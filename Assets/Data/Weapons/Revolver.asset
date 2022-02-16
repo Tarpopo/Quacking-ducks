@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b8c315803495454385990e9e923406c, type: 3}
+  m_Name: Revolver
+  m_EditorClassIdentifier: 
+  offsetColider: {x: 0.045, y: 0.0257}
+  sizeColider: {x: 0.089, y: 0.0219}
+  fullSprite: {fileID: -9192210866544151965, guid: f18be2953799d6e45be4725f94e973ad, type: 3}
+  halfSprite: {fileID: 0}
+  destroyAnim: {fileID: 0}
+  health: 0
+  full:
+    audioClip: {fileID: 0}
+    volumeSound: 0
+  destroy:
+    audioClip: {fileID: 0}
+    volumeSound: 0
+  weaponIcon: {fileID: 0}
+  recoil: 0.007
+  bullet: {fileID: 2272001242657446832, guid: ca7be910f410d6e45829eb6340ff6f67, type: 3}
+  Damage: 3
+  Force: 0.01
+  reloadTime: 0.2
+  shootPos: {x: 0.089, y: 0.035, z: 0}
+  shootAnim: {fileID: 7400000, guid: 6aadcc288eed6ee4e91a6c4bc8fbf0e4, type: 2}
+  reloadAnim: {fileID: 7400000, guid: dc88318029fa6be47b603965654fbb70, type: 2}
+  idleAnim: {fileID: 7400000, guid: 514fc2e058a8c6f4aad5c622ed9b3ef6, type: 2}
+  ShootParticle: {fileID: 7400000, guid: 7f0a6eb4bad3aec45b9a1fc74635797e, type: 2}
+  Sleeve: {fileID: 7400000, guid: fd9996d50eedf4f4ab6a9141d011fa4c, type: 2}
+  shoot: {fileID: 11400000, guid: 56aa7e055143d8d4ea1b7284f1ce6615, type: 2}
+  chest:
+    audioClip: {fileID: 8300000, guid: c0f1e60e368fa8d49a4279fb7da263a0, type: 3}
+    volumeSound: 1
+  barrel:
+    audioClip: {fileID: 8300000, guid: c0f1e60e368fa8d49a4279fb7da263a0, type: 3}
+    volumeSound: 1
+  shootSound:
+    audioClip: {fileID: 8300000, guid: 8f220413148ef994d9eb568db382dd39, type: 3}
+    volumeSound: 1
+  bodySound:
+    audioClip: {fileID: 8300000, guid: 7c4ffae79eea09449bd53f3099386d07, type: 3}
+    volumeSound: 1
+  pickUp:
+    audioClip: {fileID: 8300000, guid: 1f72f6f269e7ebd498d64d7e7abb4fc6, type: 3}
+    volumeSound: 0.6
+  noAmmo:
+    audioClip: {fileID: 8300000, guid: d8b7dc30018f7f5468917bd19a24de1e, type: 3}
+    volumeSound: 0.6
+  bulletCount: 5
+  HitLayer:
+    serializedVersion: 2
+    m_Bits: 19968

@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67e727be01fb09a48965a179d8864017, type: 3}
+  m_Name: New Loader
+  m_EditorClassIdentifier: 
+  objects:
+  - dictId: 2
+    prefab: {fileID: 3566324595537703603, guid: 001457b44d7c3754282d5c856e8a8007, type: 3}
+    countPref: 12
+  - dictId: 0
+    prefab: {fileID: 5244754601979803958, guid: 60c231a4a2f4d2b4fa3e0294d6e2b412, type: 3}
+    countPref: 0
+  - dictId: 2
+    prefab: {fileID: 3854360778388789369, guid: cb2cb1aa2c667f74a9ab1c9e0b9421ab, type: 3}
+    countPref: 0
+  - dictId: 3
+    prefab: {fileID: 34904608792070615, guid: 38eabcc62eb8adc468cf48a6669d8bee, type: 3}
+    countPref: 0
+  - dictId: 1
+    prefab: {fileID: 8953500941922712371, guid: ae494185498f2124faa0d39040df5570, type: 3}
+    countPref: 6
+  - dictId: 3
+    prefab: {fileID: 928135301367903773, guid: 0125c6c212ca24d4794f8472e77d1a81, type: 3}
+    countPref: 10
+  - dictId: 3
+    prefab: {fileID: 2272001242657446832, guid: ca7be910f410d6e45829eb6340ff6f67, type: 3}
+    countPref: 10
+  - dictId: 2
+    prefab: {fileID: 1783850305800856422, guid: acb9bfc575ded85459fd880c8b994975, type: 3}
+    countPref: 45
+  - dictId: 3
+    prefab: {fileID: 949233976099340322, guid: 47830a6ea3917e040b042437d7b3c50b, type: 3}
+    countPref: 3
+  - dictId: 3
+    prefab: {fileID: 5244754601979803958, guid: 60c231a4a2f4d2b4fa3e0294d6e2b412, type: 3}
+    countPref: 4
+  - dictId: 3
+    prefab: {fileID: 3599026789526944618, guid: 2c2e01d9bda431945a4fbdae05979877, type: 3}
+    countPref: 4
+  currentDuck: 0
+  Ducks:
+  - {fileID: 11400000, guid: 1ea981cbbd5a6564db89282d2648ef1b, type: 2}
+  - {fileID: 11400000, guid: 5af32da8134683946b5b318d8a2a8803, type: 2}
+  - {fileID: 11400000, guid: 96b2df5c303d8014d9323e64c97ffe1b, type: 2}
+  - {fileID: 11400000, guid: 23dafa2c5477e2942b71d1fb9d68a0d2, type: 2}
+  weaponDataList:
+  - {fileID: 11400000, guid: 71c6291f6ab7ea74eb0f2ded0a981f14, type: 2}
+  - {fileID: 11400000, guid: 1dbb0f4be09c1934f8684c464fae3b5d, type: 2}
+  - {fileID: 11400000, guid: b5315a6f2bdd7b148a962355e7946bb5, type: 2}
+  - {fileID: 11400000, guid: 287a403092189464bbe9e98d40eb2f99, type: 2}
+  - {fileID: 11400000, guid: 51fabffc1093a5f49ac0588bc3bf92e8, type: 2}
+  poolTransform: {fileID: 0}

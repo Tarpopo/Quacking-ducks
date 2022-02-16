@@ -1,0 +1,631 @@
+fileFormatVersion: 2
+guid: ea376765d6baae34d943f281922a4659
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -3387688819364668817
+    second: goose_24x15_idle_kluvie_walk_run_attack_0
+  - first:
+      213: 8292024792233100210
+    second: goose_24x15_idle_kluvie_walk_run_attack_1
+  - first:
+      213: -8412103659494029199
+    second: goose_24x15_idle_kluvie_walk_run_attack_2
+  - first:
+      213: 5162561260638598038
+    second: goose_24x15_idle_kluvie_walk_run_attack_3
+  - first:
+      213: -2869193191012381316
+    second: goose_24x15_idle_kluvie_walk_run_attack_4
+  - first:
+      213: -76066752882494852
+    second: goose_24x15_idle_kluvie_walk_run_attack_5
+  - first:
+      213: 5088669888433804889
+    second: goose_24x15_idle_kluvie_walk_run_attack_6
+  - first:
+      213: -5053536477266682805
+    second: goose_24x15_idle_kluvie_walk_run_attack_7
+  - first:
+      213: 5970925856248465390
+    second: goose_24x15_idle_kluvie_walk_run_attack_8
+  - first:
+      213: 6655241819812720296
+    second: goose_24x15_idle_kluvie_walk_run_attack_9
+  - first:
+      213: -8023042259341619310
+    second: goose_24x15_idle_kluvie_walk_run_attack_10
+  - first:
+      213: 9016824487947131584
+    second: goose_24x15_idle_kluvie_walk_run_attack_11
+  - first:
+      213: 2761240794331708644
+    second: goose_24x15_idle_kluvie_walk_run_attack_12
+  - first:
+      213: 9072086411129930597
+    second: goose_24x15_idle_kluvie_walk_run_attack_13
+  - first:
+      213: 5633808069027206479
+    second: goose_24x15_idle_kluvie_walk_run_attack_14
+  - first:
+      213: -6498079263888198267
+    second: goose_24x15_idle_kluvie_walk_run_attack_15
+  - first:
+      213: 8913851450980704526
+    second: goose_24x15_idle_kluvie_walk_run_attack_16
+  - first:
+      213: -2289870056007527134
+    second: goose_24x15_idle_kluvie_walk_run_attack_17
+  - first:
+      213: -9133690017939020373
+    second: goose_24x15_idle_kluvie_walk_run_attack_18
+  - first:
+      213: -4104850576712909228
+    second: goose_24x15_idle_kluvie_walk_run_attack_0
+  - first:
+      213: 2121447286664027391
+    second: goose_24x15_idle_kluvie_walk_run_attack_1
+  - first:
+      213: -6951881443337275210
+    second: goose_24x15_idle_kluvie_walk_run_attack_2
+  - first:
+      213: -5686898602702085379
+    second: goose_24x15_idle_kluvie_walk_run_attack_3
+  - first:
+      213: -6743479036240835651
+    second: goose_24x15_idle_kluvie_walk_run_attack_4
+  - first:
+      213: 692731991108670913
+    second: goose_24x15_idle_kluvie_walk_run_attack_5
+  - first:
+      213: -8694352171653599344
+    second: goose_24x15_idle_kluvie_walk_run_attack_6
+  - first:
+      213: -4909695777925350878
+    second: goose_24x15_idle_kluvie_walk_run_attack_7
+  - first:
+      213: -4370115653952319316
+    second: goose_24x15_idle_kluvie_walk_run_attack_8
+  - first:
+      213: -936612507627651532
+    second: goose_24x15_idle_kluvie_walk_run_attack_9
+  - first:
+      213: -158888923897345341
+    second: goose_24x15_idle_kluvie_walk_run_attack_10
+  - first:
+      213: 2120643367304193546
+    second: goose_24x15_idle_kluvie_walk_run_attack_11
+  - first:
+      213: -801989293630559861
+    second: goose_24x15_idle_kluvie_walk_run_attack_12
+  - first:
+      213: -9040564153243264548
+    second: goose_24x15_idle_kluvie_walk_run_attack_13
+  - first:
+      213: -5889339464428274244
+    second: goose_24x15_idle_kluvie_walk_run_attack_14
+  - first:
+      213: 4705286634161380664
+    second: goose_24x15_idle_kluvie_walk_run_attack_15
+  - first:
+      213: -6896171636824359683
+    second: goose_24x15_idle_kluvie_walk_run_attack_16
+  - first:
+      213: -5173594461513960561
+    second: goose_24x15_idle_kluvie_walk_run_attack_17
+  - first:
+      213: -1503241626159122419
+    second: goose_24x15_idle_kluvie_walk_run_attack_18
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: goose_24x15_idle_kluvie_walk_run_attack_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 60
+        width: 24
+        height: 15
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45e38fe1624a807c0800000000000000
+      internalID: -4104850576712909228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goose_24x15_idle_kluvie_walk_run_attack_1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 45
+        width: 24
+        height: 15
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffc535b3115e07d10800000000000000
+      internalID: 2121447286664027391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goose_24x15_idle_kluvie_walk_run_attack_2
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 45
+        width: 24
+        height: 15
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b87041f8a4f58f90800000000000000
+      internalID: -6951881443337275210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goose_24x15_idle_kluvie_walk_run_attack_3
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 45
+        width: 24
+        height: 15
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df2e640f9d31411b0800000000000000
+      internalID: -5686898602702085379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goose_24x15_idle_kluvie_walk_run_attack_4
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 45
+        width: 24
+        height: 15
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbb42968b895a62a0800000000000000
+      internalID: -6743479036240835651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goose_24x15_idle_kluvie_walk_run_attack_5
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 45
+        width: 24
+        height: 15
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c5d49e53141d9900800000000000000
+      internalID: 692731991108670913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goose_24x15_idle_kluvie_walk_run_attack_6
+      rect:
+        serializedVersion: 2
+        x: 120
+        y: 45
+        width: 24
+        height: 15
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09fe078b3c4775780800000000000000
+      internalID: -8694352171653599344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goose_24x15_idle_kluvie_walk_run_attack_7
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 45
+        width: 24
+        height: 15
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22a3681e3b14ddbb0800000000000000
+      internalID: -4909695777925350878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goose_24x15_idle_kluvie_walk_run_attack_8
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 45
+        width: 24
+        height: 15
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca05cc277fa3a53c0800000000000000
+      internalID: -4370115653952319316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goose_24x15_idle_kluvie_walk_run_attack_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 30
+        width: 24
+        height: 15
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43e7aaef2eb7003f0800000000000000
+      internalID: -936612507627651532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goose_24x15_idle_kluvie_walk_run_attack_10
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 30
+        width: 24
+        height: 15
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3caca549d538bcdf0800000000000000
+      internalID: -158888923897345341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goose_24x15_idle_kluvie_walk_run_attack_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 15
+        width: 24
+        height: 15
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a06647b28e90e6d10800000000000000
+      internalID: 2120643367304193546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goose_24x15_idle_kluvie_walk_run_attack_12
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 15
+        width: 24
+        height: 15
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b89eb7f8cf2ced4f0800000000000000
+      internalID: -801989293630559861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goose_24x15_idle_kluvie_walk_run_attack_13
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 15
+        width: 24
+        height: 15
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd91ec43dc6798280800000000000000
+      internalID: -9040564153243264548
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goose_24x15_idle_kluvie_walk_run_attack_14
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 15
+        width: 24
+        height: 15
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbd301dc5fcd44ea0800000000000000
+      internalID: -5889339464428274244
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goose_24x15_idle_kluvie_walk_run_attack_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 24
+        height: 15
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83d159b93498c4140800000000000000
+      internalID: 4705286634161380664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goose_24x15_idle_kluvie_walk_run_attack_16
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 0
+        width: 24
+        height: 15
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfcb5fc0f60eb40a0800000000000000
+      internalID: -6896171636824359683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goose_24x15_idle_kluvie_walk_run_attack_17
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 24
+        height: 15
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8338858f33b338b0800000000000000
+      internalID: -5173594461513960561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: goose_24x15_idle_kluvie_walk_run_attack_18
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 0
+        width: 24
+        height: 15
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d08743d94b9632be0800000000000000
+      internalID: -1503241626159122419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

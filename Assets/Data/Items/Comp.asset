@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 876a44738c28d384ca0714fb8eb18751, type: 3}
+  m_Name: Comp
+  m_EditorClassIdentifier: 
+  offsetColider: {x: 0, y: 0}
+  sizeColider: {x: 0, y: 0}
+  fullSprite: {fileID: -9192638271177797499, guid: d5fb70333015b2842952023c69b090e7, type: 3}
+  halfSprite: {fileID: -9192638271177797499, guid: d5fb70333015b2842952023c69b090e7, type: 3}
+  destroyAnim: {fileID: 7400000, guid: 1b56c0935a2ae674483cf700efff1e72, type: 2}
+  health: 1
+  full:
+    audioClip: {fileID: 0}
+    volumeSound: 0
+  destroy:
+    audioClip: {fileID: 0}
+    volumeSound: 0

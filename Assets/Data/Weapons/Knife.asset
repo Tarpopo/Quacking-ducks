@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b8c315803495454385990e9e923406c, type: 3}
+  m_Name: Knife
+  m_EditorClassIdentifier: 
+  offsetColider: {x: 0, y: 0.0695}
+  sizeColider: {x: 0.02, y: 0.108}
+  fullSprite: {fileID: -7953222810073191466, guid: f18be2953799d6e45be4725f94e973ad, type: 3}
+  halfSprite: {fileID: 0}
+  destroyAnim: {fileID: 0}
+  health: 0
+  full:
+    audioClip: {fileID: 0}
+    volumeSound: 0
+  destroy:
+    audioClip: {fileID: 0}
+    volumeSound: 0
+  weaponIcon: {fileID: 0}
+  recoil: 0
+  bullet: {fileID: 0}
+  Damage: 0
+  Force: 0
+  reloadTime: 0.8
+  shootPos: {x: 0.1763, y: 0.0927, z: 0}
+  shootAnim: {fileID: 7400000, guid: 6cf8330aa25dd794e9cda04e1583c36c, type: 2}
+  reloadAnim: {fileID: 7400000, guid: dc88318029fa6be47b603965654fbb70, type: 2}
+  idleAnim: {fileID: 7400000, guid: 2f73eecd27d5567418de02940de5b185, type: 2}
+  ShootParticle: {fileID: 0}
+  Sleeve: {fileID: 0}
+  shoot: {fileID: 11400000, guid: 76c789bb65811424bacd548e1eefe944, type: 2}
+  chest:
+    audioClip: {fileID: 8300000, guid: 440cf2e40aeb46747a0979ce36abd3b1, type: 3}
+    volumeSound: 1
+  barrel:
+    audioClip: {fileID: 8300000, guid: c0f1e60e368fa8d49a4279fb7da263a0, type: 3}
+    volumeSound: 1
+  shootSound:
+    audioClip: {fileID: 8300000, guid: d956794e4290f2f4e9cf9d706e74a648, type: 3}
+    volumeSound: 1
+  bodySound:
+    audioClip: {fileID: 8300000, guid: 7c4ffae79eea09449bd53f3099386d07, type: 3}
+    volumeSound: 1
+  pickUp:
+    audioClip: {fileID: 8300000, guid: d956794e4290f2f4e9cf9d706e74a648, type: 3}
+    volumeSound: 0.57
+  noAmmo:
+    audioClip: {fileID: 0}
+    volumeSound: 0
+  bulletCount: 0
+  HitLayer:
+    serializedVersion: 2
+    m_Bits: 19968

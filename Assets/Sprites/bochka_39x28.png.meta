@@ -1,0 +1,526 @@
+fileFormatVersion: 2
+guid: 108f5a5931704804b8a99a68e9cd4adb
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6570338980890955682
+    second: bochka_39x28_0
+  - first:
+      213: 2940172261774310400
+    second: bochka_39x28_1
+  - first:
+      213: -5584036104067223441
+    second: bochka_39x28_2
+  - first:
+      213: 167954506236674939
+    second: bochka_39x28_3
+  - first:
+      213: -7316604307622424582
+    second: bochka_39x28_4
+  - first:
+      213: 297107610246516961
+    second: bochka_39x28_5
+  - first:
+      213: 7110666561427113602
+    second: bochka_39x28_6
+  - first:
+      213: 351221221767244730
+    second: bochka_39x28_7
+  - first:
+      213: -2916847950362966650
+    second: bochka_39x28_8
+  - first:
+      213: -989579935022510049
+    second: bochka_39x28_9
+  - first:
+      213: -8535039329402685776
+    second: bochka_39x28_10
+  - first:
+      213: -5690144865993463003
+    second: bochka_39x28_11
+  - first:
+      213: 5713807100130563259
+    second: bochka_39x28_12
+  - first:
+      213: -5193480865117834280
+    second: bochka_39x28_13
+  - first:
+      213: 8292621119651961895
+    second: bochka_39x28_14
+  - first:
+      213: -1665493432499034753
+    second: bochka_39x28_15
+  - first:
+      213: -4647212859307979640
+    second: bochka_39x28_16
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: bochka_39x28_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 84
+        width: 39
+        height: 28
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e50b71e028771d4a0800000000000000
+      internalID: -6570338980890955682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bochka_39x28_1
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 84
+        width: 39
+        height: 28
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00cb38928179dc820800000000000000
+      internalID: 2940172261774310400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bochka_39x28_2
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 84
+        width: 39
+        height: 28
+      alignment: 9
+      pivot: {x: 0.51282054, y: 0.21428573}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f60fd14bfb48182b0800000000000000
+      internalID: -5584036104067223441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bochka_39x28_3
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 84
+        width: 39
+        height: 28
+      alignment: 9
+      pivot: {x: 0.51282054, y: 0.21428573}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b73c9aacbb1b45200800000000000000
+      internalID: 167954506236674939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bochka_39x28_4
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 84
+        width: 39
+        height: 28
+      alignment: 9
+      pivot: {x: 0.51282054, y: 0.21428573}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aff8212b523367a90800000000000000
+      internalID: -7316604307622424582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bochka_39x28_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 56
+        width: 39
+        height: 28
+      alignment: 9
+      pivot: {x: 0.51282054, y: 0.21428573}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e01fc02cc98f1400800000000000000
+      internalID: 297107610246516961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bochka_39x28_6
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 56
+        width: 39
+        height: 28
+      alignment: 9
+      pivot: {x: 0.51282054, y: 0.21428573}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2868c1e40992ea260800000000000000
+      internalID: 7110666561427113602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bochka_39x28_7
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 56
+        width: 39
+        height: 28
+      alignment: 9
+      pivot: {x: 0.51282054, y: 0.21428573}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abbe30127d9cfd400800000000000000
+      internalID: 351221221767244730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bochka_39x28_8
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 56
+        width: 39
+        height: 28
+      alignment: 9
+      pivot: {x: 0.51282054, y: 0.21428573}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6850ac64e364587d0800000000000000
+      internalID: -2916847950362966650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bochka_39x28_9
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 56
+        width: 39
+        height: 28
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f101128ca4e4442f0800000000000000
+      internalID: -989579935022510049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bochka_39x28_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 28
+        width: 39
+        height: 28
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b6f6f253f27d8980800000000000000
+      internalID: -8535039329402685776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bochka_39x28_11
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 28
+        width: 39
+        height: 28
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52b62fd546b8801b0800000000000000
+      internalID: -5690144865993463003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bochka_39x28_12
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 28
+        width: 39
+        height: 28
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb41366d8458b4f40800000000000000
+      internalID: 5713807100130563259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bochka_39x28_13
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 28
+        width: 39
+        height: 28
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d3fcde5bac0de7b0800000000000000
+      internalID: -5193480865117834280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bochka_39x28_14
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 28
+        width: 39
+        height: 28
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72cd1cdd8fe451370800000000000000
+      internalID: 8292621119651961895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bochka_39x28_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 39
+        height: 28
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f75262c1c8af2e8e0800000000000000
+      internalID: -1665493432499034753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bochka_39x28_16
+      rect:
+        serializedVersion: 2
+        x: 39
+        y: 0
+        width: 39
+        height: 28
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88c0255c688c18fb0800000000000000
+      internalID: -4647212859307979640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

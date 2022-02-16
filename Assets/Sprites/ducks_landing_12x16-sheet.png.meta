@@ -1,0 +1,550 @@
+fileFormatVersion: 2
+guid: ce6f92bf4571d7b418aeab86b0fc0ca1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2356313056863220743
+    second: ducks_landing_12x16-sheet_0
+  - first:
+      213: -3895447006963114988
+    second: ducks_landing_12x16-sheet_1
+  - first:
+      213: -2434578579294482716
+    second: ducks_landing_12x16-sheet_2
+  - first:
+      213: 8844609959492021962
+    second: ducks_landing_12x16-sheet_3
+  - first:
+      213: -1835728142768493410
+    second: ducks_landing_12x16-sheet_4
+  - first:
+      213: -2150475734587071532
+    second: ducks_landing_12x16-sheet_5
+  - first:
+      213: -1536433006621661032
+    second: ducks_landing_12x16-sheet_6
+  - first:
+      213: 6758652429793292098
+    second: ducks_landing_12x16-sheet_7
+  - first:
+      213: -803988241124761557
+    second: ducks_landing_12x16-sheet_8
+  - first:
+      213: -9163774367929905733
+    second: ducks_landing_12x16-sheet_9
+  - first:
+      213: 3288248469963421160
+    second: ducks_landing_12x16-sheet_10
+  - first:
+      213: 2872411889641437295
+    second: ducks_landing_12x16-sheet_11
+  - first:
+      213: 5392349440959483253
+    second: ducks_landing_12x16-sheet_12
+  - first:
+      213: 6469474431229881312
+    second: ducks_landing_12x16-sheet_13
+  - first:
+      213: -7836624011354817226
+    second: ducks_landing_12x16-sheet_14
+  - first:
+      213: 1703971081823647130
+    second: ducks_landing_12x16-sheet_15
+  - first:
+      213: 5719547886304732772
+    second: ducks_landing_12x16-sheet_0
+  - first:
+      213: 2563706390477052572
+    second: ducks_landing_12x16-sheet_1
+  - first:
+      213: 4757919113440450352
+    second: ducks_landing_12x16-sheet_2
+  - first:
+      213: 6565280534789080427
+    second: ducks_landing_12x16-sheet_3
+  - first:
+      213: 5688088561928086373
+    second: ducks_landing_12x16-sheet_4
+  - first:
+      213: 793968083655178422
+    second: ducks_landing_12x16-sheet_5
+  - first:
+      213: 1421740631072173921
+    second: ducks_landing_12x16-sheet_6
+  - first:
+      213: -8614892380454556178
+    second: ducks_landing_12x16-sheet_7
+  - first:
+      213: 6728151449299922261
+    second: ducks_landing_12x16-sheet_8
+  - first:
+      213: -6415866162321145695
+    second: ducks_landing_12x16-sheet_9
+  - first:
+      213: 184008966722763317
+    second: ducks_landing_12x16-sheet_10
+  - first:
+      213: -7513583262875953564
+    second: ducks_landing_12x16-sheet_11
+  - first:
+      213: 9133766091209330404
+    second: ducks_landing_12x16-sheet_12
+  - first:
+      213: -3433254499413326667
+    second: ducks_landing_12x16-sheet_13
+  - first:
+      213: 2163629522165919404
+    second: ducks_landing_12x16-sheet_14
+  - first:
+      213: 991931750778645308
+    second: ducks_landing_12x16-sheet_15
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ducks_landing_12x16-sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 48
+        width: 12
+        height: 16
+      alignment: 9
+      pivot: {x: 0.4166667, y: 0.125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 466a707cf7aef5f40800000000000000
+      internalID: 5719547886304732772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ducks_landing_12x16-sheet_1
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 48
+        width: 12
+        height: 16
+      alignment: 9
+      pivot: {x: 0.4166667, y: 0.125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9a98c8016d149320800000000000000
+      internalID: 2563706390477052572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ducks_landing_12x16-sheet_2
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 48
+        width: 12
+        height: 16
+      alignment: 9
+      pivot: {x: 0.4166667, y: 0.125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 037d8a2a936870240800000000000000
+      internalID: 4757919113440450352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ducks_landing_12x16-sheet_3
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 48
+        width: 12
+        height: 16
+      alignment: 9
+      pivot: {x: 0.4166667, y: 0.125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b65c3eeacdf8c1b50800000000000000
+      internalID: 6565280534789080427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ducks_landing_12x16-sheet_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 12
+        height: 16
+      alignment: 9
+      pivot: {x: 0.4166667, y: 0.125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 563afa8096620fe40800000000000000
+      internalID: 5688088561928086373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ducks_landing_12x16-sheet_5
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 32
+        width: 12
+        height: 16
+      alignment: 9
+      pivot: {x: 0.4166667, y: 0.125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b8b345f3cdb40b00800000000000000
+      internalID: 793968083655178422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ducks_landing_12x16-sheet_6
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 32
+        width: 12
+        height: 16
+      alignment: 9
+      pivot: {x: 0.4166667, y: 0.125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16febcd32990bb310800000000000000
+      internalID: 1421740631072173921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ducks_landing_12x16-sheet_7
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 32
+        width: 12
+        height: 16
+      alignment: 9
+      pivot: {x: 0.4166667, y: 0.125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eed69cc0601c17880800000000000000
+      internalID: -8614892380454556178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ducks_landing_12x16-sheet_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 16
+        width: 12
+        height: 16
+      alignment: 9
+      pivot: {x: 0.4166667, y: 0.125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55d2d8a88123f5d50800000000000000
+      internalID: 6728151449299922261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ducks_landing_12x16-sheet_9
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 16
+        width: 12
+        height: 16
+      alignment: 9
+      pivot: {x: 0.4166667, y: 0.125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a04664d7b346f6a0800000000000000
+      internalID: -6415866162321145695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ducks_landing_12x16-sheet_10
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 16
+        width: 12
+        height: 16
+      alignment: 9
+      pivot: {x: 0.4166667, y: 0.125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53a3ff82e2bbd8200800000000000000
+      internalID: 184008966722763317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ducks_landing_12x16-sheet_11
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 16
+        width: 12
+        height: 16
+      alignment: 9
+      pivot: {x: 0.4166667, y: 0.125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46655f1c4d36ab790800000000000000
+      internalID: -7513583262875953564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ducks_landing_12x16-sheet_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 12
+        height: 16
+      alignment: 9
+      pivot: {x: 0.4166667, y: 0.125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ee4a000ed7a1ce70800000000000000
+      internalID: 9133766091209330404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ducks_landing_12x16-sheet_13
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 0
+        width: 12
+        height: 16
+      alignment: 9
+      pivot: {x: 0.4166667, y: 0.125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b405f21931aa50d0800000000000000
+      internalID: -3433254499413326667
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ducks_landing_12x16-sheet_14
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 0
+        width: 12
+        height: 16
+      alignment: 9
+      pivot: {x: 0.4166667, y: 0.125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cae6f364691c60e10800000000000000
+      internalID: 2163629522165919404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ducks_landing_12x16-sheet_15
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 0
+        width: 12
+        height: 16
+      alignment: 9
+      pivot: {x: 0.4166667, y: 0.125}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3ba79efbac04cd00800000000000000
+      internalID: 991931750778645308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

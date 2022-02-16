@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8783bd0f439516e4ca95d0cab40cb841, type: 3}
+  m_Name: GoseEnemy
+  m_EditorClassIdentifier: 
+  attackSize: {x: 0, y: 0, z: 0}
+  whoisEnemy:
+    serializedVersion: 2
+    m_Bits: 2048
+  run: {fileID: 7400000, guid: 88fee16fe1453954a8316b605582fffe, type: 2}
+  idle: {fileID: 7400000, guid: cedc9bfe2a341774fb2d8c8ce138fd90, type: 2}
+  quack: {fileID: 0}
+  jumpDown: {fileID: 0}
+  death: {fileID: 7400000, guid: 8c36b2ff7156f354bab272b9de820d63, type: 2}
+  takeDamage: {fileID: 0}
+  deathParticles: {fileID: 7400000, guid: 66ee00cbd49d75845ada05c9749546da, type: 2}
+  ActorLight: {fileID: 7400000, guid: 8bb482de92ffb8e47b6217428b315f39, type: 2}
+  anim_controller: {fileID: 0}
+  _health: 3
+  curr_health: 3
+  colOffset: {x: -0.0080623245, y: 0.05343}
+  colSize: {x: 0.06387535, y: 0.13297}
+  sizeCube: {x: 0, y: 0}
+  posCube: {x: 0, y: 0}
+  stepSounds:
+  - audioClip: {fileID: 8300000, guid: bef7eb01af8f07a418ebba21364a11b4, type: 3}
+    volumeSound: 0.32
+  - audioClip: {fileID: 8300000, guid: a3990b99df1a84a47901ba3d408a48cf, type: 3}
+    volumeSound: 0.41
+  - audioClip: {fileID: 8300000, guid: edc107907afcc2748b852dedde97a27b, type: 3}
+    volumeSound: 0.31
+  - audioClip: {fileID: 8300000, guid: 34dd010fa87aee44ab851d48f5097064, type: 3}
+    volumeSound: 0.42
+  quackSound:
+    audioClip: {fileID: 0}
+    volumeSound: 0

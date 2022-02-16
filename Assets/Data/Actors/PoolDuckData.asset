@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8783bd0f439516e4ca95d0cab40cb841, type: 3}
+  m_Name: PoolDuckData
+  m_EditorClassIdentifier: 
+  attackSize: {x: 0, y: 0, z: 0}
+  whoisEnemy:
+    serializedVersion: 2
+    m_Bits: 0
+  run: {fileID: 7400000, guid: 6e738ca92cdae794c9ece156fa178400, type: 2}
+  idle: {fileID: 7400000, guid: b99c7a24679337341953334179e7d5f0, type: 2}
+  quack: {fileID: 7400000, guid: 16c88a4af0e173d4b97ed3b10746bc39, type: 2}
+  jumpDown: {fileID: 7400000, guid: 8f516a0afcad2d447bbfe18a024c2fa6, type: 2}
+  death: {fileID: 7400000, guid: a1caf6569a30e6c409e6c3cf6728eef2, type: 2}
+  takeDamage: {fileID: 0}
+  deathParticles: {fileID: 7400000, guid: 8e01641ef766fe14a9567c1784d2521e, type: 2}
+  ActorLight: {fileID: 7400000, guid: d6812337602673f4487fce85e74beaff, type: 2}
+  anim_controller: {fileID: 0}
+  _health: 20
+  curr_health: 20
+  colOffset: {x: 0.010000002, y: 0.0474}
+  colSize: {x: 0.079, y: 0.106}
+  sizeCube: {x: 0.079, y: 0.11}
+  posCube: {x: 0.010000002, y: 0.0455}
+  stepSounds:
+  - audioClip: {fileID: 8300000, guid: 34dd010fa87aee44ab851d48f5097064, type: 3}
+    volumeSound: 0.33
+  - audioClip: {fileID: 8300000, guid: bef7eb01af8f07a418ebba21364a11b4, type: 3}
+    volumeSound: 0.24
+  - audioClip: {fileID: 8300000, guid: a3990b99df1a84a47901ba3d408a48cf, type: 3}
+    volumeSound: 0.5
+  - audioClip: {fileID: 8300000, guid: edc107907afcc2748b852dedde97a27b, type: 3}
+    volumeSound: 0.18
+  quackSound:
+    audioClip: {fileID: 8300000, guid: 01babb3bd8544bd478ce872378f6f6dc, type: 3}
+    volumeSound: 0.66

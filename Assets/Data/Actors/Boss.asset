@@ -1,0 +1,43 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8783bd0f439516e4ca95d0cab40cb841, type: 3}
+  m_Name: Boss
+  m_EditorClassIdentifier: 
+  attackSize: {x: 0, y: 0, z: 0}
+  whoisEnemy:
+    serializedVersion: 2
+    m_Bits: 2048
+  run: {fileID: 0}
+  idle: {fileID: 0}
+  quack: {fileID: 0}
+  jumpDown: {fileID: 0}
+  death: {fileID: 7400000, guid: 5d559fc2b03c7f74badf385e0838029e, type: 2}
+  takeDamage: {fileID: 0}
+  deathParticles: {fileID: 7400000, guid: 8e01641ef766fe14a9567c1784d2521e, type: 2}
+  ActorLight: {fileID: 0}
+  anim_controller: {fileID: 0}
+  _health: 20
+  curr_health: 20
+  colOffset: {x: -0.044, y: 0.1145}
+  colSize: {x: 0.11, y: 0.189}
+  sizeCube: {x: 0, y: 0}
+  posCube: {x: 0, y: 0}
+  stepSounds:
+  - audioClip: {fileID: 8300000, guid: edc107907afcc2748b852dedde97a27b, type: 3}
+    volumeSound: 0.6
+  - audioClip: {fileID: 8300000, guid: 34dd010fa87aee44ab851d48f5097064, type: 3}
+    volumeSound: 0.5
+  - audioClip: {fileID: 8300000, guid: bef7eb01af8f07a418ebba21364a11b4, type: 3}
+    volumeSound: 0.7
+  quackSound:
+    audioClip: {fileID: 0}
+    volumeSound: 0
