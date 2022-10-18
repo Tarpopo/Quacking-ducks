@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Weapon
+  - Spikes
+  - Tree
+  - Box
+  - Enemy
+  - Coin
+  - LevelsMenu
+  - Shop
+  - DeathScreen
+  - Transition
+  - MainMenu
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Ground
+  - Interactive
+  - Enemy
+  - Player
+  - Weapon
+  - Coin
+  - Trees
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: BackGround
+    uniqueID: 3364492563
+    locked: 0
+  - name: Weapons
+    uniqueID: 2276628149
+    locked: 0
+  - name: Default
+    uniqueID: 0
+    locked: 0
