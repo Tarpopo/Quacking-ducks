@@ -51,7 +51,7 @@ TextureImporter:
       213: 5152101415913726357
     second: ducks_landing_12x16_15
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -72,6 +72,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -81,8 +82,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -103,11 +104,14 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -135,6 +139,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -494,6 +510,23 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      ducks_landing_12x16_2: -4871476063721556394
+      ducks_landing_12x16_0: 4412873480640398938
+      ducks_landing_12x16_15: 5152101415913726357
+      ducks_landing_12x16_12: 1182700571127051110
+      ducks_landing_12x16_13: -3092908377411500815
+      ducks_landing_12x16_4: 8394389060813579967
+      ducks_landing_12x16_8: 4003726843283338753
+      ducks_landing_12x16_14: -8782527207781680724
+      ducks_landing_12x16_3: -4344701120491902904
+      ducks_landing_12x16_6: 2343688692858800036
+      ducks_landing_12x16_11: -2176966962358252040
+      ducks_landing_12x16_9: -6458566385793868690
+      ducks_landing_12x16_1: 6985896476732777776
+      ducks_landing_12x16_7: -812332884649480746
+      ducks_landing_12x16_10: 1030585888778229219
+      ducks_landing_12x16_5: 7865792272805612770
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

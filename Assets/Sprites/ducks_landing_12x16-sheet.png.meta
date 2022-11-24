@@ -99,7 +99,7 @@ TextureImporter:
       213: 991931750778645308
     second: ducks_landing_12x16-sheet_15
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -120,6 +120,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -129,8 +130,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -151,11 +152,14 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -193,6 +197,18 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -212,7 +228,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 466a707cf7aef5f40800000000000000
-      internalID: 5719547886304732772
+      internalID: -2356313056863220743
       vertices: []
       indices: 
       edges: []
@@ -233,7 +249,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: c9a98c8016d149320800000000000000
-      internalID: 2563706390477052572
+      internalID: -3895447006963114988
       vertices: []
       indices: 
       edges: []
@@ -254,7 +270,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 037d8a2a936870240800000000000000
-      internalID: 4757919113440450352
+      internalID: -2434578579294482716
       vertices: []
       indices: 
       edges: []
@@ -275,7 +291,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: b65c3eeacdf8c1b50800000000000000
-      internalID: 6565280534789080427
+      internalID: 8844609959492021962
       vertices: []
       indices: 
       edges: []
@@ -296,7 +312,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 563afa8096620fe40800000000000000
-      internalID: 5688088561928086373
+      internalID: -1835728142768493410
       vertices: []
       indices: 
       edges: []
@@ -317,7 +333,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 6b8b345f3cdb40b00800000000000000
-      internalID: 793968083655178422
+      internalID: -2150475734587071532
       vertices: []
       indices: 
       edges: []
@@ -338,7 +354,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 16febcd32990bb310800000000000000
-      internalID: 1421740631072173921
+      internalID: -1536433006621661032
       vertices: []
       indices: 
       edges: []
@@ -359,7 +375,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: eed69cc0601c17880800000000000000
-      internalID: -8614892380454556178
+      internalID: 6758652429793292098
       vertices: []
       indices: 
       edges: []
@@ -380,7 +396,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 55d2d8a88123f5d50800000000000000
-      internalID: 6728151449299922261
+      internalID: -803988241124761557
       vertices: []
       indices: 
       edges: []
@@ -401,7 +417,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 1a04664d7b346f6a0800000000000000
-      internalID: -6415866162321145695
+      internalID: -9163774367929905733
       vertices: []
       indices: 
       edges: []
@@ -422,7 +438,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 53a3ff82e2bbd8200800000000000000
-      internalID: 184008966722763317
+      internalID: 3288248469963421160
       vertices: []
       indices: 
       edges: []
@@ -443,7 +459,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 46655f1c4d36ab790800000000000000
-      internalID: -7513583262875953564
+      internalID: 2872411889641437295
       vertices: []
       indices: 
       edges: []
@@ -464,7 +480,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 4ee4a000ed7a1ce70800000000000000
-      internalID: 9133766091209330404
+      internalID: 5392349440959483253
       vertices: []
       indices: 
       edges: []
@@ -485,7 +501,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: 5b405f21931aa50d0800000000000000
-      internalID: -3433254499413326667
+      internalID: 6469474431229881312
       vertices: []
       indices: 
       edges: []
@@ -506,7 +522,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: cae6f364691c60e10800000000000000
-      internalID: 2163629522165919404
+      internalID: -7836624011354817226
       vertices: []
       indices: 
       edges: []
@@ -527,7 +543,7 @@ TextureImporter:
       tessellationDetail: 0
       bones: []
       spriteID: c3ba79efbac04cd00800000000000000
-      internalID: 991931750778645308
+      internalID: 1703971081823647130
       vertices: []
       indices: 
       edges: []
@@ -542,6 +558,23 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      ducks_landing_12x16-sheet_9: -9163774367929905733
+      ducks_landing_12x16-sheet_8: -803988241124761557
+      ducks_landing_12x16-sheet_11: 2872411889641437295
+      ducks_landing_12x16-sheet_4: -1835728142768493410
+      ducks_landing_12x16-sheet_5: -2150475734587071532
+      ducks_landing_12x16-sheet_10: 3288248469963421160
+      ducks_landing_12x16-sheet_12: 5392349440959483253
+      ducks_landing_12x16-sheet_14: -7836624011354817226
+      ducks_landing_12x16-sheet_0: -2356313056863220743
+      ducks_landing_12x16-sheet_15: 1703971081823647130
+      ducks_landing_12x16-sheet_1: -3895447006963114988
+      ducks_landing_12x16-sheet_7: 6758652429793292098
+      ducks_landing_12x16-sheet_2: -2434578579294482716
+      ducks_landing_12x16-sheet_6: -1536433006621661032
+      ducks_landing_12x16-sheet_13: 6469474431229881312
+      ducks_landing_12x16-sheet_3: 8844609959492021962
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

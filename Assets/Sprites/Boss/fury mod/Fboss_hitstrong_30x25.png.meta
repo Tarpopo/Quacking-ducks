@@ -45,7 +45,7 @@ TextureImporter:
       213: 3802334619869525487
     second: Fboss_hitstrong_30x25_13
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -66,6 +66,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -75,8 +76,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -97,11 +98,14 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -129,6 +133,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -446,6 +462,21 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      Fboss_hitstrong_30x25_13: 3802334619869525487
+      Fboss_hitstrong_30x25_6: -3722130103054202144
+      Fboss_hitstrong_30x25_5: -6623572694990837530
+      Fboss_hitstrong_30x25_9: -2676390687806202676
+      Fboss_hitstrong_30x25_12: -766720590588761406
+      Fboss_hitstrong_30x25_1: 7933424410739442755
+      Fboss_hitstrong_30x25_10: 2378477181200962586
+      Fboss_hitstrong_30x25_0: 1010634360718910617
+      Fboss_hitstrong_30x25_7: 2945717213144508485
+      Fboss_hitstrong_30x25_4: 5112417731728364862
+      Fboss_hitstrong_30x25_3: -6904679229687922413
+      Fboss_hitstrong_30x25_2: 987488753078713590
+      Fboss_hitstrong_30x25_11: 5149765211345262628
+      Fboss_hitstrong_30x25_8: -4778279479025046837
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

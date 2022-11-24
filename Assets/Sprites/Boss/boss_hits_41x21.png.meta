@@ -51,7 +51,7 @@ TextureImporter:
       213: -2187083516315518566
     second: boss_hits_41x21_15
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -72,6 +72,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -81,8 +82,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -103,11 +104,14 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -135,6 +139,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -494,6 +510,23 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      boss_hits_41x21_10: 6154637506174096108
+      boss_hits_41x21_1: -5291292713703509980
+      boss_hits_41x21_9: -3616267637799609267
+      boss_hits_41x21_15: -2187083516315518566
+      boss_hits_41x21_0: -6955781621413087293
+      boss_hits_41x21_14: -9142178846113234904
+      boss_hits_41x21_11: 6634739787073763807
+      boss_hits_41x21_4: -4248839835541221167
+      boss_hits_41x21_2: -4199480269881737576
+      boss_hits_41x21_13: -4547411273385931446
+      boss_hits_41x21_5: 3351071648082987433
+      boss_hits_41x21_6: -1564004877073397121
+      boss_hits_41x21_12: -1728100149780153101
+      boss_hits_41x21_3: -2867676252189373131
+      boss_hits_41x21_8: -2106488833478834104
+      boss_hits_41x21_7: -6312668256699000324
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

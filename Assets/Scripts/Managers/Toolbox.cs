@@ -34,8 +34,7 @@ public class Toolbox : Singleton<Toolbox>
        if (manager != null)
           add = Instantiate(manager);
       else return;
-      //print(obj.GetType());
-      Instance.data.Add(obj.GetType(), add);
+       Instance.data.Add(obj.GetType(), add);
       
       if (add is IAwake)
       {

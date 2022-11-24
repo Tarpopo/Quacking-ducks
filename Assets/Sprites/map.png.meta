@@ -111,7 +111,7 @@ TextureImporter:
       213: -7756679942681782869
     second: map_35
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -132,6 +132,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -141,8 +142,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -163,11 +164,14 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -195,6 +199,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -974,6 +990,43 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      map_26: 2978280148829176037
+      map_30: 2291493853680427310
+      map_4: -3632615384808042850
+      map_27: 8164531455986530192
+      map_6: -4911017183162878569
+      map_14: -774224991518366330
+      map_15: 8026220478932972616
+      map_11: 4538445167262558003
+      map_2: -6113606119065762621
+      map_0: 4804446361586417100
+      map_5: 9088407016249567572
+      map_10: 7011873134591311591
+      map_20: -6627821829503508686
+      map_3: -1849047750971238059
+      map_22: 2540159621380238077
+      map_23: 7970565699956040705
+      map_34: 1860921873358595111
+      map_24: 1939891772620144925
+      map_13: -5986389138115853821
+      map_32: -220167517872740113
+      map_28: -1027689994960642934
+      map_35: -7756679942681782869
+      map_16: -8714928381196272325
+      map_18: 8695566767447915991
+      map_17: -6125389956313058150
+      map_29: 5997196242626535752
+      map_33: -7019870037146054360
+      map_21: 3854302876542490433
+      map_25: 1195476051202658792
+      map_7: -242768484182980809
+      map_9: 4606380620469610249
+      map_12: 2832775273200766691
+      map_31: 2295803781443268198
+      map_1: -7688356529983298438
+      map_8: 6657255337997859584
+      map_19: 3260640931006637787
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

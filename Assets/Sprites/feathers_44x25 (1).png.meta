@@ -66,7 +66,7 @@ TextureImporter:
       213: -4517206440804850254
     second: feathers_44x25 (1)_20
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -87,6 +87,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -96,8 +97,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -118,11 +119,14 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -150,6 +154,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -614,6 +630,28 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      feathers_44x25 (1)_9: -4898490163308074474
+      feathers_44x25 (1)_12: -5130215658926913732
+      feathers_44x25 (1)_10: 8360087076950860705
+      feathers_44x25 (1)_19: 6073415156042351115
+      feathers_44x25 (1)_0: -4601128900776685088
+      feathers_44x25 (1)_1: -2843278233889080922
+      feathers_44x25 (1)_6: -5063643647920375854
+      feathers_44x25 (1)_4: -9073930948698501620
+      feathers_44x25 (1)_16: 6149741328298513868
+      feathers_44x25 (1)_8: 1103071314008126409
+      feathers_44x25 (1)_17: 2319700140672277153
+      feathers_44x25 (1)_13: 6586205638163307678
+      feathers_44x25 (1)_5: 8180776471127743553
+      feathers_44x25 (1)_2: 5031503287145509925
+      feathers_44x25 (1)_18: 1906215608655669390
+      feathers_44x25 (1)_14: -8937365547556391264
+      feathers_44x25 (1)_20: -4517206440804850254
+      feathers_44x25 (1)_7: 8452841696384888020
+      feathers_44x25 (1)_15: -7909510474154026301
+      feathers_44x25 (1)_3: 1458523077576351629
+      feathers_44x25 (1)_11: -7522042218199248358
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

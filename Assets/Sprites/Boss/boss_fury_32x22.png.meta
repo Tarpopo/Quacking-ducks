@@ -48,7 +48,7 @@ TextureImporter:
       213: 3215638436046326000
     second: boss_fury_32x22_14
   externalObjects: {}
-  serializedVersion: 11
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -69,6 +69,7 @@ TextureImporter:
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -78,8 +79,8 @@ TextureImporter:
   textureSettings:
     serializedVersion: 2
     filterMode: 0
-    aniso: -1
-    mipBias: -100
+    aniso: 1
+    mipBias: 0
     wrapU: 1
     wrapV: 1
     wrapW: 1
@@ -100,11 +101,14 @@ TextureImporter:
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
   maxTextureSizeSet: 0
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
+  cookieLightType: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -132,6 +136,18 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -470,6 +486,22 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
+    nameFileIdTable:
+      boss_fury_32x22_1: 8047324386484675373
+      boss_fury_32x22_3: 8277369711993955350
+      boss_fury_32x22_12: -5400810885823633511
+      boss_fury_32x22_11: -8290171426490690656
+      boss_fury_32x22_0: -8860853864728009021
+      boss_fury_32x22_6: -4369685819553961622
+      boss_fury_32x22_14: 3215638436046326000
+      boss_fury_32x22_13: 6915441679480056879
+      boss_fury_32x22_8: 6924529719351336251
+      boss_fury_32x22_5: 3409155890804539508
+      boss_fury_32x22_10: 6736248229134699628
+      boss_fury_32x22_4: -4305236668354465841
+      boss_fury_32x22_2: -2455637430206648413
+      boss_fury_32x22_7: -1981601373594042622
+      boss_fury_32x22_9: 8647996238172027737
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
