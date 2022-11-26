@@ -1,59 +1,45 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel.Design.Serialization;
+using System.Linq;
 using DefaultNamespace;
-using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Toolbox : Singleton<Toolbox>
 {
-   private Dictionary<Type,object>data =new Dictionary<Type, object>();
-   public void SceneChanged(Scene scene, LoadSceneMode loadSceneMode)
-   {
-      foreach (var obj in data)
-      {
-         var changed = obj.Value as ISceneChanged;
-         changed?.OnChangeScene();
-      }
-   }
+    private readonly Dictionary<Type, object> _data = new Dictionary<Type, object>();
+    private readonly List<IStart> _starts = new List<IStart>();
 
-   public static void UpdateAllAwake()
-   {
-      foreach (var manager in Toolbox.Instance.data)
-      {
-         var obj = manager.Value as IAwake;
-         obj?.OnAwake();
-      }
-   }
+    public void SceneChanged(Scene scene, LoadSceneMode loadSceneMode)
+    {
+        foreach (var changed in _data.Select(obj => obj.Value as ISceneChanged))
+        {
+            changed?.OnChangeScene();
+        }
+    }
 
-   public static void Add(object obj)
-   {
-      var add = obj;
-       var manager = obj as ManagerBase;
-       if (manager != null)
-          add = Instantiate(manager);
-      else return;
-       Instance.data.Add(obj.GetType(), add);
-      
-      if (add is IAwake)
-      {
-         (add as IAwake).OnAwake();
-      }
-   }
+    public static void Add(object obj)
+    {
+        Instance._data.Add(obj.GetType(), obj);
+        if (obj is IAwake awake) awake.OnAwake();
+        if (obj is IStart start) Instance._starts.Add(start);
+    }
 
-   public static T Get<T>()
-   {
-      Instance.data.TryGetValue(typeof(T), out var resolve);
-      return (T) resolve;
-   }
+    public static T Get<T>()
+    {
+        Instance._data.TryGetValue(typeof(T), out var resolve);
+        return (T)resolve;
+    }
 
-   public void ClearScene(Scene scene)
-   {
-      foreach (var obj in data)
-      {
-         var perem = obj.Value as ManagerBase;
-         perem?.ClearScene();
-      }
-   }
+    public void ClearScene(Scene scene)
+    {
+        foreach (var managerBase in _data.Select(obj => obj.Value).OfType<ManagerBase>())
+        {
+            managerBase.ClearScene();
+        }
+    }
+
+    private void Start()
+    {
+        foreach (var start in _starts) start.OnStart();
+    }
 }

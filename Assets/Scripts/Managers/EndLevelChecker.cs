@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Dynamic;
-using DefaultNamespace;
+﻿using DefaultNamespace;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-[CreateAssetMenu(menuName = "Managers/EndLevelChecker")]
 public class EndLevelChecker : ManagerBase, ISceneChanged, IAwake
 {
     public AnimationClip _fallingDeathScreen;
     public AnimationClip _fallingCompleteScreen;
-    
+
     private GameObject _menuCanvas;
     private GameObject _deathCanvas;
     private GameObject _completeCanvas;
@@ -31,7 +25,7 @@ public class EndLevelChecker : ManagerBase, ISceneChanged, IAwake
             GameObject.Find("PresentLogo").SetActive(false);
             return;
         }
-        
+
         _isFirstLoad = false;
     }
 
@@ -39,16 +33,16 @@ public class EndLevelChecker : ManagerBase, ISceneChanged, IAwake
     {
         if (Toolbox.Get<SceneController>().GetIsMainScene()) return;
         _endSceneComponent = GameObject.Find("[Setup]").AddComponent<EndSceneComponent>();
-        
+
         _isLockScreen = false;
-        _menuCanvas = GameObject.FindGameObjectWithTag("LevelsMenu"); 
-        _deathCanvas = GameObject.FindGameObjectWithTag("DeathScreen"); 
+        _menuCanvas = GameObject.FindGameObjectWithTag("LevelsMenu");
+        _deathCanvas = GameObject.FindGameObjectWithTag("DeathScreen");
         _completeCanvas = GameObject.FindGameObjectWithTag("Finish");
         _menuCanvas.SetActive(false);
         _deathCanvas.SetActive(false);
         _completeCanvas.SetActive(false);
-    } 
-    
+    }
+
     public void SetCompleteCount(int count)
     {
         _killCount = 0;
@@ -67,14 +61,15 @@ public class EndLevelChecker : ManagerBase, ISceneChanged, IAwake
         Toolbox.Get<LevelController>().SetLevelPassed();
         LoadCompleteMenuAnimation();
     }
-    
+
     public void LoadDeathScreenAnimation()
     {
         if (GetScreenState()) return;
         _deathCanvas.SetActive(true);
         _deathCanvas.GetComponent<Animator>().Play(_fallingDeathScreen.name);
-        _endSceneComponent.ActiveGOWtihTime(_menuCanvas,1.5f);
+        _endSceneComponent.ActiveGOWtihTime(_menuCanvas, 1.5f);
     }
+
     private void LoadCompleteMenuAnimation()
     {
         if (GetScreenState()) return;
@@ -95,6 +90,4 @@ public class EndLevelChecker : ManagerBase, ISceneChanged, IAwake
         _isLockScreen = false;
         CheckCompleteLevel();
     }
-
-
 }

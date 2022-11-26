@@ -1,19 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using DefaultNamespace;
 using UnityEngine;
-[CreateAssetMenu(fileName = "ManagerPool", menuName = "Managers/ManagerPool")]
+
 public class ManagerPool : ManagerBase
 {
-    private Dictionary<int,Pool>pools=new Dictionary<int, Pool>();
-    
-    public Pool AddPool(PoolType id,bool reparent=true)
+    private Dictionary<int, Pool> pools = new Dictionary<int, Pool>();
+
+    public Pool AddPool(PoolType id, bool reparent = true)
     {
         Pool pool;
-        if (pools.TryGetValue((int) id, out pool)==false)
+        if (pools.TryGetValue((int)id, out pool) == false)
         {
-            pool=new Pool();
-            pools.Add((int)id,pool);
+            pool = new Pool();
+            pools.Add((int)id, pool);
             if (reparent)
             {
                 var poolsGo = GameObject.Find("[POOLS]") ?? new GameObject("[POOLS]");
@@ -23,23 +22,23 @@ public class ManagerPool : ManagerBase
             }
         }
 
-        return pool;  
+        return pool;
     }
 
     public GameObject Spawn(PoolType id, GameObject prefab, Vector3 position = default(Vector3),
-        Quaternion rotation = default(Quaternion), Transform parent = null,bool setActive=true)
+        Quaternion rotation = default(Quaternion), Transform parent = null, bool setActive = true)
     {
-        return pools[(int) id].Spawn(prefab, position, rotation, parent,setActive);
+        return pools[(int)id].Spawn(prefab, position, rotation, parent, setActive);
     }
 
     public T Spawn<T>(PoolType id, GameObject prefab, Vector3 position = default(Vector3),
-        Quaternion rotation = default(Quaternion), Transform parent = null)where T:class
+        Quaternion rotation = default(Quaternion), Transform parent = null) where T : class
     {
-        var val = pools[(int) id].Spawn(prefab, position, rotation, parent);
+        var val = pools[(int)id].Spawn(prefab, position, rotation, parent);
         return val.GetComponent<T>();
     }
 
-    public void Despawn(PoolType id,GameObject obj)
+    public void Despawn(PoolType id, GameObject obj)
     {
         pools[(int)id].Despawn(obj);
     }

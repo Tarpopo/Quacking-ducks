@@ -1,9 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using DefaultNamespace;
-using UnityEditor;
-using UnityEngine;
-[CreateAssetMenu(menuName = "Managers/Stats")]
+﻿using DefaultNamespace;
+
 public class PlayerStats : ManagerBase, IAwake
 {
     public int CoinCount;

@@ -1,39 +1,37 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using DefaultNamespace;
-using UnityEditor;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Managers/Save")]
-public class Save : ManagerBase,IAwake,ISceneChanged
+public class Save : ManagerBase, IAwake, ISceneChanged
 {
     private const string _saveName = "QuackingSave";
-    public  SaveData _save;
+    public SaveData _save;
     private bool _isFirstLoad = true;
-    
+
     public void OnAwake()
     {
-        if(_isFirstLoad==false)return;
+        if (_isFirstLoad == false) return;
         _save = LoadDataSave();
         _isFirstLoad = false;
     }
 
     private SaveData LoadDataSave()
     {
-        return PlayerPrefs.HasKey(_saveName) ? JsonUtility.FromJson<SaveData>(PlayerPrefs.GetString(_saveName)) : new SaveData();
+        return PlayerPrefs.HasKey(_saveName)
+            ? JsonUtility.FromJson<SaveData>(PlayerPrefs.GetString(_saveName))
+            : new SaveData();
     }
-    
+
     public override void ClearScene()
     {
         if (Toolbox.Get<SceneController>().GetIsMainScene()) return;
         SaveAll();
     }
-    
+
     public void SaveAll()
     {
         _save.MoneyCount = Toolbox.Get<PlayerStats>().CoinCount;
-        PlayerPrefs.SetString(_saveName,JsonUtility.ToJson(_save));
+        PlayerPrefs.SetString(_saveName, JsonUtility.ToJson(_save));
     }
 
     public void OnChangeScene()

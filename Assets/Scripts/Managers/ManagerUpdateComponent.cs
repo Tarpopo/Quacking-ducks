@@ -1,29 +1,14 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ManagerUpdateComponent : MonoBehaviour
 {
-   private ManagerUpdate mng;
+    private ManagerUpdate _managerUpdate;
 
-   public void Setup(ManagerUpdate mng)
-   {
-      this.mng = mng;
-   }
+    public void Setup(ManagerUpdate managerUpdate) => _managerUpdate = managerUpdate;
 
-   private void Update()
-   {
-      mng.Tick();
-   }
+    private void Update() => _managerUpdate.Tick();
 
-   private void FixedUpdate()
-   {
-      mng.TickFixed();
-   }
+    private void FixedUpdate() => _managerUpdate.TickFixed();
 
-   private void LateUpdate()
-   {
-      mng.TickLate();
-   }
+    private void LateUpdate() => _managerUpdate.TickLate();
 }

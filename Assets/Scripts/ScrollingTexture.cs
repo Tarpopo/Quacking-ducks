@@ -1,34 +1,34 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using UnityEngine;
-using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class ScrollingTexture : MonoBehaviour
 {
-    public float speed=0.01f;
+    [SerializeField] private float _speed = 0.01f;
     private float _value;
-    private Renderer _spriteRenderer;
+    private Image _image;
     private Material _material;
 
-    private void Start()
+    private void Awake()
     {
-        _spriteRenderer = GetComponent<Renderer>();
-        _material = _spriteRenderer.material;
+        _image = GetComponent<Image>();
+        _material = _image.material;
     }
 
-    public void SetRenderTexture(Texture2D texture)
-    {
-        _material.mainTexture = texture;
-    }
+    private void OnEnable() => StartCoroutine(TextureOffsetChanger());
 
-    private void Update()
+    private void OnDisable() => StopAllCoroutines();
+
+    private IEnumerator TextureOffsetChanger()
     {
-        _value += speed*Time.deltaTime;
-        if (_value >= 10)
+        while (true)
         {
-            _value%= 10;
+            _value += _speed * Time.deltaTime;
+            if (_value >= 10) _value %= 10;
+            _material.mainTextureOffset = new Vector2(_value, _value);
+            yield return null;
         }
-        _material.mainTextureOffset=new Vector2(_value,_value);
     }
+
+    public void SetRenderTexture(Texture2D texture) => _material.mainTexture = texture;
 }

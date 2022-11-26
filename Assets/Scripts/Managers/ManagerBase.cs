@@ -1,8 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
-public  abstract class ManagerBase : ScriptableObject
+public abstract class ManagerBase : MonoBehaviour
 {
-    public virtual void ClearScene() { }
+    public virtual void ClearScene()
+    {
+    }
 }

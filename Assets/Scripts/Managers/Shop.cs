@@ -1,30 +1,28 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using DefaultNamespace;
 using TMPro;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Managers/Shop")]
-public class Shop : ManagerBase, IAwake,ISceneChanged
+public class Shop : ManagerBase, IAwake, ISceneChanged
 {
     [SerializeField] private List<ShopItem> _shopItems;
     private TMP_Text _coinText;
+
     public void OnChangeScene()
     {
         // if (Toolbox.Get<SceneController>().GetIsMainScene() == false) return;
         // _shopItems[0].TriggerButton.transform.parent.gameObject.SetActive(false);
     }
-    
+
     public void OnAwake()
     {
-        
         if (Toolbox.Get<Save>()._save.ShopItems.Count != 0)
         {
             _shopItems = Toolbox.Get<Save>()._save.ShopItems;
         }
 
-        _coinText=GameObject.FindWithTag("Coin").GetComponentInChildren<TMP_Text>();
+        _coinText = GameObject.FindWithTag("Coin").GetComponentInChildren<TMP_Text>();
         UpdateCoinText();
         var objects = GameObject.FindWithTag("Shop").GetComponentsInChildren<ShopCell>();
         for (int i = 0; i < objects.Length; i++)
@@ -36,13 +34,15 @@ public class Shop : ManagerBase, IAwake,ISceneChanged
                 var shopCell = objects[i].GetComponent<ShopCell>();
                 shopCell.Gate.SetActive(false);
                 shopCell._lockObj.SetActive(false);
-                objects[i].gameObject.GetComponent<TriggerButton>().IsActive=true;
+                objects[i].gameObject.GetComponent<TriggerButton>().IsActive = true;
             }
+
             _shopItems[i].TriggerButton = objects[i].gameObject.GetComponent<TriggerButton>();
         }
+
         objects[0].transform.parent.gameObject.SetActive(false);
     }
-    
+
     public void UpdateCoinText()
     {
         _coinText.text = Toolbox.Get<PlayerStats>().CoinCount.ToString();
@@ -57,6 +57,7 @@ public class Shop : ManagerBase, IAwake,ISceneChanged
         Toolbox.Get<Save>().SaveAll();
     }
 }
+
 [Serializable]
 public class ShopItem
 {

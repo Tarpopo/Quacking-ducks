@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Dynamic;
-using System.Runtime.InteropServices;
 using DefaultNamespace;
 using UnityEngine;
 
-
-[CreateAssetMenu (menuName = "Loader")]
 public class Loader : ManagerBase,IAwake,ISceneChanged
 {
     private Animator particleAnim;

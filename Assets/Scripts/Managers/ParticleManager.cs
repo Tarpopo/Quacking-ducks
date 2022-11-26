@@ -1,28 +1,25 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.InteropServices;
-using System.Security.Cryptography;
 using DefaultNamespace;
 using UnityEngine;
-[CreateAssetMenu(menuName = "Managers/ParticlesManager")]
-public class ParticleManager : ManagerBase,ITick,IAwake,ISceneChanged
+
+public class ParticleManager : ManagerBase, ITick, IAwake, ISceneChanged
 {
     [SerializeField] private int _particleCount;
     [SerializeField] private GameObject _particles;
-    
-    private List<ParticleObject> _freeParticles=new List<ParticleObject>();
-    private List<ParticleObject> _occupiedParticles=new List<ParticleObject>();
+
+    private List<ParticleObject> _freeParticles = new List<ParticleObject>();
+    private List<ParticleObject> _occupiedParticles = new List<ParticleObject>();
     private static ParticleManager _particleManager;
-    
+
     public void OnChangeScene()
     {
         if (Toolbox.Get<SceneController>().GetIsMainScene()) return;
         _particleManager = Toolbox.Get<ParticleManager>();
         ManagerUpdate.AddTo(this);
-        for (int i=0; i<_particleCount; i++)
+        for (int i = 0; i < _particleCount; i++)
         {
-            var particle=new ParticleObject();
+            var particle = new ParticleObject();
             var obj = Instantiate(_particles);
             particle.obj = obj;
             particle.animator = obj.GetComponent<Animator>();
@@ -38,15 +35,15 @@ public class ParticleManager : ManagerBase,ITick,IAwake,ISceneChanged
         _occupiedParticles.Clear();
     }
 
-    public void OnAwake() 
+    public void OnAwake()
     {
         // _particleManager = Toolbox.Get<ParticleManager>();
         // ManagerUpdate.AddTo(this);
     }
-    
 
-    public ParticleObject PlayDetachedParticle(AnimationClip clip,Vector3 position,float delay=1,
-        Transform transform=null,Action func=null)
+
+    public ParticleObject PlayDetachedParticle(AnimationClip clip, Vector3 position, float delay = 1,
+        Transform transform = null, Action func = null)
     {
         var obj = _freeParticles[0];
         _freeParticles[0].func = func;
@@ -59,7 +56,7 @@ public class ParticleManager : ManagerBase,ITick,IAwake,ISceneChanged
         _freeParticles.RemoveAt(0);
         return obj;
     }
-    
+
     // public void StopDetachedParticle(ParticleObject particleObject)
     // {
     //     //particleObject.func?.Invoke();
@@ -69,8 +66,8 @@ public class ParticleManager : ManagerBase,ITick,IAwake,ISceneChanged
     //     _freeParticles.Add(particleObject);
     //     _occupiedParticles.Remove(particleObject);
     // }
-    public static void PlayParticle(AnimationClip clip,Vector3 position,float delay=1,Transform transform=null,
-        Action func=null, int scale=1)
+    public static void PlayParticle(AnimationClip clip, Vector3 position, float delay = 1, Transform transform = null,
+        Action func = null, int scale = 1)
     {
         _particleManager._freeParticles[0].func = func;
         _particleManager._freeParticles[0].obj.SetActive(true);
@@ -82,8 +79,8 @@ public class ParticleManager : ManagerBase,ITick,IAwake,ISceneChanged
         _particleManager._occupiedParticles.Add(_particleManager._freeParticles[0]);
         _particleManager._freeParticles.RemoveAt(0);
     }
-    
-    
+
+
     public void Tick()
     {
         for (int i = 0; i < _occupiedParticles.Count; i++)
@@ -104,6 +101,7 @@ public class ParticleManager : ManagerBase,ITick,IAwake,ISceneChanged
         }
     }
 }
+
 [Serializable]
 public class ParticleObject
 {

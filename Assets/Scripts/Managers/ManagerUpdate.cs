@@ -1,16 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.InteropServices;
+﻿using System.Collections.Generic;
 using DefaultNamespace;
-using Unity.Mathematics;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "ManagerUpdate", menuName = "Managers/ManagerUpdate")]
-public class ManagerUpdate : ManagerBase,ISceneChanged
+public class ManagerUpdate : ManagerBase, ISceneChanged
 {
     private List<ITick> ticks = new List<ITick>();
     private List<ITickFixed> ticksFixes = new List<ITickFixed>();
     private List<ITickLate> ticksLate = new List<ITickLate>();
+
     public static void AddTo(object updateble)
     {
         //Debug.Log("mngUpdate");
