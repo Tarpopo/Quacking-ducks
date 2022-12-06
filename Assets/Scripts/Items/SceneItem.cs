@@ -11,7 +11,7 @@ public abstract class SceneItem : MonoBehaviour,IStart,IPoolable,IDamagable
 
     protected int Health;
     protected SpriteRenderer _spriteRenderer;
-    protected Loader _loader;
+    protected ItemsSpawner ItemsSpawner;
     protected BoxCollider2D _collider;
     protected Rigidbody2D _rigidBody;
     protected AudioSource _audioSource;
@@ -56,7 +56,7 @@ public abstract class SceneItem : MonoBehaviour,IStart,IPoolable,IDamagable
 
     public virtual void OnStart()
     {
-        _loader = Toolbox.Get<Loader>();
+        ItemsSpawner = Toolbox.Get<ItemsSpawner>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _collider = GetComponent<BoxCollider2D>();
         _rigidBody = GetComponent<Rigidbody2D>();
@@ -95,7 +95,7 @@ public abstract class SceneItem : MonoBehaviour,IStart,IPoolable,IDamagable
 
     private void DespawnGameObject()
     {
-        _loader.DespawnObject(gameObject);
+        ItemsSpawner.DespawnObject(gameObject);
     }
 
     public abstract void ApplyDamage(int damage, Vector2 pos, float force);

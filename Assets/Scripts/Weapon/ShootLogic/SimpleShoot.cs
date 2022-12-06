@@ -9,7 +9,7 @@ public class SimpleShoot : ShootLogic
 {
     public ObjectId bulletId;
 
-    public override void Shoot(ISoundVisitor visitor,Loader loader)
+    public override void Shoot(ISoundVisitor visitor,ItemsSpawner itemsSpawner)
     {
         if (_weaponItem.CurrentBullet > 0)
         { 
@@ -21,7 +21,7 @@ public class SimpleShoot : ShootLogic
             _weaponItem.CurrentBullet--;
             _weaponAnimator.Play(_weaponItem.WeaponData.shootAnim.name);
 
-            var bulletComponent = loader.SpawnObject(_shootTransform.position,bulletId,false).GetComponent<BulletComponent>();
+            var bulletComponent = itemsSpawner.SpawnObject(_shootTransform.position,bulletId,false).GetComponent<BulletComponent>();
             bulletComponent.SetScale(_weaponItem.transform.parent.localScale);
             bulletComponent.StartTimer();
             bulletComponent.SetHitLayer(_weaponItem.WeaponData.HitLayer, _weaponItem.WeaponData.Damage,_weaponItem.WeaponData.Force);

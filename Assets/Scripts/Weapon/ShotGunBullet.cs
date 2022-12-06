@@ -7,7 +7,7 @@ public class ShotGunBullet : BaseBullet
     private GameObject particleOcject;
     public override void OnSpawn()
     {
-        particleOcject=_loader.SpawnObject(_transform.position, ObjectId.ShutGunParticle, true);
+        particleOcject=ItemsSpawner.SpawnObject(_transform.position, ObjectId.ShutGunParticle, true);
         _particleSystem = particleOcject.GetComponent<ParticleSystem>();
         base.OnSpawn();
     }
@@ -24,12 +24,12 @@ public class ShotGunBullet : BaseBullet
         var hit = Physics2D.Raycast(_transform.position, Vector3.right * _transform.localScale.x, _shootLenght, hitable);
         if (hit)
         {
-            if (_loader.damagableObjects.TryGetValue(hit.collider.gameObject, out _item))
-            {
-                _item.ApplyDamage(1,transform.position,0.2f);
-                _item.PlayDamageSound(Visitor);
-            }
-            _loader.DespawnObject(gameObject);
+            // if (ItemsSpawner.damagableObjects.TryGetValue(hit.collider.gameObject, out _item))
+            // {
+            //     _item.ApplyDamage(1,transform.position,0.2f);
+            //     _item.PlayDamageSound(Visitor);
+            // }
+            ItemsSpawner.DespawnObject(gameObject);
         }
         // _transform.Translate(Vector3.right * (_transform.localScale.x * (speed * Time.deltaTime)));
     }

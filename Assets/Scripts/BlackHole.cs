@@ -1,20 +1,20 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using DefaultNamespace;
+﻿using DefaultNamespace;
+using Triggers;
 using UnityEngine;
 
 public class BlackHole : MonoBehaviour
 {
-    private Loader _loader;
-    private IDamagable _damagable;
-    void Start()
+    private InterfaceTriggerChecker<IDamagable> _triggerChecker;
+
+    private void Start()
     {
-        _loader = Toolbox.Get<Loader>();
+        _triggerChecker = new InterfaceTriggerChecker<IDamagable>();
+        _triggerChecker.OnGetObject += ApplyDamage;
     }
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        _loader.damagableObjects.TryGetValue(other.gameObject,out _damagable);
-        _damagable?.ApplyDamage(100,Vector2.zero,0);
-    }
+
+    private void OnDisable() => _triggerChecker.OnGetObject -= ApplyDamage;
+
+    private void ApplyDamage() => _triggerChecker.Interface.ApplyDamage(100, Vector2.zero, 0);
+
+    private void OnTriggerEnter2D(Collider2D other) => _triggerChecker.OnTriggerEnter2D(other);
 }

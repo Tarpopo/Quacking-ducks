@@ -6,15 +6,16 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 [Serializable]
-public abstract class BaseButton : IPointerDownHandler, IPointerUpHandler
+public abstract class BaseButton
 {
     [SerializeField] private UnityEvent _buttonDown;
     [SerializeField] private UnityEvent _buttonUp;
     [SerializeField] private Sprite _whenPressed;
-    [SerializeField] private Sprite _fullButton;
+    [SerializeField] protected Sprite _fullButton;
     [SerializeField] protected SimpleSound _buttonClick;
-    private Image _image;
-    protected AudioSource _audioSource;
+
+    protected Image _image;
+    // protected AudioSource _audioSource;
 
     public event UnityAction ButtonDown
     {
@@ -28,28 +29,39 @@ public abstract class BaseButton : IPointerDownHandler, IPointerUpHandler
         remove => _buttonUp.RemoveListener(value);
     }
 
-    public virtual void OnStart() => _image.sprite = _fullButton;
-    
-    protected virtual bool IsActive() => true;
+    public virtual void OnStart(GameObject gameObject)
+    {
+        _image = gameObject.GetComponent<Image>();
+        if (_fullButton != null) _image.sprite = _fullButton;
+    }
+
+    public virtual void OnDisable() => _image.sprite = _fullButton;
+
+    public virtual void OnDestroy()
+    {
+    }
 
     protected virtual void OnButtonDown()
     {
+        if (_image == null) return;
         _image.sprite = _whenPressed;
-        _audioSource.PlaySound(_buttonClick);
+        // _audioSource.PlaySound(_buttonClick);
     }
 
-    protected virtual void OnButtonUp() => _image.sprite = _fullButton;
+    protected virtual void OnButtonUp()
+    {
+        if (_image == null) return;
+        _image.sprite = _fullButton;
+    }
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        if (IsActive() == false) return;
         OnButtonDown();
         _buttonDown?.Invoke();
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        if (IsActive() == false) return;
         OnButtonUp();
         _buttonUp?.Invoke();
     }

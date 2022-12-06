@@ -1,12 +1,11 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
 namespace DefaultNamespace
 {
-    [Serializable]
-    public class SimpleSound
-    { 
-        public AudioClip audioClip; 
+    [CreateAssetMenu(fileName = nameof(SimpleSound), menuName = "Data/SimpleSound")]
+    public class SimpleSound : ScriptableObject
+    {
+        public AudioClip audioClip;
         [Range(0, 1)] public float volumeSound;
     }
 }

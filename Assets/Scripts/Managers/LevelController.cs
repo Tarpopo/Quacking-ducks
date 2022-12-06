@@ -15,10 +15,10 @@ public class LevelController : ManagerBase, IAwake, ISceneChanged
 
     public void OnAwake()
     {
-        if (Toolbox.Get<Save>()._save.ActiveLevels.Count != 0)
-        {
-            ActiveLevels = Toolbox.Get<Save>()._save.ActiveLevels;
-        }
+        // if (Toolbox.Get<Save>()._save.ActiveLevels.Count != 0)
+        // {
+        //     ActiveLevels = Toolbox.Get<Save>()._save.ActiveLevels;
+        // }
 
         var objects = GameObject.FindWithTag("LevelsMenu").GetComponentsInChildren<LevelButton>();
         //var levelsController = Toolbox.Get<LevelController>();
@@ -90,7 +90,7 @@ public class LevelController : ManagerBase, IAwake, ISceneChanged
         if (ActiveLevels[_currentLevelIndex].havePassedMark) return;
         ActiveLevels[_currentLevelIndex].havePassedMark = true;
         if (_currentLevelIndex < ActiveLevels.Count - 1) ActiveLevels[_currentLevelIndex + 1].isLock = false;
-        Toolbox.Get<Save>()._save.ActiveLevels = ActiveLevels;
+        // Toolbox.Get<Save>()._save.ActiveLevels = ActiveLevels;
         Toolbox.Get<Save>().SaveAll();
     }
 }

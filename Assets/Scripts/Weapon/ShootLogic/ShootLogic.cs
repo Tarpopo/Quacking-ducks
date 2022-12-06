@@ -24,7 +24,7 @@ public abstract class ShootLogic : ScriptableObject
         _shootTransform = transform;
     }
 
-    public virtual void Shoot(ISoundVisitor visitor,Loader loader) { }
+    public virtual void Shoot(ISoundVisitor visitor,ItemsSpawner itemsSpawner) { }
     
     protected void TakeRecoil()
     {

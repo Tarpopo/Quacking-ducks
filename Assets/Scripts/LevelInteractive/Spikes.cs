@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Spikes : MonoBehaviour
 {
-    private Loader _loader;
+    private ItemsSpawner _itemsSpawner;
 
     private void Start()
     {

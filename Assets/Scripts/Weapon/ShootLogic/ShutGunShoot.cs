@@ -7,7 +7,7 @@ public class ShutGunShoot : ShootLogic
 {
     public ObjectId bulletId;
     public int bulletsInOneShoot;
-    public override void Shoot(ISoundVisitor visitor,Loader loader)
+    public override void Shoot(ISoundVisitor visitor,ItemsSpawner itemsSpawner)
     {
         if (_weaponItem.CurrentBullet > 0)
         { 
@@ -20,7 +20,7 @@ public class ShutGunShoot : ShootLogic
             var shootPosition = _shootTransform.position;
             for (int i = 0; i < bulletsInOneShoot; i++)
             {
-                var bulletComponent = loader.SpawnObject(shootPosition,bulletId,false).GetComponent<BulletComponent>();
+                var bulletComponent = itemsSpawner.SpawnObject(shootPosition,bulletId,false).GetComponent<BulletComponent>();
                 bulletComponent.SetScale(_weaponItem.transform.parent.localScale);
                 bulletComponent.StartTimer();
                 bulletComponent.SetHitLayer(_weaponItem.WeaponData.HitLayer,_weaponItem.WeaponData.Damage,_weaponItem.WeaponData.Force);

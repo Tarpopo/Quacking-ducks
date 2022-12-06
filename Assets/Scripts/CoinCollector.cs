@@ -8,7 +8,7 @@ using UnityEngine.UI;
 
 public class CoinCollector : MonoBehaviour, ITick
 {
-   private Loader _loader;
+   private ItemsSpawner _itemsSpawner;
    private SceneItem _item;
    private int _coinCount;
    private int CoinCount 
@@ -33,14 +33,14 @@ public class CoinCollector : MonoBehaviour, ITick
    {
       ManagerUpdate.AddTo(this);
       _transform = GetComponent<Transform>();
-      _loader = Toolbox.Get<Loader>();
+      _itemsSpawner = Toolbox.Get<ItemsSpawner>();
       _coin.SetActive(false);
-      CoinCount += Toolbox.Get<PlayerStats>().CoinCount;
+      // CoinCount += Toolbox.Get<PlayerStats>().CoinCount;
    }
    public void Tick()
    {
       var coin = Physics2D.OverlapCircle(_transform.position,0.04f,_player);
-      if (coin && _loader.Items.TryGetValue(coin.gameObject, out _item))
+      if (coin && _itemsSpawner.Items.TryGetValue(coin.gameObject, out _item))
       {
          _item.TakeItem(null,Vector3.zero);
          CoinCount++;
@@ -58,7 +58,7 @@ public class CoinCollector : MonoBehaviour, ITick
       _coin.SetActive(true);
       _text.text = coin.ToString();
       _currentTextTime = _textTime;
-      Toolbox.Get<PlayerStats>().CoinCount = CoinCount;
+      // Toolbox.Get<PlayerStats>().CoinCount = CoinCount;
    }
 
    // private void OnDestroy()

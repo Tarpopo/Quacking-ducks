@@ -20,8 +20,8 @@ public class EndLevelChecker : ManagerBase, ISceneChanged, IAwake
         if (_isFirstLoad == false)
         {
             var transition = FindObjectOfType<Transition>();
-            transition.OnStart();
-            transition.PlayGateUp();
+            // transition.OnStart();
+            // transition.PlayGateUp();
             GameObject.Find("PresentLogo").SetActive(false);
             return;
         }

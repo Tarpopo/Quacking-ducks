@@ -17,8 +17,8 @@ public class Chest : SceneItem,IChestSound
         base.OnStart();
         Health = data.health;
         _spriteRenderer.sprite = data.fullSprite;
-        _loader.damagableObjects.Add(gameObject,this);
-        _loader.Items.Add(gameObject,this);
+        // ItemsSpawner.damagableObjects.Add(gameObject,this);
+        ItemsSpawner.Items.Add(gameObject,this);
     }
 
     public override void Destroing()
@@ -52,7 +52,7 @@ public class Chest : SceneItem,IChestSound
         base.ApplyExplosionDamage(damage, pos, force, damageRadius);
         Health = 0;
         Destroing();
-        var weapon=_loader.SpawnObject(ObjectId.Weapon,true);
+        var weapon=ItemsSpawner.SpawnObject(ObjectId.Weapon,true);
         weapon.transform.position = transform.position;
     }
     
@@ -65,7 +65,7 @@ public class Chest : SceneItem,IChestSound
         {
             Destroing();
             print(gameObject+"createWeapon");
-            var weapon=_loader.SpawnObject(ObjectId.Weapon,true);
+            var weapon=ItemsSpawner.SpawnObject(ObjectId.Weapon,true);
             weapon.transform.position = new Vector3(_transform.position.x,_transform.position.y+0.02f,0);
             return;
         }

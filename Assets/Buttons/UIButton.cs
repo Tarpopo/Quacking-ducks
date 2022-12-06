@@ -1,15 +1,15 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class UIButton : MonoBehaviour
+public class UIButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     [SerializeReference] private BaseButton _baseButton;
 
-    private void Start() => _baseButton.OnStart();
-}
+    private void Start() => _baseButton.OnStart(gameObject);
 
-public enum Panels
-{
-    Menu,
-    Shop,
-    Levels
+    private void OnDisable() => _baseButton.OnDisable();
+
+    public void OnPointerDown(PointerEventData eventData) => _baseButton.OnPointerDown(eventData);
+
+    public void OnPointerUp(PointerEventData eventData) => _baseButton.OnPointerUp(eventData);
 }

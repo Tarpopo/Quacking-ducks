@@ -96,7 +96,7 @@ public class PlayerLog : Actor, ITick
         _weapon.SetAudioSource(AudioSource);
         anima.Play(data.idle.name);
         //_particles = _loader.SpawnParticles(_transform.position);
-        _loader.damagableObjects.Add(gameObject, this);
+        // ItemsSpawner.damagableObjects.Add(gameObject, this);
         _healthBar = GetComponent<HealthBar>();
         _healthBar.SetMaxHealth(_health, 2, null);
         _healthBar.SetHealthValue(_health);
@@ -109,7 +109,7 @@ public class PlayerLog : Actor, ITick
         //_takeButton.ButtonDown += SetTime;
         _weapon.SetBaseWeapon(true);
         //_startPosition=_transform.position;
-        Toolbox.Get<EndLevelChecker>().SetCompleteCount(_killToComplete);
+        // Toolbox.Get<EndLevelChecker>().SetCompleteCount(_killToComplete);
         // _jumpButton.ButtonDown = Jump;
         // _audio = Toolbox.Get<AudioManager>();
         //_weapon = BaseWeapon;
@@ -143,7 +143,7 @@ public class PlayerLog : Actor, ITick
 
         if (Input.GetKeyDown(KeyCode.T))
         {
-            var obj = _loader.SpawnObject(ObjectId.Tree, true);
+            var obj = ItemsSpawner.SpawnObject(ObjectId.Tree, true);
             obj.transform.position = _transform.position;
         }
 
@@ -186,7 +186,7 @@ public class PlayerLog : Actor, ITick
             anima.Play(data.ActorLight.name);
         }
 
-        _weapon.Shoot(_loader);
+        _weapon.Shoot(ItemsSpawner);
     }
 
     private void QuitItem(Vector3 dir)
@@ -211,7 +211,7 @@ public class PlayerLog : Actor, ITick
             var itemCollider2D = Physics2D.OverlapCircle(_transform.position, takeRadius, distructableLayer);
             if (itemCollider2D)
             {
-                if (_loader.Items.TryGetValue(itemCollider2D.gameObject, out _item))
+                if (ItemsSpawner.Items.TryGetValue(itemCollider2D.gameObject, out _item))
                 {
                     if (itemCollider2D.CompareTag("Weapon")) _weapon.SetWeapon((WeaponItem)_item);
                     _item.TakeItem(_transform, _transform.position);

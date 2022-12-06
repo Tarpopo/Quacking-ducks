@@ -6,22 +6,29 @@ using UnityEngine;
 public abstract class LockButton : BaseButton
 {
     [SerializeField] private SimpleSound _lockSound;
-    protected bool _isActive;
+    // protected bool _isActive;
 
-    protected override bool IsActive()
+    public override void OnStart(GameObject gameObject)
     {
-        if (_isActive == false) _audioSource.PlaySound(_lockSound);
-        return _isActive;
+        base.OnStart(gameObject);
+        TryActive();
     }
 
     protected override void OnButtonDown()
     {
-        if (_isActive == false)
+        if (IsActive() == false)
         {
-            _audioSource.PlaySound(_lockSound);
+            // _audioSource.PlaySound(_lockSound);
             return;
         }
 
-        _audioSource.PlaySound(_buttonClick);
+        base.OnButtonDown();
+        ActiveButtonDown();
+
+        // _audioSource.PlaySound(_buttonClick);
     }
+
+    protected abstract void ActiveButtonDown();
+    protected abstract void TryActive();
+    protected abstract bool IsActive();
 }

@@ -15,7 +15,7 @@ public class ChunksSpawner : MonoBehaviour,ITick
     private List<int> _occupiedChunks;
     private Transform _playerTransform;
     private float _lastYPos;
-    private Loader _loader;
+    private ItemsSpawner _itemsSpawner;
     
     
     private const float StepY=1.56f*25;
@@ -25,7 +25,7 @@ public class ChunksSpawner : MonoBehaviour,ITick
         _lastYPos = 0;
         _freeChunks=new List<int>(chunks.Count);
         _occupiedChunks=new List<int>(chunks.Count);
-        _loader = Toolbox.Get<Loader>();
+        _itemsSpawner = Toolbox.Get<ItemsSpawner>();
         ManagerUpdate.AddTo(this);
         
         for (var index = 0; index < chunks.Count; index++)
@@ -65,7 +65,7 @@ public class ChunksSpawner : MonoBehaviour,ITick
     {
         foreach (var enemy in chunks[chunkIndex].enemies)
         {
-            _loader.SpawnObject(ObjectId.Enemy,true).transform.position=enemy.position;
+            _itemsSpawner.SpawnObject(ObjectId.Enemy,true).transform.position=enemy.position;
         }
     }
     private void FreeOccupiedChunks()

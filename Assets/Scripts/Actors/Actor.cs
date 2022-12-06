@@ -23,7 +23,7 @@ public abstract class Actor : MonoBehaviour, IDamagable, IBodySound
     protected AudioSource AudioSource;
     protected Rigidbody2D _rigidBody;
     protected int _health;
-    protected Loader _loader;
+    protected ItemsSpawner ItemsSpawner;
     private BoxCollider2D _col;
     private Shader _shaderText;
     private Shader _shaderSpritesDefault;
@@ -49,7 +49,7 @@ public abstract class Actor : MonoBehaviour, IDamagable, IBodySound
         // BaseWeapon = GetComponent<Weapon>();
         // BaseWeapon.SetAudioSource(AudioSource);
         // BaseWeapon.SetBulletCount();
-        _loader = Toolbox.Get<Loader>();
+        ItemsSpawner = Toolbox.Get<ItemsSpawner>();
         TryGetComponent(out _coinDropper);
         StartGame();
     }

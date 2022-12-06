@@ -43,7 +43,7 @@ public class GoseEnemy : Actor, ITick
         
         //_currentTime = _colDownTime;
         //_loader = Toolbox.Get<Loader>();
-        _loader.damagableObjects.Add(gameObject,this);
+        // ItemsSpawner.damagableObjects.Add(gameObject,this);
         _weapon = GetComponent<Weapon>();
         _weapon.SetAudioSource(AudioSource);
         _playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
@@ -130,7 +130,7 @@ public class GoseEnemy : Actor, ITick
     public override void AttackEnemy()
     {
         if(_weapon.IsBulletShoot())anima.Play(data.ActorLight.name);
-        _weapon.Shoot(_loader);
+        _weapon.Shoot(ItemsSpawner);
     }
     IEnumerator MovePosition()
     {

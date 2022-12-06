@@ -6,7 +6,11 @@ public class PanelChangeButton : BaseButton
 {
     [SerializeField] private Panels _showingPanel;
 
-    public void ChangePanel(Panels panel)
+    private void ChangePanel() => Toolbox.Get<PanelChanger>().ActivatePanel(_showingPanel);
+
+    protected override void OnButtonDown()
     {
+        base.OnButtonDown();
+        ChangePanel();
     }
 }

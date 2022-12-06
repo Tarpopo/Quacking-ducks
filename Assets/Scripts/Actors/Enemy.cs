@@ -38,7 +38,7 @@ public class Enemy : Actor,ITick
         _weapon = GetComponent<Weapon>();
         _weapon.SetBaseWeapon();
         _weapon.SetAudioSource(AudioSource);
-        _loader.damagableObjects.Add(gameObject,this);
+        // ItemsSpawner.damagableObjects.Add(gameObject,this);
         _playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
         //_loader.damagableObjects.Add(gameObject,this);
         //_particles = _loader.SpawnParticles(transform.position);
@@ -183,7 +183,7 @@ public class Enemy : Actor,ITick
     public override void AttackEnemy()
     { 
         anima.Play(data.ActorLight.name);
-        _weapon.Shoot(_loader);
+        _weapon.Shoot(ItemsSpawner);
     }
 }
 public enum EnemyState

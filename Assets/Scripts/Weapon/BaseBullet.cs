@@ -16,7 +16,7 @@ public abstract class BaseBullet : MonoBehaviour,IPoolable,IStart,ITick
     public AnimationClip endShoot;
     
     private float _currentTime;
-    protected Loader _loader;
+    protected ItemsSpawner ItemsSpawner;
     protected IDamagable _item;
     protected Transform _transform;
     protected ParticleSystem _particleSystem;
@@ -29,7 +29,7 @@ public abstract class BaseBullet : MonoBehaviour,IPoolable,IStart,ITick
     public virtual void OnStart()
     {
         //ManagerUpdate.AddTo(this);
-        _loader = Toolbox.Get<Loader>();
+        ItemsSpawner = Toolbox.Get<ItemsSpawner>();
         _transform = GetComponent<Transform>();
     }
 
@@ -41,7 +41,7 @@ public abstract class BaseBullet : MonoBehaviour,IPoolable,IStart,ITick
         }
         else
         {
-            _loader.DespawnObject(gameObject);
+            ItemsSpawner.DespawnObject(gameObject);
         }
     }
 
@@ -63,7 +63,7 @@ public abstract class BaseBullet : MonoBehaviour,IPoolable,IStart,ITick
 
     private void Despawn()
     {
-        if(_particleSystem) _loader.DespawnObject(_particleSystem.gameObject);
+        if(_particleSystem) ItemsSpawner.DespawnObject(_particleSystem.gameObject);
     }
     
 }

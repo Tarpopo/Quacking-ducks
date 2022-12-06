@@ -58,12 +58,12 @@ public class Weapon: MonoBehaviour,ITick
         if(_bulletText!=null) _bulletText.text = count.ToString();
     }
 
-    public void Shoot(Loader loader)
+    public void Shoot(ItemsSpawner itemsSpawner)
     {
         //print(_reloadTime);
         if (_reloadTime > 0) return;
         //TakeRecoil();
-        _weapon.WeaponData.shoot.Shoot(_soundVisitor,loader);
+        _weapon.WeaponData.shoot.Shoot(_soundVisitor,itemsSpawner);
         _reloadTime = _weapon.WeaponData.reloadTime;
         SetTextBullet(_weapon.CurrentBullet);
     }

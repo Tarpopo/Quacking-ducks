@@ -23,7 +23,7 @@ public class EndSceneComponent : MonoBehaviour
 
    private void LoadTransition()
    {
-      FindObjectOfType<Transition>().PlayGateDown();
+      // FindObjectOfType<Transition>().PlayGateDown();
    }
 
    private void LoadMainScene()

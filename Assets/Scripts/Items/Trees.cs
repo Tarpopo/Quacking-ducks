@@ -15,8 +15,8 @@ public class Trees : SceneItem
         //Health = data.health;
         _spriteRenderer.sprite = data.fullSprite;
         rootTree.gameObject.GetComponent<SpriteRenderer>().sprite = data.halfSprite;
-        _loader.damagableObjects.Add(gameObject,this);
-        _loader.Items.Add(gameObject,this);
+        // ItemsSpawner.damagableObjects.Add(gameObject,this);
+        ItemsSpawner.Items.Add(gameObject,this);
     }
     public override void OnSpawn() { }
     public override void OnDespawn() { }

@@ -10,21 +10,22 @@ public class KnifeShoot : ShootLogic
     private IDamagable _distractable;
     [SerializeField] private int _damage;
     [SerializeField] private float _force;
-    
+
     //public LayerMask layer;
     public float radius;
-    public override void Shoot(ISoundVisitor visitor,Loader loader)
+
+    public override void Shoot(ISoundVisitor visitor, ItemsSpawner itemsSpawner)
     {
         //TakeRecoil();
         _weaponAnimator.Play(_weaponItem.WeaponData.shootAnim.name);
         _audioSource.PlaySound(_weaponItem.WeaponData.shootSound);
-        var hit2D=Physics2D.OverlapCircleAll(_shootTransform.position,radius,_weaponItem.WeaponData.HitLayer);
+        var hit2D = Physics2D.OverlapCircleAll(_shootTransform.position, radius, _weaponItem.WeaponData.HitLayer);
         foreach (var t in hit2D)
         {
-            if (!loader.damagableObjects.TryGetValue(t.gameObject, out _distractable)) continue;
-            _distractable.ApplyDamage(_damage, _shootTransform.parent.transform.position,_force);
+            // if (!itemsSpawner.damagableObjects.TryGetValue(t.gameObject, out _distractable)) continue;
+            if (t.TryGetComponent(out _distractable) == false) continue;
+            _distractable.ApplyDamage(_damage, _shootTransform.parent.transform.position, _force);
             _distractable.PlayDamageSound(visitor);
         }
     }
-
 }

@@ -20,7 +20,7 @@ public class Bullet : MonoBehaviour,IStart,IPoolable
     private float _currentTime;
     private bool _isTakeItem;
     private ManagerPool _pool;
-    private Loader _loader;
+    private ItemsSpawner _itemsSpawner;
     private IDamagable _item;
     private AudioSource _audioSource;
     private Animator _animator;
@@ -31,12 +31,12 @@ public class Bullet : MonoBehaviour,IStart,IPoolable
         _animator = GetComponent<Animator>();
         _audioSource = GetComponent<AudioSource>();
         _pool = Toolbox.Get<ManagerPool>();
-        _loader = Toolbox.Get<Loader>();
+        _itemsSpawner = Toolbox.Get<ItemsSpawner>();
         _currentTime = time;
     }
     public void OnSpawn()
     {
-        if(IsRocket)_rocketParticleTransform = _loader.SpawnObject(transform.position,ObjectId.ShutGunParticle,true).transform;
+        if(IsRocket)_rocketParticleTransform = _itemsSpawner.SpawnObject(transform.position,ObjectId.ShutGunParticle,true).transform;
         _system=_rocketParticleTransform.GetComponent<ParticleSystem>();
         _rocketParticleTransform.transform.position = transform.position;
         _system.Play();
@@ -60,12 +60,12 @@ public class Bullet : MonoBehaviour,IStart,IPoolable
         if (hit&&!_isTakeItem)
         {
             _isTakeItem = true;
-            if (_loader.damagableObjects.TryGetValue(hit.collider.gameObject, out _item))
-            { 
-                if(IsRocket)_item.ApplyExplosionDamage(4,transform.position,0.5f,0.55f);
-                else _item.ApplyDamage(1,transform.position,0.2f);
-                _item.PlayDamageSound(Visitor);
-            }
+            // if (_itemsSpawner.damagableObjects.TryGetValue(hit.collider.gameObject, out _item))
+            // { 
+            //     if(IsRocket)_item.ApplyExplosionDamage(4,transform.position,0.5f,0.55f);
+            //     else _item.ApplyDamage(1,transform.position,0.2f);
+            //     _item.PlayDamageSound(Visitor);
+            // }
             Delete();
             print("hit");
         }
@@ -90,7 +90,7 @@ public class Bullet : MonoBehaviour,IStart,IPoolable
     public void Despawn()
     {
         _isTakeItem = false;
-        _loader.DespawnObject(_rocketParticleTransform.gameObject);
+        _itemsSpawner.DespawnObject(_rocketParticleTransform.gameObject);
     }
 
     public void OnDespawn()

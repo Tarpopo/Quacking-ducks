@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class WeaponItem : SceneItem
 {
@@ -12,13 +9,13 @@ public class WeaponItem : SceneItem
     public Transform ShootTransform;
     public override void OnStart()
     {
-        _loader = Toolbox.Get<Loader>();
+        ItemsSpawner = Toolbox.Get<ItemsSpawner>();
         _spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         _collider = GetComponent<BoxCollider2D>();
         _rigidBody = GetComponent<Rigidbody2D>();
         _transform = transform;
         _baseLayer = gameObject.layer;
-        WeaponData = Instantiate(WeaponData ? WeaponData : _loader.weaponDataList.Random());
+        WeaponData = Instantiate(WeaponData ? WeaponData : ItemsSpawner.weaponDataList.Random());
         if(WeaponData.shoot)WeaponData.shoot = Instantiate(WeaponData.shoot);
         data = WeaponData; 
         CurrentBullet = WeaponData.bulletCount;
@@ -65,6 +62,6 @@ public class WeaponItem : SceneItem
 
     public override void ApplyDamage(int damage, Vector2 pos, float force)
     {
-        _loader.DespawnObject(gameObject);
+        ItemsSpawner.DespawnObject(gameObject);
     }
 }

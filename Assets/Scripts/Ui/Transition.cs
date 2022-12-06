@@ -1,50 +1,36 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using DefaultNamespace;
-using UnityEngine;
+﻿using UnityEngine;
+using UnityEngine.Events;
 
-public class Transition : MonoBehaviour
+public class Transition : ManagerBase
 {
-    private Animator _animator;
-    [SerializeField] private AnimationClip GateUp;
-    [SerializeField] private AnimationClip GateDown;
-    [SerializeField] private SimpleSound _door;
-    private AudioSource _audioSource;
-    private void Start()
+    [SerializeField] private Animator _animator;
+    // [SerializeField] private AudioSource _audioSource;
+    // [SerializeField] private SimpleSound _door;
+
+    private UnityAction _onClose;
+
+    public void PlayCloseAnimation(UnityAction onClose)
     {
-        OnStart();
+        _animator.PlayStateAnimation(TransitionAnimation.Close);
+        _onClose += onClose;
     }
 
-    public void PlayDoorSound()
+    public void PlayOpenAnimation() => _animator.PlayStateAnimation(TransitionAnimation.Open);
+
+    public void DoTransitionAnimation(UnityAction onCloseAnimationEnd)
     {
-        _audioSource.PlaySound(_door);
+        PlayCloseAnimation(() =>
+        {
+            onCloseAnimationEnd?.Invoke();
+            PlayOpenAnimation();
+        });
     }
 
-    public void OnStart()
+    public void OnCloseEnd()
     {
-        _audioSource = GetComponent<AudioSource>();
-        _animator = GetComponent<Animator>();
+        _onClose?.Invoke();
+        _onClose = null;
     }
 
-    public void LoadMainSceneWithTime()
-    {
-        _animator.Play(GateDown.name);
-        Invoke(nameof(LoadMainScene),0.9f);
-    }
-
-    public void LoadMainScene()
-    {
-        Toolbox.Get<SceneController>().LoadMenuScene();
-    }
-
-    public void PlayGateUp()
-    {
-        _animator.Play(GateUp.name);
-    }
-
-    public void PlayGateDown()
-    {
-        _animator.Play(GateDown.name);
-    }
+    // private void PlayDoorSound() => _audioSource.PlaySound(_door);
 }

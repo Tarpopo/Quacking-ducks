@@ -13,10 +13,10 @@ public class PlayerChck : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            print(Selection.activeObject);
-        }
+        // if (Input.GetMouseButtonDown(0))
+        // {
+        //     print(Selection.activeObject);
+        // }
     }
 
     private static int Sum(int a, int b)

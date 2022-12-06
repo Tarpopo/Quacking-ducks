@@ -1,74 +1,52 @@
 ﻿using System.Collections.Generic;
 using DefaultNamespace;
-using UnityEngine;
 
-public class ManagerUpdate : ManagerBase, ISceneChanged
+public class ManagerUpdate : ManagerBase
 {
-    private List<ITick> ticks = new List<ITick>();
-    private List<ITickFixed> ticksFixes = new List<ITickFixed>();
-    private List<ITickLate> ticksLate = new List<ITickLate>();
+    private readonly List<ITick> _ticks = new List<ITick>();
+    private readonly List<ITickFixed> _ticksFixes = new List<ITickFixed>();
+    private readonly List<ITickLate> _ticksLate = new List<ITickLate>();
 
-    public static void AddTo(object updateble)
-    {
-        //Debug.Log("mngUpdate");
-        var mngUpdate = Toolbox.Get<ManagerUpdate>();
-
-        if (updateble is ITick)
-            mngUpdate.ticks.Add(updateble as ITick);
-
-        if (updateble is ITickFixed)
-            mngUpdate.ticksFixes.Add(updateble as ITickFixed);
-
-        if (updateble is ITickLate)
-            mngUpdate.ticksLate.Add(updateble as ITickLate);
-    }
-
-    public static void RemoveFrom(object updateble)
+    public static void AddTo(object updatable)
     {
         var mngUpdate = Toolbox.Get<ManagerUpdate>();
-        if (updateble is ITick)
-            mngUpdate.ticks.Remove(updateble as ITick);
 
-        if (updateble is ITickFixed)
-            mngUpdate.ticksFixes.Remove(updateble as ITickFixed);
+        if (updatable is ITick tick) mngUpdate._ticks.Add(tick);
 
-        if (updateble is ITickLate)
-            mngUpdate.ticksLate.Remove(updateble as ITickLate);
+        if (updatable is ITickFixed tickFixed) mngUpdate._ticksFixes.Add(tickFixed);
+
+        if (updatable is ITickLate tickLate) mngUpdate._ticksLate.Add(tickLate);
     }
 
-    public void Tick()
+    public static void RemoveFrom(object updatable)
     {
-        for (int i = 0; i < ticks.Count; i++)
-        {
-            ticks[i].Tick();
-        }
+        var mngUpdate = Toolbox.Get<ManagerUpdate>();
+        if (updatable is ITick tick) mngUpdate._ticks.Remove(tick);
+
+        if (updatable is ITickFixed tickFixed) mngUpdate._ticksFixes.Remove(tickFixed);
+
+        if (updatable is ITickLate tickLate) mngUpdate._ticksLate.Remove(tickLate);
     }
 
-    public void TickFixed()
+    private void Update()
     {
-        for (int i = 0; i < ticksFixes.Count; i++)
-        {
-            ticksFixes[i].TickFixed();
-        }
+        for (int i = 0; i < _ticks.Count; i++) _ticks[i].Tick();
     }
 
-    public void TickLate()
+    public void FixedUpdate()
     {
-        for (int i = 0; i < ticksLate.Count; i++)
-        {
-            ticksLate[i].TickLate();
-        }
+        for (int i = 0; i < _ticksFixes.Count; i++) _ticksFixes[i].TickFixed();
+    }
+
+    public void LateUpdate()
+    {
+        for (int i = 0; i < _ticksLate.Count; i++) _ticksLate[i].TickLate();
     }
 
     public override void ClearScene()
     {
-        ticks.Clear();
-        ticksFixes.Clear();
-        ticksLate.Clear();
-    }
-
-    public void OnChangeScene()
-    {
-        GameObject.Find("[Setup]")?.AddComponent<ManagerUpdateComponent>().Setup(this);
+        _ticks.Clear();
+        _ticksFixes.Clear();
+        _ticksLate.Clear();
     }
 }

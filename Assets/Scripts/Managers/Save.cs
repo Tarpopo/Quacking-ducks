@@ -1,19 +1,14 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using DefaultNamespace;
 using UnityEngine;
 
-public class Save : ManagerBase, IAwake, ISceneChanged
+public class Save : ManagerBase, IAwake
 {
     private const string _saveName = "QuackingSave";
-    public SaveData _save;
-    private bool _isFirstLoad = true;
+    private SaveData _saveData;
 
-    public void OnAwake()
-    {
-        if (_isFirstLoad == false) return;
-        _save = LoadDataSave();
-        _isFirstLoad = false;
-    }
+    public void OnAwake() => _saveData = LoadDataSave();
 
     private SaveData LoadDataSave()
     {
@@ -28,22 +23,48 @@ public class Save : ManagerBase, IAwake, ISceneChanged
         SaveAll();
     }
 
-    public void SaveAll()
+    private void OnApplicationFocus(bool hasFocus)
     {
-        _save.MoneyCount = Toolbox.Get<PlayerStats>().CoinCount;
-        PlayerPrefs.SetString(_saveName, JsonUtility.ToJson(_save));
     }
 
-    public void OnChangeScene()
+    public void SaveAll()
     {
-        //_isSceneClear = false;
+        // _saveData.MoneyCount = Toolbox.Get<PlayerStats>().CoinCount;
+        PlayerPrefs.SetString(_saveName, JsonUtility.ToJson(_saveData));
     }
 }
 
+[Serializable]
+public class HashItemSaver
+{
+    private List<HashItem> _hashItems;
+    // public bool
+}
+
+[Serializable]
+public class HashItem
+{
+}
+
+[Serializable]
 public class SaveData
 {
-    public List<ShopItem> ShopItems = new List<ShopItem>();
-    public List<Level> ActiveLevels = new List<Level>();
-    public int MoneyCount;
-    public bool Volume = true;
+    // public List<ShopItem> ShopItems = new List<ShopItem>();
+    // public List<Level> ActiveLevels = new List<Level>();
+    // public int MoneyCount;
+    // public bool Volume = true;
+    public PlayerStats PlayerStats;
+    public Settings Settings;
+}
+
+[Serializable]
+public class PlayerStats
+{
+    public int Coins;
+}
+
+[Serializable]
+public class Settings
+{
+    public bool Volume;
 }
