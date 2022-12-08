@@ -34,9 +34,9 @@ public class SingleAxisMoveAnimation : BaseTweenAnimation
         return tween;
     }
 
-    private Tween XLocalMove() => _rectTransform.DOLocalMoveX(_endValue, _duration);
-    private Tween YLocalMove() => _rectTransform.DOLocalMoveY(_endValue, _duration);
-    private Tween ZLocalMove() => _rectTransform.DOLocalMoveZ(_endValue, _duration);
+    private Tween XLocalMove() => _rectTransform.DOAnchorPosX(_endValue, _duration);
+    private Tween YLocalMove() => _rectTransform.DOAnchorPosY(_endValue, _duration);
+    private Tween ZLocalMove() => _rectTransform.DOAnchorPos3DZ(_endValue, _duration);
 }
 
 public enum Axis

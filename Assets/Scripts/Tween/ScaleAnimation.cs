@@ -1,27 +1,16 @@
 using System;
 using DG.Tweening;
+using UnityEngine;
 
 [Serializable]
 public class ScaleAnimation : BaseTweenAnimation
 {
-    
-    public override Tween GetTween()
-    {
-        return null;
-    }
+    [SerializeField] private Vector3 _endScale;
+    [SerializeField] private Vector3 _startScale;
 
-    public override void OnStart()
-    {
-        throw new NotImplementedException();
-    }
+    public override void SetStartValues() => _rectTransform.localScale = _startScale;
 
-    public override void SetStartValues()
-    {
-        throw new NotImplementedException();
-    }
+    public override void SetEndValues() => _rectTransform.localScale = _endScale;
 
-    public override void SetEndValues()
-    {
-        throw new NotImplementedException();
-    }
+    public override Tween GetTween() => _rectTransform.DOScale(_endScale, _duration);
 }
