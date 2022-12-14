@@ -16,6 +16,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -288574092617524335, guid: 4b6e6ce79b3343b45a160fe4eda89213, type: 3}
     - target: {fileID: 2807390052738707151, guid: d44c61d17b7d45242bb917ca2a1da8b2, type: 3}
+      propertyPath: managedReferences[6573042831371796480]._buttonClick
+      value: 
+      objectReference: {fileID: 11400000, guid: 9d872fd2dfe8c4c4ab58d71fddbcae90, type: 2}
+    - target: {fileID: 2807390052738707151, guid: d44c61d17b7d45242bb917ca2a1da8b2, type: 3}
       propertyPath: managedReferences[6573042831371796480]._whenPressed
       value: 
       objectReference: {fileID: -6803668754916624048, guid: 4b6e6ce79b3343b45a160fe4eda89213, type: 3}

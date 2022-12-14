@@ -8,24 +8,27 @@ using UnityEngine;
 using UnityEngine.Timeline;
 using Random = UnityEngine.Random;
 
-public class Enemy : Actor,ITick
+public class Enemy : Actor, ITick
 {
     public LayerMask whoIsEnemy;
     public Transform shootPos;
     public float enemySpeed;
-    
+
     private float _colDownTime;
     private float _currentTime;
     private float _currentShootTime;
     private float _shootTime;
     private bool _seePlayer;
+
     private EnemyState _myState;
+
     //private Rigidbody2D _rigidBody;
     private Coroutine moveFunc;
+
     //private Loader _loader;
     private Weapon _weapon;
     private Transform _playerTransform;
-    
+
     //private Transform _playerTransform;
     //private Animator _particles;
     protected override void StartGame()
@@ -43,13 +46,12 @@ public class Enemy : Actor,ITick
         //_loader.damagableObjects.Add(gameObject,this);
         //_particles = _loader.SpawnParticles(transform.position);
         SetState(EnemyState.Wait);
-        
     }
 
     public void Tick()
     {
         if (_isDead) return;
-        if (Physics2D.Raycast(shootPos.position, Vector2.right*transform.localScale.x, 2, whoIsEnemy))
+        if (Physics2D.Raycast(shootPos.position, Vector2.right * transform.localScale.x, 2, whoIsEnemy))
         {
             if (!_seePlayer)
             {
@@ -74,37 +76,38 @@ public class Enemy : Actor,ITick
                 {
                     StopCoroutine(moveFunc);
                 }
-                
+
                 SetState(EnemyState.Shoot);
                 _currentShootTime = _shootTime;
             }
         }
 
-        if(_currentTime>0)_currentTime -= Time.deltaTime;
+        if (_currentTime > 0) _currentTime -= Time.deltaTime;
         else
         {
             _currentTime = _colDownTime;
             SetState();
         }
     }
-    public override void ApplyDamage(int damage, Vector2 pos,float force)
+
+    public override void ApplyDamage(int damage, Vector2 pos, float force)
     {
         if (moveFunc != null) StopCoroutine(moveFunc);
-        base.ApplyDamage(damage, pos,force);
+        base.ApplyDamage(damage, pos, force);
         //_rigidBody2D.AddForce(pos*0.02f,ForceMode2D.Impulse);
     }
 
-    public override void ApplyExplosionDamage(int damage,Vector2 pos,float force,float damageRadius)
+    public override void ApplyExplosionDamage(int damage, Vector2 pos, float force, float damageRadius)
     {
-        base.ApplyExplosionDamage(damage,pos,force,damageRadius);
+        base.ApplyExplosionDamage(damage, pos, force, damageRadius);
         if (moveFunc != null) StopCoroutine(moveFunc);
     }
 
-    private void SetState(EnemyState state=EnemyState.Empty)
+    private void SetState(EnemyState state = EnemyState.Empty)
     {
         if (state == EnemyState.Empty)
         {
-            state = (EnemyState) Random.Range(0, 3);
+            state = (EnemyState)Random.Range(0, 3);
         }
 
         switch (state)
@@ -116,8 +119,8 @@ public class Enemy : Actor,ITick
                 break;
             case EnemyState.Run:
                 anima.Play("EnemyDuckRun");
-                transform.localScale=GetScale();
-                moveFunc=StartCoroutine(MovePosition());
+                transform.localScale = GetScale();
+                moveFunc = StartCoroutine(MovePosition());
                 _myState = EnemyState.Run;
                 //print("run");
                 break;
@@ -134,7 +137,7 @@ public class Enemy : Actor,ITick
                 _myState = EnemyState.ChangeDir;
                 //print("change");
                 break;
-            
+
             default:
                 throw new ArgumentOutOfRangeException();
         }
@@ -142,22 +145,24 @@ public class Enemy : Actor,ITick
 
     IEnumerator MovePosition()
     {
-        while(_currentTime>0)
+        while (_currentTime > 0)
         {
             _rigidBody.position = Vector2.MoveTowards(_rigidBody.position,
-                _rigidBody.position + Vector2.right * transform.localScale.x, enemySpeed*Time.deltaTime); 
+                _rigidBody.position + Vector2.right * transform.localScale.x, enemySpeed * Time.deltaTime);
             yield return null;
         }
     }
+
 
     private Vector3 GetScale()
     {
         if (_seePlayer)
         {
-            return _transform.position.x - _playerTransform.position.x > 0?new Vector3(-1, 1, 1): Vector3.one;
+            return _transform.position.x - _playerTransform.position.x > 0 ? new Vector3(-1, 1, 1) : Vector3.one;
         }
-        var value=Random.Range(0, 2);
-        return value == 0 ? new Vector3(-1,1,1) : Vector3.one;
+
+        var value = Random.Range(0, 2);
+        return value == 0 ? new Vector3(-1, 1, 1) : Vector3.one;
     }
 
     protected override void Death()
@@ -165,14 +170,15 @@ public class Enemy : Actor,ITick
         // _particles.transform.position = transform.position;
         // _particles.Play("DuckFeathers");
         Toolbox.Get<EndLevelChecker>().AddDeathCount();
-        ParticleManager.PlayParticle(data.deathParticles,transform.position);
+        ParticleManager.PlayParticle(data.deathParticles, transform.position);
         base.Death();
         if (moveFunc != null)
         {
             StopCoroutine(moveFunc);
             moveFunc = null;
         }
-        Invoke(nameof(DeactiveEnemy),5.5f);
+
+        Invoke(nameof(DeactiveEnemy), 5.5f);
     }
 
     private void DeactiveEnemy()
@@ -181,11 +187,12 @@ public class Enemy : Actor,ITick
     }
 
     public override void AttackEnemy()
-    { 
+    {
         anima.Play(data.ActorLight.name);
         _weapon.Shoot(ItemsSpawner);
     }
 }
+
 public enum EnemyState
 {
     Wait,

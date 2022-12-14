@@ -9,11 +9,11 @@ public abstract class Actor : MonoBehaviour, IDamagable, IBodySound
     public DataActor data;
     public bool _takeDamage = false;
     public float _spikeForce;
-    
+
     protected float attackPosX;
     protected bool _isDead;
     protected Vector3 attackPos;
-    
+
     protected Transform _transform;
 
     //protected Weapon BaseWeapon;
@@ -28,7 +28,7 @@ public abstract class Actor : MonoBehaviour, IDamagable, IBodySound
     private Shader _shaderText;
     private Shader _shaderSpritesDefault;
     protected CoinDropper _coinDropper;
-    
+
     private void Start()
     {
         Sprite = GetComponent<SpriteRenderer>();
@@ -56,7 +56,6 @@ public abstract class Actor : MonoBehaviour, IDamagable, IBodySound
 
     protected virtual void StartGame()
     {
-        
     }
 
     protected virtual void Death()
@@ -90,7 +89,7 @@ public abstract class Actor : MonoBehaviour, IDamagable, IBodySound
     public virtual void DeactiveActor()
     {
         _isDead = true;
-        _rigidBody.velocity=Vector2.zero;
+        _rigidBody.velocity = Vector2.zero;
         _rigidBody.gravityScale = 0;
         _col.enabled = false;
         anima.Play(data.idle.name);
@@ -128,31 +127,32 @@ public abstract class Actor : MonoBehaviour, IDamagable, IBodySound
         if (_health > 0) return;
         Death();
     }
-    private void SetWhiteSprite() 
+
+    private void SetWhiteSprite()
     {
         Sprite.material.shader = _shaderText;
         Sprite.color = Color.white;
-        Invoke(nameof(SetNormalSprite),0.1f);
+        Invoke(nameof(SetNormalSprite), 0.1f);
     }
-    
+
     private void SetNormalSprite()
     {
         Sprite.material.shader = _shaderSpritesDefault;
         Sprite.color = Color.white;
     }
-    
-    public virtual void ApplyDamage(int damage, Vector2 pos,float force)
+
+    public virtual void ApplyDamage(int damage, Vector2 pos, float force)
     {
         var direction = _transform.position.x - pos.x > 0 ? Vector2.right : Vector2.left;
-        _rigidBody.AddForce(direction * force,ForceMode2D.Impulse);
+        _rigidBody.AddForce(direction * force, ForceMode2D.Impulse);
         SetWhiteSprite();
         ReduceHealth(damage);
     }
 
-    public virtual void ApplyExplosionDamage(int damage,Vector2 pos,float force,float damageRadius)
+    public virtual void ApplyExplosionDamage(int damage, Vector2 pos, float force, float damageRadius)
     {
         SetWhiteSprite();
-        ReduceHealth((int)_rigidBody.AddExplosionForce(damage,force,damageRadius,pos));
+        ReduceHealth((int)_rigidBody.AddExplosionForce(damage, force, damageRadius, pos));
     }
 
     public void WalkSound()
@@ -166,7 +166,7 @@ public abstract class Actor : MonoBehaviour, IDamagable, IBodySound
     {
         if (other.CompareTag("Spikes"))
         {
-            ApplyDamage(2,other.transform.position,_spikeForce);
+            ApplyDamage(2, other.transform.position, _spikeForce);
         }
     }
 

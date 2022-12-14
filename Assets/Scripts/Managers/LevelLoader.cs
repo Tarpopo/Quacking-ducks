@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using DefaultNamespace;
 using NaughtyAttributes;
@@ -7,10 +8,10 @@ using UnityEngine.SceneManagement;
 
 public class LevelLoader : ManagerBase, IStart
 {
-    public event UnityAction OnLevelUnloadedStart;
-    public event UnityAction OnLevelUnloaded;
-    public event UnityAction OnLevelLoadedStart;
-    public event UnityAction OnLevelLoaded;
+    public event UnityAction<string> OnLevelUnloadedStart;
+    public event UnityAction<string> OnLevelUnloaded;
+    public event UnityAction<string> OnLevelLoadedStart;
+    public event UnityAction<string> OnLevelLoaded;
     public string MainScene => _mainScene;
     public string EnabledLevel => _enabledLevel;
     [SerializeField, Scene] private string _mainScene;
@@ -25,36 +26,40 @@ public class LevelLoader : ManagerBase, IStart
 
     public void LoadLevel(string levelName)
     {
-        SetOnlyScene(_mainScene, true);
+        SetOnlyScene(_mainScene, true, () => OnLevelLoadedStart?.Invoke(_mainScene),
+            () => OnLevelLoaded?.Invoke(_mainScene));
         if (_mainScene.Equals(levelName)) return;
         _transition.PlayCloseAnimation(() => StartCoroutine(LoadSceneAsync(levelName)));
     }
 
     private IEnumerator LoadSceneAsync(string sceneName)
     {
-        OnLevelLoadedStart?.Invoke();
+        OnLevelLoadedStart?.Invoke(sceneName);
         AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
         while (asyncLoad.isDone == false)
         {
             yield return null;
         }
 
-        _transition.PlayOpenAnimation(() => OnLevelLoaded?.Invoke());
+        _transition.PlayOpenAnimation(() => OnLevelLoaded?.Invoke(sceneName));
     }
 
-    private IEnumerator UnloadSceneAsync(string sceneName)
+    private IEnumerator UnloadSceneAsync(string sceneName, Action onStart = null, Action onEnd = null)
     {
-        OnLevelUnloadedStart?.Invoke();
+        OnLevelUnloadedStart?.Invoke(sceneName);
+        onStart?.Invoke();
         AsyncOperation asyncLoad = SceneManager.UnloadSceneAsync(sceneName);
         while (asyncLoad.isDone == false)
         {
             yield return null;
         }
 
-        _transition.PlayOpenAnimation(() => OnLevelUnloaded?.Invoke());
+        onEnd?.Invoke();
+        OnLevelUnloaded?.Invoke(sceneName);
+        _transition.PlayOpenAnimation();
     }
 
-    private void SetOnlyScene(string sceneName, bool transition = false)
+    private void SetOnlyScene(string sceneName, bool transition = false, Action onStart = null, Action onEnd = null)
     {
         var countLoaded = SceneManager.sceneCount;
 
@@ -62,7 +67,8 @@ public class LevelLoader : ManagerBase, IStart
         {
             var scene = SceneManager.GetSceneAt(i);
             if (scene.name.Equals(sceneName)) continue;
-            if (transition) _transition.PlayCloseAnimation(() => StartCoroutine(UnloadSceneAsync(scene.name)));
+            if (transition)
+                _transition.PlayCloseAnimation(() => StartCoroutine(UnloadSceneAsync(scene.name, onStart, onEnd)));
             else SceneManager.UnloadSceneAsync(scene);
         }
     }

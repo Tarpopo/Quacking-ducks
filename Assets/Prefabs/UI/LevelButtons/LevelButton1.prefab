@@ -409,8 +409,8 @@ MonoBehaviour:
             m_Calls: []
         _whenPressed: {fileID: 6734957991350236085, guid: 4b6e6ce79b3343b45a160fe4eda89213, type: 3}
         _fullButton: {fileID: 6769509450110079083, guid: 4b6e6ce79b3343b45a160fe4eda89213, type: 3}
-        _buttonClick: {fileID: 0}
-        _lockSound: {fileID: 0}
+        _buttonClick: {fileID: 11400000, guid: 9d872fd2dfe8c4c4ab58d71fddbcae90, type: 2}
+        _lockSound: {fileID: 11400000, guid: 00134261f5a1ba5448ae580f972d9abf, type: 2}
         _animator: {fileID: 2695408466032283625}
         _loadingScene: Level1
 --- !u!1 &4794473340708231544

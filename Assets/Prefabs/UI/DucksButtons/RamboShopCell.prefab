@@ -319,11 +319,12 @@ MonoBehaviour:
             m_Calls: []
         _whenPressed: {fileID: 2570555974270224125, guid: 6311ae6c55d62ad42a9bc342b0082c8a, type: 3}
         _fullButton: {fileID: 2570555974270224125, guid: 6311ae6c55d62ad42a9bc342b0082c8a, type: 3}
-        _buttonClick: {fileID: 0}
-        _lockSound: {fileID: 0}
+        _buttonClick: {fileID: 11400000, guid: 69f5a082871379b4480b098905dc7ef1, type: 2}
+        _lockSound: {fileID: 11400000, guid: 00134261f5a1ba5448ae580f972d9abf, type: 2}
         _animator: {fileID: 1602729263719789208}
         _price: 0
         _duck: 0
+        _openSound: {fileID: 11400000, guid: 094169dfc7869a640994cd0658fabd36, type: 2}
 --- !u!1 &1602729264914294287
 GameObject:
   m_ObjectHideFlags: 0
@@ -520,7 +521,7 @@ MonoBehaviour:
             m_Calls: []
         _whenPressed: {fileID: -703444289696928111, guid: 31e13c00508dab147bcd26ebc298ca54, type: 3}
         _fullButton: {fileID: 117099547814586431, guid: 31e13c00508dab147bcd26ebc298ca54, type: 3}
-        _buttonClick: {fileID: 0}
+        _buttonClick: {fileID: 11400000, guid: 740f6d3c76a14c644b4985e16a0c1ec7, type: 2}
         _onValueChange:
           m_PersistentCalls:
             m_Calls: []

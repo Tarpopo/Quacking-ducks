@@ -311,6 +311,10 @@ PrefabInstance:
       propertyPath: managedReferences[6573042831371796481]._price
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 1602729264578157514, guid: 47a2b8f03a057214a8c4c9230abcf249, type: 3}
+      propertyPath: managedReferences[6573042831371796481]._lockSound
+      value: 
+      objectReference: {fileID: 11400000, guid: 00134261f5a1ba5448ae580f972d9abf, type: 2}
     - target: {fileID: 1602729265312788657, guid: 47a2b8f03a057214a8c4c9230abcf249, type: 3}
       propertyPath: managedReferences[6573042804838367233]._price
       value: 50
@@ -331,6 +335,10 @@ PrefabInstance:
       propertyPath: managedReferences[6573042804838367233]._fullButton
       value: 
       objectReference: {fileID: 6578603643466326921, guid: 31e13c00508dab147bcd26ebc298ca54, type: 3}
+    - target: {fileID: 1602729265312788657, guid: 47a2b8f03a057214a8c4c9230abcf249, type: 3}
+      propertyPath: managedReferences[6573042804838367233]._buttonClick
+      value: 
+      objectReference: {fileID: 11400000, guid: 3ece7c973bbba194bb4e89be31220730, type: 2}
     - target: {fileID: 1602729265312788657, guid: 47a2b8f03a057214a8c4c9230abcf249, type: 3}
       propertyPath: managedReferences[6573042804838367233]._whenPressed
       value: 

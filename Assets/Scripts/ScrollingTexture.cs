@@ -1,19 +1,29 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ScrollingTexture : MonoBehaviour
 {
-    [SerializeField] private float _speed = 0.01f;
+    [SerializeField] private Image _canvas;
+    [SerializeField] private ScrollingTextureItem[] _scrollingTextures;
+    [SerializeField] private float _speed = 0.2f;
     private float _value;
     private Image _image;
     private Material _material;
 
+    [Button]
+    private void Sort() => _scrollingTextures = _scrollingTextures.SortByEnum();
+
     private void Awake()
     {
+        Sort();
         _image = GetComponent<Image>();
         _material = _image.material;
     }
+
+    private void Start() => Toolbox.Get<Signals>().Get<OnCharacterSelected>().AddListener(SetDuckTexture);
 
     private void OnEnable() => StartCoroutine(TextureOffsetChanger());
 
@@ -30,5 +40,19 @@ public class ScrollingTexture : MonoBehaviour
         }
     }
 
-    public void SetRenderTexture(Texture2D texture) => _material.mainTexture = texture;
+    private void SetDuckTexture(Ducks duck)
+    {
+        _material.mainTexture = _scrollingTextures[(int)duck].Texture;
+        _canvas.RecalculateMasking();
+    }
+}
+
+[Serializable]
+public class ScrollingTextureItem : IEnum
+{
+    public Enum EnumValue => _duck;
+    public Texture2D Texture => _texture;
+
+    [SerializeField] private Ducks _duck;
+    [SerializeField] private Texture2D _texture;
 }

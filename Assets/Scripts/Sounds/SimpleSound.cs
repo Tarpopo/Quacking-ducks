@@ -6,6 +6,6 @@ namespace DefaultNamespace
     public class SimpleSound : ScriptableObject
     {
         public AudioClip audioClip;
-        [Range(0, 1)] public float volumeSound;
+        [Range(0, 1)] public float volumeSound = 0.7f;
     }
 }

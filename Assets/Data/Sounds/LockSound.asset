@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d325cd93d2424eb2b4aff42fc357b708, type: 3}
   m_Name: LockSound
   m_EditorClassIdentifier: 
-  audioClip: {fileID: 8300000, guid: 66b7ab6c9cc303a46961c20ac9ecc0f5, type: 3}
+  audioClip: {fileID: 8300000, guid: b4368b486a110b14d940e824b557f94a, type: 3}
   volumeSound: 0.7

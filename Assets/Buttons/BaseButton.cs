@@ -13,9 +13,8 @@ public abstract class BaseButton
     [SerializeField] private Sprite _whenPressed;
     [SerializeField] protected Sprite _fullButton;
     [SerializeField] protected SimpleSound _buttonClick;
-
+    protected AudioPlayer _audioPlayer;
     protected Image _image;
-    // protected AudioSource _audioSource;
 
     public event UnityAction ButtonDown
     {
@@ -32,6 +31,7 @@ public abstract class BaseButton
     public virtual void OnStart(GameObject gameObject)
     {
         _image = gameObject.GetComponent<Image>();
+        _audioPlayer = Toolbox.Get<AudioPlayer>();
         if (_fullButton != null) _image.sprite = _fullButton;
     }
 
@@ -44,6 +44,7 @@ public abstract class BaseButton
     protected virtual void OnButtonDown()
     {
         if (_image == null) return;
+        _audioPlayer.PlaySound(_buttonClick);
         _image.sprite = _whenPressed;
         // _audioSource.PlaySound(_buttonClick);
     }

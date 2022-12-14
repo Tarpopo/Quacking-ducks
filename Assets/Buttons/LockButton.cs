@@ -5,7 +5,7 @@ using UnityEngine;
 [Serializable]
 public abstract class LockButton : BaseButton
 {
-    [SerializeField] private SimpleSound _lockSound;
+    [SerializeField] protected SimpleSound _lockSound;
     // protected bool _isActive;
 
     public override void OnStart(GameObject gameObject)
@@ -18,7 +18,7 @@ public abstract class LockButton : BaseButton
     {
         if (IsActive() == false)
         {
-            // _audioSource.PlaySound(_lockSound);
+            _audioPlayer.PlaySound(_lockSound);
             return;
         }
 

@@ -2,15 +2,10 @@ using System;
 using DG.Tweening;
 using Sirenix.OdinInspector;
 using UnityEngine;
-using UnityEngine.Events;
 
 public class TweenSequencer : MonoBehaviour
 {
-    [SerializeField] private UnityEvent _onAnimationEnd;
-
-    [SerializeField] private UnityEvent _onRewindAnimationEnd;
-
-    // [SerializeField] private UnityEvent _onEnable;
+    [SerializeField] private Ease _ease = Ease.Linear;
     [SerializeReference] private BaseTweenAnimation[] _tweenDataAnimations;
     private Sequence _sequence;
     private bool _sequenceTriggered;
@@ -30,6 +25,12 @@ public class TweenSequencer : MonoBehaviour
     }
 
     [Button]
+    public void Rewind()
+    {
+        _sequence.Rewind();
+    }
+
+    [Button]
     public void SetStartValues()
     {
         foreach (var tween in _tweenDataAnimations) tween.SetStartValues();
@@ -43,24 +44,20 @@ public class TweenSequencer : MonoBehaviour
 
     private void Awake()
     {
-        _sequence = DOTween.Sequence();
-        BuildSequence();
         foreach (var tween in _tweenDataAnimations) tween.OnStart();
     }
 
-    // private void OnEnable()
-    // {
-    //     // SetStartValues();
-    //     // _onEnable?.Invoke();
-    // }
+    public void OnEnable()
+    {
+        _sequence = DOTween.Sequence();
+        BuildSequence();
+    }
 
-    // private void OnDisable()
-    // {
-    //     _sequence.PlayBackwards();
-    // }
+    public void OnDisable() => _sequence.Kill();
 
     private void BuildSequence()
     {
+        _sequence.SetEase(_ease);
         _sequence.Pause();
         _sequence.SetAutoKill(false);
         foreach (var tween in _tweenDataAnimations)
@@ -68,11 +65,5 @@ public class TweenSequencer : MonoBehaviour
             if (tween.Join) _sequence.Join(tween.GetTween());
             else _sequence.Append(tween.GetTween());
         }
-
-        _sequence.onComplete = OnComplete;
-        _sequence.onRewind = OnRewindComplete;
     }
-
-    private void OnComplete() => _onAnimationEnd?.Invoke();
-    private void OnRewindComplete() => _onRewindAnimationEnd?.Invoke();
 }

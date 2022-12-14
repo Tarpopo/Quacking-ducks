@@ -8,6 +8,7 @@ public class PanelChanger : ManagerBase, IAwake, IStart
     [SerializeField] private List<Panel> _panels;
     private Dictionary<Panels, Panel> _panelsDictionary;
     private Panel _currentPanel;
+    private LevelLoader _levelLoader;
 
     public void OnAwake()
     {
@@ -18,35 +19,39 @@ public class PanelChanger : ManagerBase, IAwake, IStart
     public void OnStart()
     {
         _currentPanel ??= _panels[0];
-        var levelLoader = Toolbox.Get<LevelLoader>();
-        levelLoader.OnLevelLoadedStart += DisableCurrentPanel;
-        levelLoader.OnLevelLoaded += ActivateGameUI;
-        // levelLoader.OnLevelUnloadedStart += DisableCurrentPanel;
-        levelLoader.OnLevelUnloadedStart += DisableCurrentPanelWithAnimation;
-        levelLoader.OnLevelUnloadedStart += ActivateMainMenu;
+        _levelLoader = Toolbox.Get<LevelLoader>();
+        _levelLoader.OnLevelLoadedStart += DisableCurrentPanel;
+        _levelLoader.OnLevelLoaded += CheckAndActiveUI;
+        // _levelLoader.OnLevelUnloadedStart += DisableCurrentPanel;
+        // _levelLoader.OnLevelUnloadedStart += ActivateMainMenu;
     }
 
-    public void ActivatePanel(Panels panelType)
-    {
+    public void ActivatePanel(Panels panelType) =>
         _currentPanel.DisablePanel(() => EnablePanel(panelType));
+
+    private void ActivateGameUI() => EnablePanel(Panels.GameUI);
+
+    private void ActivateMainMenu() => EnablePanel(Panels.MainMenu, false);
+
+    private void DisableCurrentPanel(string sceneName) => _currentPanel.SetActivePanel(false);
+
+    private void CheckAndActiveUI(string sceneName)
+    {
+        if (sceneName.Equals(_levelLoader.MainScene))
+        {
+            ActivateMainMenu();
+        }
+        else
+        {
+            ActivateGameUI();
+        }
     }
 
-    public void DisableCurrentPanel() => _currentPanel.SetActivePanel(false);
-    public void DisableCurrentPanelWithAnimation() => _currentPanel.DisablePanel();
-
-    public void ActivateGameUI() => EnablePanel(Panels.GameUI);
-    public void ActivateMainMenu() => EnablePanel(Panels.MainMenu);
-
-    private void EnablePanel(Panels panelType)
+    private void EnablePanel(Panels panel, bool transition = true)
     {
-        _panelsDictionary[panelType].EnablePanel();
-        _currentPanel = _panelsDictionary[panelType];
-    }
-
-    private void DisablePanel(Panels panelType)
-    {
-        _panelsDictionary[panelType].DisablePanel();
-        _currentPanel = _panelsDictionary[panelType];
+        if (transition) _panelsDictionary[panel].EnablePanel();
+        else _panelsDictionary[panel].SetActivePanel(true);
+        _currentPanel = _panelsDictionary[panel];
     }
 }
 
@@ -55,35 +60,35 @@ public class Panel
 {
     public Panels PaneType => _panelType;
     [SerializeField] private Panels _panelType;
-    [SerializeField] private GameObject _panel;
+    [SerializeField] private Canvas _panel;
     [SerializeReference] private BasePanelChange _basePanelChange;
 
-    public void SetActivePanel(bool active) => _panel.SetActive(active);
+    public void SetActivePanel(bool active) => _panel.gameObject.SetActive(active);
     public void DisablePanel(Action onDisable = null) => _basePanelChange.Disable(_panel, onDisable);
     public void EnablePanel(Action onEnable = null) => _basePanelChange.Enable(_panel, onEnable);
 }
 
 public abstract class BasePanelChange
 {
-    public abstract void Enable(GameObject panel, Action onEnable);
+    public abstract void Enable(Canvas panel, Action onEnable);
 
-    public abstract void Disable(GameObject panel, Action onDisable);
+    public abstract void Disable(Canvas panel, Action onDisable);
 }
 
 [Serializable]
 public class PanelChangeTransition : BasePanelChange
 {
-    public override void Enable(GameObject panel, Action onEnable)
+    public override void Enable(Canvas panel, Action onEnable)
     {
-        panel.SetActive(true);
+        panel.gameObject.SetActive(true);
         Toolbox.Get<Transition>().PlayOpenAnimation(onEnable);
     }
 
-    public override void Disable(GameObject panel, Action onDisable)
+    public override void Disable(Canvas panel, Action onDisable)
     {
         Toolbox.Get<Transition>().PlayCloseAnimation(() =>
         {
-            panel.SetActive(false);
+            panel.gameObject.SetActive(false);
             onDisable?.Invoke();
         });
     }
@@ -94,18 +99,18 @@ public class PanelChangeAnimation : BasePanelChange
 {
     [SerializeField] private TweenSequencer _sequencer;
 
-    public override void Enable(GameObject panel, Action onEnable)
+    public override void Enable(Canvas panel, Action onEnable)
     {
-        // _sequencer.SetStartValues();
-        panel.SetActive(true);
+        _sequencer.SetStartValues();
+        panel.gameObject.SetActive(true);
         _sequencer.PlayForward(onEnable);
     }
 
-    public override void Disable(GameObject panel, Action onDisable)
+    public override void Disable(Canvas panel, Action onDisable)
     {
         _sequencer.PlayBackward(() =>
         {
-            panel.SetActive(false);
+            panel.gameObject.SetActive(false);
             onDisable?.Invoke();
         });
     }

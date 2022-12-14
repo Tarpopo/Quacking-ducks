@@ -1,33 +1,30 @@
 ﻿using System;
+using DefaultNamespace;
 using UnityEngine;
-using UnityEngine.Events;
 
-public class Transition : ManagerBase
+public class Transition : ManagerBase, IStart
 {
-    [SerializeField] private Animator _animator;
+    [SerializeField] private TweenSequencer _tweenSequencer;
+    [SerializeField] private Canvas _canvas;
+    [SerializeField] private SimpleSound _gateSound;
+    private AudioPlayer _audioPlayer;
 
-    // [SerializeField] private AudioSource _audioSource;
-    // [SerializeField] private SimpleSound _door;
-    public void PlayCloseAnimation(Action onAnimationEnd = null) =>
-        _animator.PlayStateAnimation(TransitionAnimation.Close).AddOnComplete(onAnimationEnd);
+    public void OnStart() => _audioPlayer = Toolbox.Get<AudioPlayer>();
 
-    public void PlayOpenAnimation(Action onAnimationEnd = null) =>
-        _animator.PlayStateAnimation(TransitionAnimation.Open).AddOnComplete(onAnimationEnd);
-
-    public void DoTransitionAnimation(UnityAction onCloseAnimationEnd)
+    public void PlayCloseAnimation(Action onAnimationEnd = null)
     {
-        // PlayCloseAnimation(() =>
-        // {
-        //     onCloseAnimationEnd?.Invoke();
-        //     PlayOpenAnimation();
-        // });
+        EnableCanvas();
+        _audioPlayer.PlaySound(_gateSound);
+        _tweenSequencer.PlayForward(onAnimationEnd);
     }
 
-    // public void OnCloseEnd()
-    // {
-    //     _onClose?.Invoke();
-    //     _onClose = null;
-    // }
+    public void PlayOpenAnimation(Action onAnimationEnd = null)
+    {
+        onAnimationEnd += DisableCanvas;
+        _audioPlayer.PlaySound(_gateSound);
+        _tweenSequencer.PlayBackward(onAnimationEnd);
+    }
 
-    // private void PlayDoorSound() => _audioSource.PlaySound(_door);
+    private void EnableCanvas() => _canvas.gameObject.SetActive(true);
+    private void DisableCanvas() => _canvas.gameObject.SetActive(false);
 }

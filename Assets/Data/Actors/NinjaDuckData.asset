@@ -32,14 +32,8 @@ MonoBehaviour:
   sizeCube: {x: 0.25, y: 0.75}
   posCube: {x: 2, y: 2.5}
   stepSounds:
-  - audioClip: {fileID: 8300000, guid: 34dd010fa87aee44ab851d48f5097064, type: 3}
-    volumeSound: 0.33
-  - audioClip: {fileID: 8300000, guid: bef7eb01af8f07a418ebba21364a11b4, type: 3}
-    volumeSound: 0.24
-  - audioClip: {fileID: 8300000, guid: a3990b99df1a84a47901ba3d408a48cf, type: 3}
-    volumeSound: 0.5
-  - audioClip: {fileID: 8300000, guid: edc107907afcc2748b852dedde97a27b, type: 3}
-    volumeSound: 0.18
-  quackSound:
-    audioClip: {fileID: 8300000, guid: 01babb3bd8544bd478ce872378f6f6dc, type: 3}
-    volumeSound: 0.66
+  - {fileID: 11400000, guid: 5e2690fec99572d48a9ef05b0442ba8a, type: 2}
+  - {fileID: 11400000, guid: 785b11687e3f1a945b247bda78378226, type: 2}
+  - {fileID: 11400000, guid: a62164ff8d536b6439695dddb59f0f89, type: 2}
+  - {fileID: 11400000, guid: c4fd02cb5e8fd324383896e85e725ef2, type: 2}
+  quackSound: {fileID: 11400000, guid: 08103346432daa040bdce77549ac46ad, type: 2}
