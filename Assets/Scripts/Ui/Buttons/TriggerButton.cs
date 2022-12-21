@@ -12,6 +12,7 @@ public class TriggerButton : MenuCustomButton
     [SerializeField] private SimpleSound _lockSound;
     public bool _isTriggerActive;
     public bool IsActive;
+
     public override void OnPointerDown(PointerEventData eventData)
     {
         if (IsActive == false)
@@ -19,6 +20,7 @@ public class TriggerButton : MenuCustomButton
             _audioSource.PlaySound(_lockSound);
             return;
         }
+
         _audioSource.PlaySound(_buttonClick);
         ClickOnButton();
     }
@@ -26,14 +28,14 @@ public class TriggerButton : MenuCustomButton
     public void ClickOnButton()
     {
         _spriteRenderer.sprite = _whenPressed;
-        if (_isTriggerActive == false)_triggerChecker?.Invoke();
+        if (_isTriggerActive == false) _triggerChecker?.Invoke();
         _isTriggerActive = !_isTriggerActive;
         ButtonDown?.Invoke();
     }
 
     public override void OnPointerUp(PointerEventData eventData)
     {
-        if(IsActive==false) return;
+        if (IsActive == false) return;
         _spriteRenderer.sprite = _isTriggerActive ? _activeState : _fullButton;
         ButtonUp?.Invoke();
     }

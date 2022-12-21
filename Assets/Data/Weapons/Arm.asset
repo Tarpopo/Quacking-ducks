@@ -18,15 +18,13 @@ MonoBehaviour:
   halfSprite: {fileID: 0}
   destroyAnim: {fileID: 0}
   health: 0
-  full:
-    audioClip: {fileID: 0}
-    volumeSound: 0
-  destroy:
-    audioClip: {fileID: 0}
-    volumeSound: 0
+  full: {fileID: 0}
+  destroy: {fileID: 0}
   weaponIcon: {fileID: 0}
   recoil: 0
   bullet: {fileID: 0}
+  Damage: 0
+  Force: 0
   reloadTime: 0.6
   shootPos: {x: 0.05, y: 0, z: 0}
   shootAnim: {fileID: 7400000, guid: abaa094fd6dc0f7419e18cd75175da7f, type: 2}
@@ -35,24 +33,12 @@ MonoBehaviour:
   ShootParticle: {fileID: 0}
   Sleeve: {fileID: 0}
   shoot: {fileID: 11400000, guid: 450112fd359c9f044a44893043f120b8, type: 2}
-  chest:
-    audioClip: {fileID: 8300000, guid: 440cf2e40aeb46747a0979ce36abd3b1, type: 3}
-    volumeSound: 1
-  barrel:
-    audioClip: {fileID: 8300000, guid: c0f1e60e368fa8d49a4279fb7da263a0, type: 3}
-    volumeSound: 1
-  shootSound:
-    audioClip: {fileID: 8300000, guid: b61897551a6209c4e898918acd4af95d, type: 3}
-    volumeSound: 1
-  bodySound:
-    audioClip: {fileID: 8300000, guid: 7c4ffae79eea09449bd53f3099386d07, type: 3}
-    volumeSound: 1
-  pickUp:
-    audioClip: {fileID: 0}
-    volumeSound: 0
-  noAmmo:
-    audioClip: {fileID: 0}
-    volumeSound: 0
+  chest: {fileID: 11400000, guid: ff84b5c9c72c306448461094239b3dd5, type: 2}
+  barrel: {fileID: 11400000, guid: 13a342923fb18e147a383803e8b79f02, type: 2}
+  shootSound: {fileID: 11400000, guid: 2d20a1454e1e0144083f1ebb602ef10b, type: 2}
+  bodySound: {fileID: 11400000, guid: 8c8024e7ff2b0ca42be6165eb2803d95, type: 2}
+  pickUp: {fileID: 0}
+  noAmmo: {fileID: 0}
   bulletCount: 0
   HitLayer:
     serializedVersion: 2

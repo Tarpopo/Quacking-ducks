@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using DefaultNamespace;
 using UnityEngine;
+
 [CreateAssetMenu(menuName = "Data/ItemData")]
-public class ItemData: ScriptableObject
+public class ItemData : ScriptableObject
 {
     public Vector2 offsetColider;
     public Vector2 sizeColider;

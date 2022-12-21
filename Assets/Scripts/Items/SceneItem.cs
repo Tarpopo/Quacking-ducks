@@ -5,7 +5,7 @@ using DefaultNamespace;
 using Interfaces.SoundsTypes;
 using UnityEngine;
 
-public abstract class SceneItem : MonoBehaviour,IStart,IPoolable,IDamagable
+public abstract class SceneItem : MonoBehaviour, IStart, IPoolable, IDamagable
 {
     public ItemData data;
 
@@ -34,13 +34,16 @@ public abstract class SceneItem : MonoBehaviour,IStart,IPoolable,IDamagable
     {
         _spriteRenderer.sortingOrder = value;
     }
-    
-    public virtual void ApplyExplosionDamage(int damage,Vector2 pos,float force,float damageRadius)
+
+    public virtual void ApplyExplosionDamage(int damage, Vector2 pos, float force, float damageRadius)
     {
-        _rigidBody.AddExplosionForce(damage,force,damageRadius,pos);
+        _rigidBody.AddExplosionForce(damage, force, damageRadius, pos);
     }
 
-    public virtual void PlayDamageSound(ISoundVisitor visitor){ }
+    public virtual void PlayDamageSound(ISoundVisitor visitor)
+    {
+    }
+
     public virtual void OnSpawn()
     {
         _rigidBody.gravityScale = 1;
@@ -48,6 +51,7 @@ public abstract class SceneItem : MonoBehaviour,IStart,IPoolable,IDamagable
         _spriteRenderer.sprite = data.fullSprite;
         _collider.enabled = true;
     }
+
     public virtual void OnDespawn()
     {
         _rigidBody.WakeUp();
@@ -68,20 +72,21 @@ public abstract class SceneItem : MonoBehaviour,IStart,IPoolable,IDamagable
     public virtual void TakeItem(Transform parent, Vector3 pos)
     {
         //_transform.rotation=Quaternion.identity;
-        _rigidBody.gravityScale=0;
+        _rigidBody.gravityScale = 0;
         _rigidBody.bodyType = RigidbodyType2D.Kinematic;
         //_collider.enabled = false;
         gameObject.layer = _whenTake;
         _transform.SetParent(parent);
         _transform.position = pos;
     }
+
     public virtual void QuitItem(Vector3 dir)
     {
         _transform.position += dir;
         _transform.SetParent(null);
-        _rigidBody.gravityScale=1;
+        _rigidBody.gravityScale = 1;
         _rigidBody.bodyType = RigidbodyType2D.Dynamic;
-        _rigidBody.AddForce(dir*4f,ForceMode2D.Impulse);
+        _rigidBody.AddForce(dir * 4f, ForceMode2D.Impulse);
         gameObject.layer = _baseLayer;
         //_collider.enabled = true;
     }
@@ -90,7 +95,7 @@ public abstract class SceneItem : MonoBehaviour,IStart,IPoolable,IDamagable
     {
         _audioSource.PlaySound(data.destroy);
         //_rigidBody.gravityScale = 0;
-        Invoke(nameof(DespawnGameObject),0.5f);
+        Invoke(nameof(DespawnGameObject), 0.5f);
     }
 
     private void DespawnGameObject()

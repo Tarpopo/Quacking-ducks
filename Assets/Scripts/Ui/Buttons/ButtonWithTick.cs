@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-public class ButtonWithTick : MonoBehaviour,ITick,IPointerDownHandler,IPointerUpHandler
+public class ButtonWithTick : MonoBehaviour, ITick, IPointerDownHandler, IPointerUpHandler
 {
     public Action ButtonUp;
     public Action ButtonDown;
@@ -30,7 +30,6 @@ public class ButtonWithTick : MonoBehaviour,ITick,IPointerDownHandler,IPointerUp
             ButtonUpdate();
             _currentUpdateTime -= Time.deltaTime;
         }
-        
     }
 
     public void OnPointerDown(PointerEventData eventData)

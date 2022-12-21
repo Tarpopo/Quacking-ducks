@@ -8,7 +8,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UIElements;
 using Image = UnityEngine.UI.Image;
 
-public class MoveButtons : MonoBehaviour,ITick,IPointerDownHandler,IPointerUpHandler
+public class MoveButtons : MonoBehaviour, ITick, IPointerDownHandler, IPointerUpHandler
 {
     public UnityEvent<int> MoveAction;
     public UnityEvent ButtonUp;
@@ -22,17 +22,19 @@ public class MoveButtons : MonoBehaviour,ITick,IPointerDownHandler,IPointerUpHan
     [SerializeField] private Sprite _interactRight;
     [SerializeField] private Sprite _baseRight;
     private float _screenWidth;
+
     private void Start()
     {
         ManagerUpdate.AddTo(this);
         _leftImage.sprite = _baseLeft;
         _rightImage.sprite = _baseRight;
         _midPosition = Camera.main.WorldToScreenPoint(_leftImage.transform.parent.position).x;
-        _screenWidth = Screen.width/2;
+        _screenWidth = Screen.width / 2;
     }
+
     public void Tick()
     {
-        if (Input.touches.Length>0 && _isAction)
+        if (Input.touches.Length > 0 && _isAction)
         {
             var input = Input.GetTouch(0);
             if (Input.touches.Length > 1)
@@ -54,7 +56,7 @@ public class MoveButtons : MonoBehaviour,ITick,IPointerDownHandler,IPointerUpHan
             }
         }
     }
-    
+
     public void OnPointerDown(PointerEventData eventData)
     {
         _isAction = true;
@@ -68,6 +70,4 @@ public class MoveButtons : MonoBehaviour,ITick,IPointerDownHandler,IPointerUpHan
         _rightImage.sprite = _baseRight;
         ButtonUp?.Invoke();
     }
-
-  
 }

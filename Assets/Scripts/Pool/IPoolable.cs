@@ -4,6 +4,5 @@
     {
         void OnSpawn();
         void OnDespawn();
-
     }
 }

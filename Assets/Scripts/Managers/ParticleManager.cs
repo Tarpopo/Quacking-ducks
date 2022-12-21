@@ -3,19 +3,25 @@ using System.Collections.Generic;
 using DefaultNamespace;
 using UnityEngine;
 
-public class ParticleManager : ManagerBase, ITick, IAwake, ISceneChanged
+public class ParticleManager : ManagerBase, ITick, IStart
 {
     [SerializeField] private int _particleCount;
     [SerializeField] private GameObject _particles;
 
     private List<ParticleObject> _freeParticles = new List<ParticleObject>();
-    private List<ParticleObject> _occupiedParticles = new List<ParticleObject>();
-    private static ParticleManager _particleManager;
 
-    public void OnChangeScene()
+    private List<ParticleObject> _occupiedParticles = new List<ParticleObject>();
+    // private static ParticleManager _particleManager;
+
+
+    // public override void ClearScene()
+    // {
+    //     _freeParticles.Clear();
+    //     _occupiedParticles.Clear();
+    // }
+
+    public void OnStart()
     {
-        if (Toolbox.Get<SceneController>().GetIsMainScene()) return;
-        _particleManager = Toolbox.Get<ParticleManager>();
         ManagerUpdate.AddTo(this);
         for (int i = 0; i < _particleCount; i++)
         {
@@ -29,19 +35,6 @@ public class ParticleManager : ManagerBase, ITick, IAwake, ISceneChanged
         }
     }
 
-    public override void ClearScene()
-    {
-        _freeParticles.Clear();
-        _occupiedParticles.Clear();
-    }
-
-    public void OnAwake()
-    {
-        // _particleManager = Toolbox.Get<ParticleManager>();
-        // ManagerUpdate.AddTo(this);
-    }
-
-
     public ParticleObject PlayDetachedParticle(AnimationClip clip, Vector3 position, float delay = 1,
         Transform transform = null, Action func = null)
     {
@@ -52,7 +45,7 @@ public class ParticleManager : ManagerBase, ITick, IAwake, ISceneChanged
         _freeParticles[0].transform.position = position;
         _freeParticles[0].time = delay;
         _freeParticles[0].transform.SetParent(transform);
-        _occupiedParticles.Add(_particleManager._freeParticles[0]);
+        _occupiedParticles.Add(_freeParticles[0]);
         _freeParticles.RemoveAt(0);
         return obj;
     }
@@ -66,18 +59,18 @@ public class ParticleManager : ManagerBase, ITick, IAwake, ISceneChanged
     //     _freeParticles.Add(particleObject);
     //     _occupiedParticles.Remove(particleObject);
     // }
-    public static void PlayParticle(AnimationClip clip, Vector3 position, float delay = 1, Transform transform = null,
+    public void PlayParticle(AnimationClip clip, Vector3 position, float delay = 1, Transform transform = null,
         Action func = null, int scale = 1)
     {
-        _particleManager._freeParticles[0].func = func;
-        _particleManager._freeParticles[0].obj.SetActive(true);
-        _particleManager._freeParticles[0].animator.Play(clip.name);
-        _particleManager._freeParticles[0].transform.position = position;
-        _particleManager._freeParticles[0].time = delay;
-        _particleManager._freeParticles[0].transform.localScale = scale == 1 ? Vector3.one : new Vector3(-1, 1, 0);
-        _particleManager._freeParticles[0].transform.SetParent(transform);
-        _particleManager._occupiedParticles.Add(_particleManager._freeParticles[0]);
-        _particleManager._freeParticles.RemoveAt(0);
+        _freeParticles[0].func = func;
+        _freeParticles[0].obj.SetActive(true);
+        _freeParticles[0].animator.Play(clip.name);
+        _freeParticles[0].transform.position = position;
+        _freeParticles[0].time = delay;
+        _freeParticles[0].transform.localScale = scale == 1 ? Vector3.one : new Vector3(-1, 1, 0);
+        _freeParticles[0].transform.SetParent(transform);
+        _occupiedParticles.Add(_freeParticles[0]);
+        _freeParticles.RemoveAt(0);
     }
 
 

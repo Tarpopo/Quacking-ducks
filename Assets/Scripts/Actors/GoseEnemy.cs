@@ -14,15 +14,19 @@ public class GoseEnemy : Actor, ITick
     public float attackDistance;
     public float AttackRadius;
     public bool isBasukaWeapon;
-    
+
     [SerializeField] private float _colDownTime;
+
     //private float _currentTime;
     private float _currentShootTime;
     [SerializeField] private float _shootTime;
-     private bool _seePlayer;
+
+    private bool _seePlayer;
+
     //private EnemyState _myState;
     //private Rigidbody2D _rigidBody;
     private Coroutine moveFunc;
+
     //private Loader _loader;
     private Weapon _weapon;
     private Transform _playerTransform;
@@ -30,17 +34,19 @@ public class GoseEnemy : Actor, ITick
     private Timer _shootTimer;
     private Timer _stateTimer;
     private Timer _movingTimer;
-    
+    private ParticleManager _particleManager;
+
     protected override void StartGame()
     {
         base.StartGame();
+        _particleManager = Toolbox.Get<ParticleManager>();
         // _shootTime = 1.8f;
         // _colDownTime = 2.2f;
         _shootTimer = gameObject.AddComponent<Timer>();
         _stateTimer = gameObject.AddComponent<Timer>();
-        _shootTimer.StartTimer(null,_shootTime);
-        _stateTimer.StartTimer(null,_colDownTime);
-        
+        _shootTimer.StartTimer(null, _shootTime);
+        _stateTimer.StartTimer(null, _colDownTime);
+
         //_currentTime = _colDownTime;
         //_loader = Toolbox.Get<Loader>();
         // ItemsSpawner.damagableObjects.Add(gameObject,this);
@@ -57,13 +63,13 @@ public class GoseEnemy : Actor, ITick
     {
         if (_isDead) return;
         var distanceToPlayer = Vector2.Distance(_playerTransform.position, _transform.position);
-        
+
         //if (_currentShootTime > 0) _currentShootTime -= Time.deltaTime;
         //if(_currentTime>0)_currentTime -= Time.deltaTime;
-        
-        if (distanceToPlayer<=ignoreDistance)
+
+        if (distanceToPlayer <= ignoreDistance)
         {
-            if(moveFunc!=null)StopCoroutine(moveFunc);
+            if (moveFunc != null) StopCoroutine(moveFunc);
             SetScale();
             if (distanceToPlayer > attackDistance)
             {
@@ -87,13 +93,14 @@ public class GoseEnemy : Actor, ITick
         }
     }
 
-    private void SetState(EnemyState state=EnemyState.Empty)
+    private void SetState(EnemyState state = EnemyState.Empty)
     {
-        if(moveFunc!=null)StopCoroutine(moveFunc);
+        if (moveFunc != null) StopCoroutine(moveFunc);
         if (state == EnemyState.Empty)
         {
-            state = (EnemyState) Random.Range(0, 3);
+            state = (EnemyState)Random.Range(0, 3);
         }
+
         switch (state)
         {
             case EnemyState.Wait:
@@ -103,8 +110,8 @@ public class GoseEnemy : Actor, ITick
                 break;
             case EnemyState.Run:
                 anima.Play("GoseWalk");
-                transform.localScale=GetScale();
-                moveFunc=StartCoroutine(MovePosition());
+                transform.localScale = GetScale();
+                moveFunc = StartCoroutine(MovePosition());
                 //_myState = EnemyState.Run;
                 //print("run");
                 break;
@@ -121,23 +128,24 @@ public class GoseEnemy : Actor, ITick
                 //_myState = EnemyState.ChangeDir;
                 //print("change");
                 break;
-            
+
             //default:
-                //throw new ArgumentOutOfRangeException();
+            //throw new ArgumentOutOfRangeException();
         }
     }
 
     public override void AttackEnemy()
     {
-        if(_weapon.IsBulletShoot())anima.Play(data.ActorLight.name);
+        if (_weapon.IsBulletShoot()) anima.Play(data.ActorLight.name);
         _weapon.Shoot(ItemsSpawner);
     }
+
     IEnumerator MovePosition()
     {
-        while(_stateTimer.GetIsTimerActive())
+        while (_stateTimer.GetIsTimerActive())
         {
             _rigidBody.position = Vector2.MoveTowards(_rigidBody.position,
-                _rigidBody.position + Vector2.right * _transform.localScale.x, enemySpeed*Time.deltaTime); 
+                _rigidBody.position + Vector2.right * _transform.localScale.x, enemySpeed * Time.deltaTime);
             yield return null;
         }
     }
@@ -146,18 +154,18 @@ public class GoseEnemy : Actor, ITick
     {
         base.Death();
         Toolbox.Get<EndLevelChecker>().AddDeathCount();
-        ParticleManager.PlayParticle(data.deathParticles,_transform.position);
-        Invoke(nameof(DeactiveEnemy),5.5f);
+        _particleManager.PlayParticle(data.deathParticles, _transform.position);
+        Invoke(nameof(DeactiveEnemy), 5.5f);
     }
 
     private void MoveToPlayer()
     {
         _rigidBody.position = Vector2.MoveTowards(_rigidBody.position,
-            _playerTransform.position, enemySpeed*Time.deltaTime);
+            _playerTransform.position, enemySpeed * Time.deltaTime);
     }
 
     private void SetScale()
-    { 
+    {
         _transform.localScale = _transform.position.x - _playerTransform.position.x > 0
             ? new Vector3(-1, 1, 1)
             : Vector3.one;
@@ -165,20 +173,20 @@ public class GoseEnemy : Actor, ITick
 
     private Vector3 GetScale()
     {
-        var value=Random.Range(0, 2);
-        return value == 0 ? new Vector3(-1,1,1) : Vector3.one;
+        var value = Random.Range(0, 2);
+        return value == 0 ? new Vector3(-1, 1, 1) : Vector3.one;
     }
+
     private void DeactiveEnemy()
     {
         gameObject.SetActive(false);
     }
-    
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(shootPos.position, AttackRadius);
-        Gizmos.DrawWireSphere(transform.position,ignoreDistance);
-        Gizmos.DrawWireSphere(transform.position,attackDistance);
+        Gizmos.DrawWireSphere(transform.position, ignoreDistance);
+        Gizmos.DrawWireSphere(transform.position, attackDistance);
     }
 }
-

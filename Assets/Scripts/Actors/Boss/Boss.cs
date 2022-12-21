@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using DefaultNamespace;
-using UnityEditor;
 using UnityEngine;
 
 namespace Actors.Boss
@@ -24,9 +22,11 @@ namespace Actors.Boss
         [SerializeField] private EnemyAttack[] Attacks;
         private HealthBar _healthBar;
         private bool _isNoDamage;
+        private ParticleManager _particleManager;
 
         protected override void StartGame()
         {
+            _particleManager = Toolbox.Get<ParticleManager>();
             _playerTransform = GameObject.FindWithTag("Player").transform;
             //_loader = Toolbox.Get<Loader>();
             var components = anima.GetBehaviours<BossRun>();
@@ -57,7 +57,7 @@ namespace Actors.Boss
                 _isNoDamage = true;
                 anima.Play(data.death.name);
                 //_rigidBody.AddForce((_transform.position-_playerTransform.position).normalized*,ForceMode2D.Impulse);
-                ParticleManager.PlayParticle(data.deathParticles, transform.position);
+                _particleManager.PlayParticle(data.deathParticles, transform.position);
                 _coinDropper.DropCoins();
                 Invoke(nameof(SetFuryMod), 2f);
                 return;

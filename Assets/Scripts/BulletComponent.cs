@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using DefaultNamespace;
+﻿using DefaultNamespace;
 using Interfaces.SoundsTypes;
 using UnityEngine;
 
@@ -19,11 +16,13 @@ public class BulletComponent : MonoBehaviour, IPoolable, ITick
     protected IDamagable _item;
     protected ParticleSystem _particleSystem;
     private ISoundVisitor Visitor;
+    private ParticleManager _particleManager;
 
     private void Awake()
     {
         _transform = transform;
         ItemsSpawner = Toolbox.Get<ItemsSpawner>();
+        _particleManager = Toolbox.Get<ParticleManager>();
     }
 
     public void SetHitLayer(LayerMask layer, int damage, float force)
@@ -112,7 +111,7 @@ public class BulletComponent : MonoBehaviour, IPoolable, ITick
     {
         ManagerUpdate.RemoveFrom(this);
         if (endShoot)
-            ParticleManager.PlayParticle(endShoot, transform.position, 0.5f, scale: (int)transform.localScale.x);
+            _particleManager.PlayParticle(endShoot, transform.position, 0.5f, scale: (int)transform.localScale.x);
         Invoke(nameof(Despawn), 0.9f);
     }
 

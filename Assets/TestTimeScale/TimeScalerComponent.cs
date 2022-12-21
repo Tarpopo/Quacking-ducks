@@ -5,23 +5,22 @@ using UnityEngine.Events;
 
 public class TimeScalerComponent : MonoBehaviour
 {
-   private UnityAction _onScaleChanged;
-   
-   public event UnityAction OnScaleChanged
-   {
-      add => _onScaleChanged += value;
-      remove => _onScaleChanged -= value;
-   }
+    private UnityAction _onScaleChanged;
 
-   public void UpdateTimeScaler()
-   {
-      print("time scale update");
-      _onScaleChanged?.Invoke();
-   }
+    public event UnityAction OnScaleChanged
+    {
+        add => _onScaleChanged += value;
+        remove => _onScaleChanged -= value;
+    }
 
-   private void Start()
-   {
-      Toolbox.Get<TimeScaler>().AddScalerComponent(this);   
-   }
+    public void UpdateTimeScaler()
+    {
+        print("time scale update");
+        _onScaleChanged?.Invoke();
+    }
 
+    private void Start()
+    {
+        Toolbox.Get<TimeScaler>().AddScalerComponent(this);
+    }
 }

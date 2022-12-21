@@ -6,6 +6,7 @@ public class CoinDropper : MonoBehaviour
 {
     [SerializeField] private Vector3[] _coinPosition;
     private ItemsSpawner _itemsSpawner;
+
     private void Start()
     {
         _itemsSpawner = Toolbox.Get<ItemsSpawner>();

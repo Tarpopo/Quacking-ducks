@@ -7,8 +7,8 @@ public class Timer : MonoBehaviour, ITick
     private float _time;
     private bool _isEveryFrame;
     private Action _action;
-    
-    
+
+
     public void Tick()
     {
         if (_time > 0)
@@ -17,6 +17,7 @@ public class Timer : MonoBehaviour, ITick
             if (_isEveryFrame) _action?.Invoke();
             return;
         }
+
         _action?.Invoke();
         ResetTimer();
     }
@@ -26,7 +27,7 @@ public class Timer : MonoBehaviour, ITick
         return _time > 0;
     }
 
-    public void StartTimer(Action action,float time,bool isEveryFrame = false)
+    public void StartTimer(Action action, float time, bool isEveryFrame = false)
     {
         _time = time;
         _action = action;
@@ -34,11 +35,11 @@ public class Timer : MonoBehaviour, ITick
         ManagerUpdate.AddTo(this);
         //print("Im add timer "+_time);
     }
+
     private void ResetTimer()
     {
         _action = null;
         _time = 0;
         ManagerUpdate.RemoveFrom(this);
     }
-    
 }

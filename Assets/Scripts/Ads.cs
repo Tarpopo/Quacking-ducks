@@ -19,7 +19,7 @@ public class Ads : MonoBehaviour, IUnityAdsListener
 
     private void Start()
     {
-        Advertisement.Initialize(_adsId,false);
+        Advertisement.Initialize(_adsId, false);
         _propeSpawner = FindObjectOfType<PropeSpawner>();
         _player = GameObject.FindWithTag("Player").GetComponent<Actor>();
         _audioSource = gameObject.AddComponent<AudioSource>();
@@ -44,6 +44,7 @@ public class Ads : MonoBehaviour, IUnityAdsListener
             _audioSource.PlaySound(QuackSound);
             return;
         }
+
         _count++;
         Advertisement.Show("rewardedVideo");
     }
@@ -54,12 +55,10 @@ public class Ads : MonoBehaviour, IUnityAdsListener
 
     public void OnUnityAdsDidError(string message)
     {
-        
     }
 
     public void OnUnityAdsDidStart(string placementId)
     {
-        
     }
 
     public void OnUnityAdsDidFinish(string placementId, ShowResult showResult)

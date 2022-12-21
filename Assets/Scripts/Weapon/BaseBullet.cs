@@ -1,29 +1,27 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using DefaultNamespace;
+﻿using DefaultNamespace;
 using Interfaces.SoundsTypes;
 using UnityEngine;
 
-public abstract class BaseBullet : MonoBehaviour,IPoolable,IStart,ITick
+public abstract class BaseBullet : MonoBehaviour, IPoolable, IStart, ITick
 {
     public float speed;
     public float time;
     public ISoundVisitor Visitor;
     public LayerMask hitable;
     [SerializeField] protected int _damage;
-  
+
     public AnimationClip endShoot;
-    
+
     private float _currentTime;
     protected ItemsSpawner ItemsSpawner;
     protected IDamagable _item;
     protected Transform _transform;
     protected ParticleSystem _particleSystem;
+    private ParticleManager _particleManager;
 
     public virtual void SetScale(int scale)
     {
-        _transform.localScale=new Vector3(scale,1,1);
+        _transform.localScale = new Vector3(scale, 1, 1);
     }
 
     public virtual void OnStart()
@@ -31,11 +29,12 @@ public abstract class BaseBullet : MonoBehaviour,IPoolable,IStart,ITick
         //ManagerUpdate.AddTo(this);
         ItemsSpawner = Toolbox.Get<ItemsSpawner>();
         _transform = GetComponent<Transform>();
+        _particleManager = Toolbox.Get<ParticleManager>();
     }
 
     public virtual void Tick()
     {
-        if(_currentTime > 0)
+        if (_currentTime > 0)
         {
             _currentTime -= Time.deltaTime;
         }
@@ -49,21 +48,21 @@ public abstract class BaseBullet : MonoBehaviour,IPoolable,IStart,ITick
     {
         ManagerUpdate.AddTo(this);
         _currentTime = time;
-        if(_particleSystem)_particleSystem.Play();
+        if (_particleSystem) _particleSystem.Play();
         print("Hey its bullet");
     }
 
     public virtual void OnDespawn()
     {
         ManagerUpdate.RemoveFrom(this);
-        if(endShoot)ParticleManager.PlayParticle(endShoot,_transform.position,0.5f,scale:(int)_transform.localScale.x);
+        if (endShoot)
+            _particleManager.PlayParticle(endShoot, _transform.position, 0.5f, scale: (int)_transform.localScale.x);
         _currentTime = time;
-        Invoke(nameof(Despawn),0.9f);
+        Invoke(nameof(Despawn), 0.9f);
     }
 
     private void Despawn()
     {
-        if(_particleSystem) ItemsSpawner.DespawnObject(_particleSystem.gameObject);
+        if (_particleSystem) ItemsSpawner.DespawnObject(_particleSystem.gameObject);
     }
-    
 }

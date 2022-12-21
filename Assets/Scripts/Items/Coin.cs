@@ -10,6 +10,7 @@ public class Coin : SceneItem
     public AnimationClip NoneSprite;
 
     private Animator _animator;
+
     // private readonly List<Vector2> _vectors=new List<Vector2>(5)
     // {
     //     Vector2.up,
@@ -34,10 +35,12 @@ public class Coin : SceneItem
         Health = data.health;
         _spriteRenderer.sprite = data.fullSprite;
     }
+
     public override void ApplyDamage(int damage, Vector2 pos, float force)
     {
         Destroing();
     }
+
     public override void TakeItem(Transform parent, Vector3 pos)
     {
         //_rigidBody.gravityScale=0;
@@ -50,5 +53,8 @@ public class Coin : SceneItem
         Destroing();
         //Invoke(nameof(Destroing),0.5f);
     }
-    public override void QuitItem(Vector3 dir){}
+
+    public override void QuitItem(Vector3 dir)
+    {
+    }
 }

@@ -28,11 +28,13 @@ public class Enemy : Actor, ITick
     //private Loader _loader;
     private Weapon _weapon;
     private Transform _playerTransform;
+    private ParticleManager _particleManager;
 
     //private Transform _playerTransform;
     //private Animator _particles;
     protected override void StartGame()
     {
+        _particleManager = Toolbox.Get<ParticleManager>();
         _shootTime = 1.8f;
         //_rigidBody = GetComponent<Rigidbody2D>();
         _colDownTime = 2.2f;
@@ -170,7 +172,7 @@ public class Enemy : Actor, ITick
         // _particles.transform.position = transform.position;
         // _particles.Play("DuckFeathers");
         Toolbox.Get<EndLevelChecker>().AddDeathCount();
-        ParticleManager.PlayParticle(data.deathParticles, transform.position);
+        _particleManager.PlayParticle(data.deathParticles, transform.position);
         base.Death();
         if (moveFunc != null)
         {

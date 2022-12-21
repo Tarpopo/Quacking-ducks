@@ -4,11 +4,10 @@ using UnityEngine;
 
 public class GunBullet : BaseBullet
 {
-    
     public override void Tick()
     {
         base.Tick();
-        var hit = Physics2D.Raycast(_transform.position, Vector3.right * _transform.localScale.x, 0.05f,hitable);
+        var hit = Physics2D.Raycast(_transform.position, Vector3.right * _transform.localScale.x, 0.05f, hitable);
         if (hit)
         {
             // if (ItemsSpawner.damagableObjects.TryGetValue(hit.collider.gameObject, out _item))
@@ -20,7 +19,7 @@ public class GunBullet : BaseBullet
             //ParticleManager.PlayParticle(endShoot,_transform.position);
             ItemsSpawner.DespawnObject(gameObject);
         }
+
         _transform.Translate(Vector3.right * (_transform.localScale.x * (speed * Time.deltaTime)));
     }
-    
 }

@@ -10,8 +10,9 @@ public class ItemsSpawner : ManagerBase, IAwake, ISceneChanged
     public Ducks currentDuck;
     public List<DataActor> Ducks;
     public List<WeaponData> weaponDataList = new List<WeaponData>();
+
     public Dictionary<GameObject, SceneItem> Items = new Dictionary<GameObject, SceneItem>();
-     // public Dictionary<GameObject, IDamagable> damagableObjects = new Dictionary<GameObject, IDamagable>();
+    // public Dictionary<GameObject, IDamagable> damagableObjects = new Dictionary<GameObject, IDamagable>();
 
     //public Vector3[] TransformsChest;
     private ManagerPool _managerPool;

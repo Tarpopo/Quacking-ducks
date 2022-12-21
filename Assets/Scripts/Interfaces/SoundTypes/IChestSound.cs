@@ -1,4 +1,6 @@
 ﻿namespace Interfaces.SoundsTypes
 {
-    public interface IChestSound { }
+    public interface IChestSound
+    {
+    }
 }

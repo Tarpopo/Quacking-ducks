@@ -1,4 +1,6 @@
 ﻿namespace Interfaces.SoundsTypes
 {
-    public interface IBodySound{ }
+    public interface IBodySound
+    {
+    }
 }

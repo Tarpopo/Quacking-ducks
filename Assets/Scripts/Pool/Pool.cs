@@ -4,55 +4,59 @@ using UnityEngine;
 
 namespace DefaultNamespace
 {
-    public class Pool:MonoBehaviour
+    public class Pool : MonoBehaviour
     {
         private Transform parentPool;
-        private Dictionary<int,Stack<GameObject>>cachedObjects=new Dictionary<int, Stack<GameObject>>();
-        private Dictionary<int,int>cachedIds=new Dictionary<int, int>();
+        private Dictionary<int, Stack<GameObject>> cachedObjects = new Dictionary<int, Stack<GameObject>>();
+        private Dictionary<int, int> cachedIds = new Dictionary<int, int>();
 
-        public Pool PopulateWith(GameObject prefab,int amount)
+        public Pool PopulateWith(GameObject prefab, int amount)
         {
             var key = prefab.GetInstanceID();
             print(key);
-            var stack=new Stack<GameObject>(amount);
-            cachedObjects.Add(key,stack);
-            
+            var stack = new Stack<GameObject>(amount);
+            cachedObjects.Add(key, stack);
+
             for (int i = 0; i < amount; i++)
             {
                 var go = Populate(prefab, Vector3.zero, quaternion.identity, parentPool);
                 go.SetActive(false);
                 go.GetComponent<IStart>()?.OnStart();
-                cachedIds.Add(go.GetInstanceID(),key);
+                cachedIds.Add(go.GetInstanceID(), key);
                 cachedObjects[key].Push(go);
             }
+
             return this;
         }
-        public Pool PopulateWith<T>(GameObject prefab,int amount,Dictionary<GameObject,T>dictionary)
+
+        public Pool PopulateWith<T>(GameObject prefab, int amount, Dictionary<GameObject, T> dictionary)
         {
             var key = prefab.GetInstanceID();
             print(key);
-            var stack=new Stack<GameObject>(amount);
-            cachedObjects.Add(key,stack);
+            var stack = new Stack<GameObject>(amount);
+            cachedObjects.Add(key, stack);
             for (int i = 0; i < amount; i++)
             {
-                var go = Populate(prefab,Vector3.zero, quaternion.identity, parentPool);
+                var go = Populate(prefab, Vector3.zero, quaternion.identity, parentPool);
                 go.SetActive(false);
                 go.GetComponent<IStart>()?.OnStart();
-                dictionary.Add(go,go.GetComponent<T>());
-                cachedIds.Add(go.GetInstanceID(),key);
+                dictionary.Add(go, go.GetComponent<T>());
+                cachedIds.Add(go.GetInstanceID(), key);
                 cachedObjects[key].Push(go);
             }
+
             return this;
         }
-        
+
         public void SetParent(Transform parent)
         {
             parentPool = parent;
         }
-        
-        public GameObject Spawn(GameObject prefab,Vector3 position=default(Vector3),Quaternion rotation=default(Quaternion),Transform parent=null,bool setActive=true)
+
+        public GameObject Spawn(GameObject prefab, Vector3 position = default(Vector3),
+            Quaternion rotation = default(Quaternion), Transform parent = null, bool setActive = true)
         {
-            var key=prefab.GetInstanceID();
+            var key = prefab.GetInstanceID();
             Stack<GameObject> stack;
             var stackted = cachedObjects.TryGetValue(key, out stack);
             if (stackted && stack.Count > 0)
@@ -70,31 +74,34 @@ namespace DefaultNamespace
                     transform.localPosition = position;
                     transform.SetParent(parentPool);
                 }
+
                 var poolable = transform.GetComponent<IPoolable>();
-                if(poolable!=null)poolable.OnSpawn();
+                if (poolable != null) poolable.OnSpawn();
                 return transform.gameObject;
             }
-            if(!stackted)cachedObjects.Add(key,new Stack<GameObject>());
+
+            if (!stackted) cachedObjects.Add(key, new Stack<GameObject>());
 
             var createdPrefab = Populate(prefab, position, rotation, parent);
-            cachedIds.Add(createdPrefab.GetInstanceID(),key);
-            return createdPrefab; 
+            cachedIds.Add(createdPrefab.GetInstanceID(), key);
+            return createdPrefab;
         }
-        
-        
+
+
         public void Despawn(GameObject go)
         {
             go.SetActive(false);
             cachedObjects[cachedIds[go.GetInstanceID()]].Push(go);
             var poolable = go.GetComponent<IPoolable>();
-            if(poolable!=null)poolable.OnDespawn();
-            if(parentPool!=null)go.transform.SetParent(parentPool);
+            if (poolable != null) poolable.OnDespawn();
+            if (parentPool != null) go.transform.SetParent(parentPool);
         }
+
         public void Dispose()
         {
             parentPool = null;
             cachedObjects.Clear();
-            cachedIds.Clear();   
+            cachedIds.Clear();
         }
 
         public GameObject Populate(GameObject prefab, Vector3 position = default(Vector3),
@@ -107,6 +114,7 @@ namespace DefaultNamespace
                 go.transform.SetParent(parentPool);
             }
             else go.localPosition = position;
+
             return go.gameObject;
         }
 

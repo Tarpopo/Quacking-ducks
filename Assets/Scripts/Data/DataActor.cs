@@ -1,9 +1,12 @@
-﻿using DefaultNamespace;
+﻿using System;
+using DefaultNamespace;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "DataActor", menuName = "Data/DataActor")]
-public class DataActor : ScriptableObject
+public class DataActor : ScriptableObject, IEnum
 {
+    public Enum EnumValue => _ducks;
+    [SerializeField] private Ducks _ducks;
     [Header("Attack Zone")] public Vector3 attackSize;
 
     public LayerMask whoisEnemy;

@@ -80,7 +80,7 @@ public class Barrel : SceneItem, IBarrelSound
         _collider.enabled = false;
         var hit = Physics2D.Raycast(transform.position, Vector2.down, 0.5f, layer);
         var position = hit ? (Vector3)hit.point : _transform.position;
-        ParticleManager.PlayParticle(data.destroyAnim, position);
+        _particleManager.PlayParticle(data.destroyAnim, position);
         _spriteRenderer.sprite = null;
         var colMass = Physics2D.OverlapCircleAll(_transform.position, damageRadius, distr);
         for (int i = 0; i < colMass.Length; i++)

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Linq;
 using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,7 +15,10 @@ public class ScrollingTexture : MonoBehaviour
     private Material _material;
 
     [Button]
-    private void Sort() => _scrollingTextures = _scrollingTextures.SortByEnum();
+    private void Sort()
+    {
+        _scrollingTextures = _scrollingTextures.SortByEnum().ToArray();
+    }
 
     private void Awake()
     {

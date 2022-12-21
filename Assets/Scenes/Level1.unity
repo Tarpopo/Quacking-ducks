@@ -1925,7 +1925,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 1.6400146, y: 0}
   m_SizeDelta: {x: 0.73, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -4787,8 +4787,8 @@ RectTransform:
   m_Father: {fileID: 39244089}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -8288,7 +8288,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.030541647, y: 0.040592577}
   m_AnchorMax: {x: 0.282, y: 0.2183333}
-  m_AnchoredPosition: {x: -11.714355, y: -40.93097}
+  m_AnchoredPosition: {x: -11.71434, y: -40.93097}
   m_SizeDelta: {x: -383, y: -92}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &528546279
@@ -17894,7 +17894,7 @@ MonoBehaviour:
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
     GateFit: 2
-    m_SensorSize: {x: 1.7790974, y: 1}
+    m_SensorSize: {x: 1.7783133, y: 1}
   m_Transitions:
     m_BlendHint: 0
     m_InheritPosition: 0
@@ -22995,7 +22995,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1616818873
 Transform:
   m_ObjectHideFlags: 0

@@ -9,6 +9,7 @@ public class TransitionComponent : MonoBehaviour
 
     [SerializeField] private UnityEvent _event;
     [SerializeField] private AnimationClip _transition;
+
     void Start()
     {
         _animator = GetComponent<Animator>();

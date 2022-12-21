@@ -2,7 +2,7 @@
 {
     public enum PoolType
     {
-        Entities=0,
+        Entities = 0,
         Chunks,
         Fx,
     }

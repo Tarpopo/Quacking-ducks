@@ -7,7 +7,7 @@ using UnityEngine.Events;
 using UnityEngine.EventSystems;
 
 
-public class MenuCustomButton : MonoBehaviour,IPointerDownHandler,IPointerUpHandler
+public class MenuCustomButton : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
 {
     public UnityEvent ButtonDown;
     public UnityEvent ButtonUp;
@@ -18,10 +18,10 @@ public class MenuCustomButton : MonoBehaviour,IPointerDownHandler,IPointerUpHand
 
     protected AudioSource _audioSource;
     protected SpriteRenderer _spriteRenderer;
-    
+
     public void Start()
     {
-        _audioSource=GetComponent<AudioSource>();
+        _audioSource = GetComponent<AudioSource>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
@@ -39,5 +39,4 @@ public class MenuCustomButton : MonoBehaviour,IPointerDownHandler,IPointerUpHand
         _spriteRenderer.sprite = _fullButton;
         ButtonUp?.Invoke();
     }
-   
 }

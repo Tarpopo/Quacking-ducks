@@ -14,5 +14,4 @@ public class ButtonTriggerChecker : MonoBehaviour
             _buttons[i].SetActiveFull();
         }
     }
-
 }

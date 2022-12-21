@@ -8,6 +8,5 @@ public class Spikes : MonoBehaviour
 
     private void Start()
     {
-        
     }
 }

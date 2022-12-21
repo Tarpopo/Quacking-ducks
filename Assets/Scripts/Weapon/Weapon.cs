@@ -1,9 +1,8 @@
 ﻿using DefaultNamespace;
 using TMPro;
-using Unity.Mathematics;
 using UnityEngine;
 
-public class Weapon: MonoBehaviour,ITick
+public class Weapon : MonoBehaviour, ITick
 {
     [SerializeField] private WeaponData _baseWeaponData;
     [SerializeField] private Transform _shootPos;
@@ -11,7 +10,7 @@ public class Weapon: MonoBehaviour,ITick
     [SerializeField] private Animator _weaponAnim;
 
     [SerializeField] private float _recoil;
-    
+
     private WeaponItem _baseWeapon;
     private SoundVisitorComponent _soundVisitor;
     private Transform _transform;
@@ -19,15 +18,15 @@ public class Weapon: MonoBehaviour,ITick
     private WeaponItem _weapon;
     private Rigidbody2D _rigidbody;
     private float _reloadTime;
-    
-    
+
+
     private void Start()
     {
         ManagerUpdate.AddTo(this);
         _transform = transform;
         _soundVisitor = GetComponent<SoundVisitorComponent>();
         _audioSource = GetComponent<AudioSource>();
-        _baseWeapon=GetComponentInChildren<WeaponItem>();
+        _baseWeapon = GetComponentInChildren<WeaponItem>();
         _rigidbody = GetComponent<Rigidbody2D>();
         print("its start");
         //if (_shootPos == null) _shootPos = _transform;
@@ -49,13 +48,13 @@ public class Weapon: MonoBehaviour,ITick
         _reloadTime = _weapon.WeaponData.reloadTime;
         _soundVisitor.SetWeaponData(_weapon.WeaponData);
         _weaponAnim.Play(_weapon.WeaponData.idleAnim.name);
-        _weapon.WeaponData.shoot.SetParameters(_weaponAnim,_weapon,_audioSource,_rigidbody);
-        if(changeSortCount)_baseWeapon.ChangeSortingSprite(5);
+        _weapon.WeaponData.shoot.SetParameters(_weaponAnim, _weapon, _audioSource, _rigidbody);
+        if (changeSortCount) _baseWeapon.ChangeSortingSprite(5);
     }
 
     private void SetTextBullet(int count)
     {
-        if(_bulletText!=null) _bulletText.text = count.ToString();
+        if (_bulletText != null) _bulletText.text = count.ToString();
     }
 
     public void Shoot(ItemsSpawner itemsSpawner)
@@ -63,11 +62,11 @@ public class Weapon: MonoBehaviour,ITick
         //print(_reloadTime);
         if (_reloadTime > 0) return;
         //TakeRecoil();
-        _weapon.WeaponData.shoot.Shoot(_soundVisitor,itemsSpawner);
+        _weapon.WeaponData.shoot.Shoot(_soundVisitor, itemsSpawner);
         _reloadTime = _weapon.WeaponData.reloadTime;
         SetTextBullet(_weapon.CurrentBullet);
     }
-    
+
     // public void MeleeShoot(Loader loader)
     // {
     //     _weaponAnim.Play(_weapon.WeaponData.shootAnim.name);
@@ -92,7 +91,7 @@ public class Weapon: MonoBehaviour,ITick
 
     public bool IsBulletShoot()
     {
-        return _reloadTime<=0 && _weapon.CurrentBullet != 0;
+        return _reloadTime <= 0 && _weapon.CurrentBullet != 0;
     }
 
     public bool TryQuitWeapon()
@@ -135,14 +134,13 @@ public class Weapon: MonoBehaviour,ITick
         _weapon.transform.position = _transform.position;
         _weapon.transform.localScale = _transform.localScale;
         //_shootPos.localPosition = _weapon.WeaponData.shootPos;
-        _weapon.WeaponData.shoot.SetParameters(_weaponAnim,_weapon,_audioSource,_rigidbody);
+        _weapon.WeaponData.shoot.SetParameters(_weaponAnim, _weapon, _audioSource, _rigidbody);
         SetTextBullet(_weapon.CurrentBullet);
         _baseWeapon.ChangeSortingSprite(7);
     }
+
     public void SetAudioSource(AudioSource audioSource)
     {
         _audioSource = audioSource;
     }
-    
-    
 }

@@ -13,7 +13,8 @@ public class CanvasComponent : MonoBehaviour
     [SerializeField] private Animator _animator;
     private GameObject _currentWindow;
     private int _nextWindowCount;
-        private void Start()
+
+    private void Start()
     {
         //_animator = GetComponentInChildren<Animator>();
         _currentWindow = gameObject;
@@ -22,20 +23,20 @@ public class CanvasComponent : MonoBehaviour
     public void OpenPreviousWindow()
     {
         _animator.Play(_transitionClip.name);
-        Invoke(nameof(DoPreviousWindow),0.25f);
+        Invoke(nameof(DoPreviousWindow), 0.25f);
     }
 
     public void OpenNextWindow(int index)
     {
         _animator.Play(_transitionClip.name);
         _nextWindowCount = index;
-        Invoke(nameof(DoNextWindow),0.25f);
+        Invoke(nameof(DoNextWindow), 0.25f);
     }
-    
+
     public void DoNextWindow()
     {
         _nextWindow[_nextWindowCount].nextWindow.SetActive(true);
-        Invoke(nameof(InvokeNextAction),0.3f);
+        Invoke(nameof(InvokeNextAction), 0.3f);
         _currentWindow.SetActive(false);
     }
 
@@ -51,11 +52,12 @@ public class CanvasComponent : MonoBehaviour
 
     private void DoPreviousWindow()
     {
-        Invoke(nameof(InvokePreviousAction),0.3f);
+        Invoke(nameof(InvokePreviousAction), 0.3f);
         _previousWindow.SetActive(true);
         _currentWindow.SetActive(false);
     }
 }
+
 [Serializable]
 public class NextWindow
 {

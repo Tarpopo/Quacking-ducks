@@ -5,7 +5,7 @@ using UnityEngine;
 public class AnimatorOverrider : MonoBehaviour
 {
     private Animator _animator;
-    [SerializeField]private AnimatorOverrideController _controller;
+    [SerializeField] private AnimatorOverrideController _controller;
 
     private void Update()
     {
@@ -17,7 +17,7 @@ public class AnimatorOverrider : MonoBehaviour
 
     private void Start()
     {
-        _animator=GetComponent<Animator>();
+        _animator = GetComponent<Animator>();
     }
 
     private void SetController()

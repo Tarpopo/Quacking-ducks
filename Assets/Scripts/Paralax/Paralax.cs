@@ -11,6 +11,7 @@ public class Paralax : MonoBehaviour, ITickLate
     private Transform _cameraTransform;
     private ParalaxLayer[] _layers;
     private bool _isMoving;
+
     private void Start()
     {
         ManagerUpdate.AddTo(this);
@@ -29,6 +30,7 @@ public class Paralax : MonoBehaviour, ITickLate
     {
         _isMoving = moving;
     }
+
     public void TickLate()
     {
         if (_isMoving == false) return;

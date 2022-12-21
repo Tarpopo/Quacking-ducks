@@ -5,11 +5,11 @@ using DefaultNamespace;
 using Interfaces.SoundsTypes;
 using UnityEngine;
 
-public class SoundVisitorComponent : MonoBehaviour,ISoundVisitor
+public class SoundVisitorComponent : MonoBehaviour, ISoundVisitor
 {
     [SerializeField] private WeaponData _weaponData;
     private AudioSource _audioSource;
-    
+
     private void Start()
     {
         _audioSource = GetComponent<AudioSource>();
@@ -19,6 +19,7 @@ public class SoundVisitorComponent : MonoBehaviour,ISoundVisitor
     {
         _weaponData = data;
     }
+
     public void Visit(IChestSound sound)
     {
         _audioSource.PlayOneShot(_weaponData.chest);
@@ -28,10 +29,9 @@ public class SoundVisitorComponent : MonoBehaviour,ISoundVisitor
     {
         _audioSource.PlayOneShot(_weaponData.barrel);
     }
-    
+
     public void Visit(IBodySound sound)
     {
         _audioSource.PlayOneShot(_weaponData.bodySound);
     }
-
 }

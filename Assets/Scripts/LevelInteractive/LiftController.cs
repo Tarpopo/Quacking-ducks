@@ -6,9 +6,10 @@ using UnityEngine;
 public class LiftController : MonoBehaviour
 {
     private Lift[] _lifts;
+
     private void Start()
     {
-        _lifts=FindObjectsOfType<Lift>();
+        _lifts = FindObjectsOfType<Lift>();
     }
 
     public void ResetLifts()

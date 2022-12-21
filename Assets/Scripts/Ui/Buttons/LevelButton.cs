@@ -17,10 +17,9 @@ public class LevelButton : MenuCustomButton
     public AnimationClip UpButtonClip;
     public AnimationClip DownButtonClip;
     public AnimationClip FirstButtonState;
-    public bool IsFirstOpen=true;
+    public bool IsFirstOpen = true;
     public bool _isActive;
 
-   
 
     public override void OnPointerDown(PointerEventData eventData)
     {
@@ -29,13 +28,13 @@ public class LevelButton : MenuCustomButton
         _animatorGate.Play(DownButtonClip.name);
         ButtonDown?.Invoke();
     }
-    
+
     public override void OnPointerUp(PointerEventData eventData)
     {
         if (_isActive == false) return;
         _audioSource.Stop();
         //_spriteRenderer.sprite = _fullButton;
-        
+
         ButtonUp?.Invoke();
     }
 
@@ -61,7 +60,7 @@ public class LevelButton : MenuCustomButton
         Gate.SetActive(false);
         _animatorGate.Play(UpButtonClip.name);
     }
-    
+
 
     public void ActivePassedMark()
     {

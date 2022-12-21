@@ -79,6 +79,8 @@ public class PlayerLog : Actor, ITick
 
     private bool _isGround;
 
+    private ParticleManager _particleManager;
+
     //private Vector3 _startPosition;
     // private AudioManager _audio;
     protected override void StartGame()
@@ -90,6 +92,7 @@ public class PlayerLog : Actor, ITick
         //_rigid = GetComponent<Rigidbody2D>();
         //_loader = Toolbox.Get<Loader>();
         //_cameraBehaviour = GetComponent<CameraBehaviour>();
+        _particleManager = Toolbox.Get<ParticleManager>();
         _cameraBehaviour = GetComponent<CameraBehaviour>();
         _startPosition = _transform.position;
         _weapon = GetComponent<Weapon>();
@@ -337,7 +340,7 @@ public class PlayerLog : Actor, ITick
         // _particles.transform.position = _transform.position;
         // _particles.Play("DuckFeathers");
         _lastDeathPosition = _transform.position;
-        ParticleManager.PlayParticle(data.deathParticles, _transform.position);
+        _particleManager.PlayParticle(data.deathParticles, _transform.position);
         if (_isTakeItem)
         {
             QuitItem(itemTransform * _transform.localScale.x);
