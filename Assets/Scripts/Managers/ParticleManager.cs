@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using DefaultNamespace;
+using Managers;
 using UnityEngine;
 
 public class ParticleManager : ManagerBase, ITick, IStart
@@ -86,11 +87,6 @@ public class ParticleManager : ManagerBase, ITick, IStart
             _occupiedParticles[i].func = null;
             _freeParticles.Add(_occupiedParticles[i]);
             _occupiedParticles.RemoveAt(i);
-        }
-
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            Debug.Log("Hi");
         }
     }
 }

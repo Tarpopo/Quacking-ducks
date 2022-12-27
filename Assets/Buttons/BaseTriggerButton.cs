@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.EventSystems;
 
 [Serializable]
 public class BaseTriggerButton : BaseButton
@@ -20,14 +21,14 @@ public class BaseTriggerButton : BaseButton
 
     public override void OnDisable() => _isActive.Save();
 
-    protected override void OnButtonDown()
+    protected override void OnButtonDown(PointerEventData eventData)
     {
         base.OnButtonDown();
         _isActive.Value = !_isActive.Value;
         _onValueChange?.Invoke(_isActive.Value);
     }
 
-    protected override void OnButtonUp()
+    protected override void OnButtonUp(PointerEventData eventData)
     {
         base.OnButtonUp();
         SetButtonState(_isActive.Value);

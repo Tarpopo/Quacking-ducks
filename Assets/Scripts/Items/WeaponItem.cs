@@ -17,7 +17,7 @@ public class WeaponItem : SceneItem
         _rigidBody = GetComponent<Rigidbody2D>();
         _transform = transform;
         _baseLayer = gameObject.layer;
-        WeaponData = Instantiate(WeaponData ? WeaponData : ItemsSpawner.weaponDataList.Random());
+        WeaponData = Instantiate(WeaponData ? WeaponData : Toolbox.Get<DataContainer>().WeaponData.GetRandom());
         if (WeaponData.shoot) WeaponData.shoot = Instantiate(WeaponData.shoot);
         data = WeaponData;
         CurrentBullet = WeaponData.bulletCount;
@@ -25,7 +25,6 @@ public class WeaponItem : SceneItem
         _collider.size = WeaponData.sizeColider;
         _collider.offset = WeaponData.offsetColider;
         ShootTransform.localPosition = WeaponData.shootPos;
-        print(ShootTransform.gameObject);
         WeaponData.shoot.SetShootTransform(ShootTransform);
         _baseSortingLayer = _spriteRenderer.sortingOrder;
         Animator = GetComponentInChildren<Animator>();

@@ -8,6 +8,7 @@ using UnityEngine.UI;
 [Serializable]
 public abstract class BaseButton
 {
+    public bool IsPressed { get; private set; }
     [SerializeField] private UnityEvent _buttonDown;
     [SerializeField] private UnityEvent _buttonUp;
     [SerializeField] private Sprite _whenPressed;
@@ -15,6 +16,7 @@ public abstract class BaseButton
     [SerializeField] protected SimpleSound _buttonClick;
     protected AudioPlayer _audioPlayer;
     protected Image _image;
+    private int _pointerId;
 
     public event UnityAction ButtonDown
     {
@@ -41,15 +43,14 @@ public abstract class BaseButton
     {
     }
 
-    protected virtual void OnButtonDown()
+    protected virtual void OnButtonDown(PointerEventData eventData = null)
     {
         if (_image == null) return;
         _audioPlayer.PlaySound(_buttonClick);
         _image.sprite = _whenPressed;
-        // _audioSource.PlaySound(_buttonClick);
     }
 
-    protected virtual void OnButtonUp()
+    protected virtual void OnButtonUp(PointerEventData eventData = null)
     {
         if (_image == null) return;
         _image.sprite = _fullButton;
@@ -57,13 +58,21 @@ public abstract class BaseButton
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        OnButtonDown();
+        _pointerId = eventData.pointerId;
+        IsPressed = true;
+        OnButtonDown(eventData);
         _buttonDown?.Invoke();
     }
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        OnButtonUp();
+        if (_pointerId != eventData.pointerId) return;
+        IsPressed = false;
+        OnButtonUp(eventData);
         _buttonUp?.Invoke();
+    }
+
+    public virtual void OnPointerMove(PointerEventData eventData)
+    {
     }
 }

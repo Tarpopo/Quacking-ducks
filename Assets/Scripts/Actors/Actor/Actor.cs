@@ -159,7 +159,6 @@ public abstract class Actor : MonoBehaviour, IDamagable, IBodySound
     {
         var randomCount = Random.Range(0, data.stepSounds.Length);
         AudioSource.PlayOneShot(data.stepSounds[randomCount]);
-        print("Its walk");
     }
 
     private void OnTriggerEnter2D(Collider2D other)

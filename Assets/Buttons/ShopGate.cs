@@ -1,6 +1,7 @@
 using System;
 using DefaultNamespace;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 [Serializable]
 public class ShopGate : LockButton
@@ -32,11 +33,11 @@ public class ShopGate : LockButton
         _animator.PlayStateAnimation(LockAnimation.Open);
     }
 
-    protected override void OnButtonUp()
+    protected override void OnButtonUp(PointerEventData eventData)
     {
     }
 
-    protected override void OnButtonDown()
+    protected override void OnButtonDown(PointerEventData eventData)
     {
         if (_isUnlock.Value || Toolbox.Get<Shop>().TryReduceCoins(_price) == false)
         {
@@ -45,6 +46,6 @@ public class ShopGate : LockButton
         }
 
         _isUnlock.Value = true;
-        base.OnButtonDown();
+        base.OnButtonDown(eventData);
     }
 }

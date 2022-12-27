@@ -1,6 +1,7 @@
 using System;
 using DefaultNamespace;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 [Serializable]
 public abstract class LockButton : BaseButton
@@ -14,7 +15,7 @@ public abstract class LockButton : BaseButton
         TryActive();
     }
 
-    protected override void OnButtonDown()
+    protected override void OnButtonDown(PointerEventData eventData)
     {
         if (IsActive() == false)
         {

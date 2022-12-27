@@ -12,7 +12,8 @@ public class SimpleShoot : ShootLogic
         {
             var particleManager = Toolbox.Get<ParticleManager>();
             TakeRecoil();
-            _audioSource.PlaySound(_weaponItem.WeaponData.shootSound);
+            // _audioSource.PlaySound(_weaponItem.WeaponData.shootSound);
+            Toolbox.Get<AudioPlayer>().PlaySound(_weaponItem.WeaponData.shootSound);
             particleManager.PlayParticle(_weaponItem.WeaponData.Sleeve, _shootTransform.position,
                 scale: (int)_shootTransform.parent.localScale.x);
             particleManager.PlayParticle(_weaponItem.WeaponData.ShootParticle, _shootTransform.position,

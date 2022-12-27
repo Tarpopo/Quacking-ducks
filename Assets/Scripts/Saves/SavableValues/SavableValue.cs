@@ -1,6 +1,6 @@
 using System;
 
-public abstract class SavableValue<T> where T : IComparable<T>
+public abstract class SavableValue<T>
 {
     public event Action<T> OnChangeValue;
     private T _value;

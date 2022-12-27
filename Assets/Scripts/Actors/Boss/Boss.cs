@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using DefaultNamespace;
+using Managers;
 using UnityEngine;
+using Input = UnityEngine.Input;
 
 namespace Actors.Boss
 {

@@ -15,7 +15,6 @@ public static class AudioMixerExtansions
             var o = array.GetValue(i);
             var parameter = (string)o.GetType().GetField("name").GetValue(o);
             exposedParams[i] = parameter;
-            Debug.Log(parameter);
         }
 
         return exposedParams;

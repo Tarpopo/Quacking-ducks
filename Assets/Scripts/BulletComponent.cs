@@ -66,8 +66,8 @@ public class BulletComponent : MonoBehaviour, IPoolable, ITick
         if (hit == false) return;
         if (hit.collider.TryGetComponent<IDamagable>(out var damageable))
         {
-            _item.ApplyDamage(_damage, transform.position, _force);
-            _item.PlayDamageSound(Visitor);
+            damageable.ApplyDamage(_damage, transform.position, _force);
+            damageable.PlayDamageSound(Visitor);
         }
 
         // if (ItemsSpawner.damagableObjects.TryGetValue(hit.collider.gameObject, out _item))
@@ -111,7 +111,8 @@ public class BulletComponent : MonoBehaviour, IPoolable, ITick
     {
         ManagerUpdate.RemoveFrom(this);
         if (endShoot)
-            _particleManager.PlayParticle(endShoot, transform.position, 0.5f, scale: (int)transform.localScale.x);
+            Toolbox.Get<ParticleManager>()
+                .PlayParticle(endShoot, transform.position, 0.5f, scale: (int)transform.localScale.x);
         Invoke(nameof(Despawn), 0.9f);
     }
 

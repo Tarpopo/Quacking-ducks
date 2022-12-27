@@ -28,7 +28,6 @@ public class Weapon : MonoBehaviour, ITick
         _audioSource = GetComponent<AudioSource>();
         _baseWeapon = GetComponentInChildren<WeaponItem>();
         _rigidbody = GetComponent<Rigidbody2D>();
-        print("its start");
         //if (_shootPos == null) _shootPos = _transform;
     }
 
@@ -38,7 +37,6 @@ public class Weapon : MonoBehaviour, ITick
         //_weapon = Instantiate(_baseWeapon,_transform.position,quaternion.identity,_transform);
         //Destroy(_weapon.GetComponent<Rigidbody2D>()); 
         _weapon = _baseWeapon;
-        print(_weapon.WeaponData);
         //_baseWeapon = _weapon;
         //_weapon.WeaponData = _baseWeaponData;
         _weapon.OnStart();

@@ -101,8 +101,8 @@ public class PanelChangeAnimation : BasePanelChange
 
     public override void Enable(Canvas panel, Action onEnable)
     {
-        _sequencer.SetStartValues();
         panel.gameObject.SetActive(true);
+        _sequencer.SetStartValues();
         _sequencer.PlayForward(onEnable);
     }
 

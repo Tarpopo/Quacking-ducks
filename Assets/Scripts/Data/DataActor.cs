@@ -34,9 +34,6 @@ public class DataActor : ScriptableObject, IEnum
     [Header("Sounds")] public SimpleSound[] stepSounds;
     public SimpleSound quackSound;
 
-    // public SimpleSound stepSound;
-
-
     private void OnDisable()
     {
         curr_health = _health;

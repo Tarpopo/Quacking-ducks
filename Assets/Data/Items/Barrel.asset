@@ -18,9 +18,5 @@ MonoBehaviour:
   halfSprite: {fileID: 2940172261774310400, guid: 108f5a5931704804b8a99a68e9cd4adb, type: 3}
   destroyAnim: {fileID: 7400000, guid: 19b86314e6a3a564abe0c74fae7f7098, type: 2}
   health: 2
-  full:
-    audioClip: {fileID: 8300000, guid: 176e0e8e31aa6a944bb664521eba402e, type: 3}
-    volumeSound: 0.46
-  destroy:
-    audioClip: {fileID: 8300000, guid: 3538dd18b14c49542b23dcdacfce2bf1, type: 3}
-    volumeSound: 0.77
+  full: {fileID: 11400000, guid: 13a342923fb18e147a383803e8b79f02, type: 2}
+  destroy: {fileID: 11400000, guid: 42fcddc4329d309469bbc9ff5a7edbd3, type: 2}

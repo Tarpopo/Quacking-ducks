@@ -5,19 +5,20 @@ using UnityEngine;
 
 public class ItemsSpawner : ManagerBase, IAwake, ISceneChanged
 {
-    private Animator particleAnim;
-    public List<SpawnedObjects> objects;
-    public Ducks currentDuck;
-    public List<DataActor> Ducks;
-    public List<WeaponData> weaponDataList = new List<WeaponData>();
+    [SerializeField] private SpawnedObjects[] _objects;
+
+    // public Ducks currentDuck;
+    // public List<DataActor> Ducks;
+    // public List<WeaponData> weaponDataList = new List<WeaponData>();
 
     public Dictionary<GameObject, SceneItem> Items = new Dictionary<GameObject, SceneItem>();
     // public Dictionary<GameObject, IDamagable> damagableObjects = new Dictionary<GameObject, IDamagable>();
 
     //public Vector3[] TransformsChest;
-    private ManagerPool _managerPool;
     private int _currentWeaponCount;
-    public Transform poolTransform;
+    private Animator particleAnim;
+    private ManagerPool _managerPool;
+    private Dictionary<Enum, SpawnedObjects> _itemsPrefabs;
 
     public override void ClearScene()
     {
@@ -63,6 +64,34 @@ public class ItemsSpawner : ManagerBase, IAwake, ISceneChanged
     public void OnAwake()
     {
         _managerPool = Toolbox.Get<ManagerPool>();
+        _itemsPrefabs = _objects.ConvertToDictionary();
+        _managerPool.AddPool(PoolType.Entities);
+        foreach (var item in _objects)
+        {
+            _managerPool.AddPool(PoolType.Entities).PopulateWith(item.prefab, item.countPref);
+        }
+        // for (int i = 0; i < objects.Count; i++)
+        // {
+        //     var dictId = objects[i].dictId;
+        //     if (dictId == DictId.Damagable)
+        //     {
+        //         _managerPool.AddPool(PoolType.Entities)
+        //             .PopulateWith(objects[i].prefab, objects[i].countPref, damagableObjects);
+        //     }
+        //     else if (dictId == DictId.Item)
+        //     {
+        //         _managerPool.AddPool(PoolType.Entities).PopulateWith(objects[i].prefab, objects[i].countPref, Items);
+        //         //_managerPool.AddPool(PoolType.Entities).PopulateWith(objects[i].prefab,objects[i].countPref, damagableObjects);
+        //     }
+        //     else if (dictId == DictId.Particle)
+        //     {
+        //         continue;
+        //     }
+        //     else
+        //     {
+        //         _managerPool.AddPool(PoolType.Entities).PopulateWith(objects[i].prefab, objects[i].countPref);
+        //     }
+        // }
         // _managerPool = Toolbox.Get<ManagerPool>();
 
         // _managerPool.AddPool(PoolType.Entities).PopulateWith(barrel,6, damagableDict);
@@ -111,20 +140,20 @@ public class ItemsSpawner : ManagerBase, IAwake, ISceneChanged
     // {
     //     return _managerPool.Spawn(PoolType.Entities, go,setActive:setActive);
     // }
-    public void SetDataDuck()
-    {
-        GameObject.FindWithTag("Player").GetComponent<Actor>().data = Ducks[(int)currentDuck];
-    }
+    // public void SetDataDuck()
+    // {
+    //     GameObject.FindWithTag("Player").GetComponent<Actor>().data = Ducks[(int)currentDuck];
+    // }
 
     public GameObject SpawnObject(Vector3 position, ObjectId id, bool setActive, Transform parent = null)
     {
-        return _managerPool.Spawn(PoolType.Entities, objects[(int)id].prefab, position, setActive: setActive,
+        return _managerPool.Spawn(PoolType.Entities, _itemsPrefabs[id].prefab, position, setActive: setActive,
             parent: parent);
     }
 
     public GameObject SpawnObject(ObjectId id, bool setActive)
     {
-        return _managerPool.Spawn(PoolType.Entities, objects[(int)id].prefab, setActive: setActive);
+        return _managerPool.Spawn(PoolType.Entities, _itemsPrefabs[id].prefab, setActive: setActive);
     }
 
     public void DespawnObject(GameObject obj)
@@ -134,9 +163,11 @@ public class ItemsSpawner : ManagerBase, IAwake, ISceneChanged
 }
 
 [Serializable]
-public struct SpawnedObjects
+public struct SpawnedObjects : IEnum
 {
-    public DictId dictId;
+    //public DictId dictId;
+    [SerializeField] private ObjectId _objectId;
+    public Enum EnumValue => _objectId;
     public GameObject prefab;
     public int countPref;
 }

@@ -13,7 +13,6 @@ namespace DefaultNamespace
         public Pool PopulateWith(GameObject prefab, int amount)
         {
             var key = prefab.GetInstanceID();
-            print(key);
             var stack = new Stack<GameObject>(amount);
             cachedObjects.Add(key, stack);
 
@@ -29,24 +28,24 @@ namespace DefaultNamespace
             return this;
         }
 
-        public Pool PopulateWith<T>(GameObject prefab, int amount, Dictionary<GameObject, T> dictionary)
-        {
-            var key = prefab.GetInstanceID();
-            print(key);
-            var stack = new Stack<GameObject>(amount);
-            cachedObjects.Add(key, stack);
-            for (int i = 0; i < amount; i++)
-            {
-                var go = Populate(prefab, Vector3.zero, quaternion.identity, parentPool);
-                go.SetActive(false);
-                go.GetComponent<IStart>()?.OnStart();
-                dictionary.Add(go, go.GetComponent<T>());
-                cachedIds.Add(go.GetInstanceID(), key);
-                cachedObjects[key].Push(go);
-            }
-
-            return this;
-        }
+        // public Pool PopulateWith<T>(GameObject prefab, int amount, Dictionary<GameObject, T> dictionary)
+        // {
+        //     var key = prefab.GetInstanceID();
+        //     print(key);
+        //     var stack = new Stack<GameObject>(amount);
+        //     cachedObjects.Add(key, stack);
+        //     for (int i = 0; i < amount; i++)
+        //     {
+        //         var go = Populate(prefab, Vector3.zero, quaternion.identity, parentPool);
+        //         go.SetActive(false);
+        //         go.GetComponent<IStart>()?.OnStart();
+        //         dictionary.Add(go, go.GetComponent<T>());
+        //         cachedIds.Add(go.GetInstanceID(), key);
+        //         cachedObjects[key].Push(go);
+        //     }
+        //
+        //     return this;
+        // }
 
         public void SetParent(Transform parent)
         {
@@ -76,7 +75,11 @@ namespace DefaultNamespace
                 }
 
                 var poolable = transform.GetComponent<IPoolable>();
-                if (poolable != null) poolable.OnSpawn();
+                if (poolable != null)
+                {
+                    poolable.OnSpawn();
+                }
+
                 return transform.gameObject;
             }
 
