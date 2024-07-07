@@ -1,23 +1,27 @@
 using System;
-using Sirenix.OdinInspector;
+#if UNITY_EDITOR
 using UnityEditor.Animations;
+#endif
 using UnityEngine;
 
 [Serializable]
 public class AnimationComponent
 {
+#if UNITY_EDITOR
     [SerializeField] private AnimatorController _animatorController;
+#endif
     [SerializeField] private Animator _animator;
-    [SerializeReference] private Enum _animations;
-    private Enum _currentState = null;
+    private UnitAnimations _animations;
+    private UnitAnimations _currentState = UnitAnimations.Idle;
 
-    [Button]
+#if UNITY_EDITOR
     private void UpdateAnimator()
     {
         _animatorController.GenerateAnimatorControllerFromExist(_animations, true);
     }
+#endif
 
-    public void PlayAnimation(Enum animationType)
+    public void PlayAnimation(UnitAnimations animationType)
     {
         _animator.SetBool(_currentState.ToString(), false);
         _currentState = animationType;

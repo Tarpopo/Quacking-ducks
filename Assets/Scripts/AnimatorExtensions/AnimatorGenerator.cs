@@ -1,3 +1,4 @@
+#if UNITY_EDITOR
 using System;
 using UnityEditor.Animations;
 using UnityEngine;
@@ -50,3 +51,4 @@ public static class AnimatorGenerator
         // }
     }
 }
+#endif

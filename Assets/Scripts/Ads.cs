@@ -1,12 +1,7 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using DefaultNamespace;
-using UnityEditor.Experimental;
+﻿using DefaultNamespace;
 using UnityEngine;
-using UnityEngine.Advertisements;
 
-public class Ads : MonoBehaviour, IUnityAdsListener
+public class Ads : MonoBehaviour //, IUnityAdsListener
 {
     private const string _adsId = "4002259";
     public SimpleSound QuackSound;
@@ -19,7 +14,7 @@ public class Ads : MonoBehaviour, IUnityAdsListener
 
     private void Start()
     {
-        Advertisement.Initialize(_adsId, false);
+        // Advertisement.Initialize(_adsId, false);
         _propeSpawner = FindObjectOfType<PropeSpawner>();
         _player = GameObject.FindWithTag("Player").GetComponent<Actor>();
         _audioSource = gameObject.AddComponent<AudioSource>();
@@ -29,12 +24,12 @@ public class Ads : MonoBehaviour, IUnityAdsListener
 
     private void OnEnable()
     {
-        Advertisement.AddListener(this);
+        // Advertisement.AddListener(this);
     }
 
     private void OnDisable()
     {
-        Advertisement.RemoveListener(this);
+        // Advertisement.RemoveListener(this);
     }
 
     public void ShowAd()
@@ -46,7 +41,8 @@ public class Ads : MonoBehaviour, IUnityAdsListener
         }
 
         _count++;
-        Advertisement.Show("rewardedVideo");
+        OnAds();
+        // Advertisement.Show("rewardedVideo");
     }
 
     public void OnUnityAdsReady(string placementId)
@@ -61,7 +57,17 @@ public class Ads : MonoBehaviour, IUnityAdsListener
     {
     }
 
-    public void OnUnityAdsDidFinish(string placementId, ShowResult showResult)
+    // public void OnUnityAdsDidFinish(string placementId, ShowResult showResult)
+    // {
+    //     if (Toolbox.Get<SceneController>().GetIsMainScene()) return;
+    //     Toolbox.Get<EndLevelChecker>().UnlockScreen();
+    //     _propeSpawner?.CheckAllProps();
+    //     _player.MakeActorAlive();
+    //     _menu.SetActive(false);
+    //     _deathName.SetActive(false);
+    // }
+
+    private void OnAds()
     {
         if (Toolbox.Get<SceneController>().GetIsMainScene()) return;
         Toolbox.Get<EndLevelChecker>().UnlockScreen();
